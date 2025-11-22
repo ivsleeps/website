@@ -9,7 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-  /* ... your existing CSS unchanged ... */
   :root{
     --bg-very-dark:#080704;
     --panel:#0d0b0b;
@@ -45,38 +44,87 @@
   .hamburger{ display:none; background:transparent; border:0; color:var(--muted); font-size:22px; cursor:pointer }
   .mobile-nav{ display:none }
   .mobile-nav.open{ display:block; background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:12px; border-radius:8px; margin-top:12px }
-  .hero{ display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:start; margin-bottom:0; }
-  .hero-left{ background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01)); padding:34px 36px; border-radius:10px; position:relative; box-shadow: 0 14px 44px rgba(0,0,0,0.6); }
+
+  /* HERO: larger, more presence and proportional headline */
+  .hero{
+    display:grid;
+    grid-template-columns:1fr 420px;
+    gap:28px;
+    align-items:start;
+    margin-bottom:0;
+    padding-top:6px;
+    padding-bottom:6px;
+    min-height:52vh; /* gives the hero more vertical presence */
+  }
+  .hero-left{
+    background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+    padding:42px 40px; /* increased padding for breathing room */
+    border-radius:10px;
+    position:relative;
+    box-shadow: 0 14px 44px rgba(0,0,0,0.6);
+  }
   .eyebrow{ font-size:12px; color:var(--muted); letter-spacing:2px; margin-bottom:12px }
-  h1{ font-family:Playfair Display,serif; font-weight:700; margin:0 0 12px; font-size:34px; letter-spacing:1px; line-height:1.05; color:var(--text); }
-  .lead{ color:var(--muted); font-size:15px; margin:0 0 18px; max-width:62ch; }
-  .photo-block{ position:relative; display:flex; gap:12px; align-items:flex-start; }
-  .photo-block .main-photo{ width:230px; height:280px; border-radius:6px; overflow:hidden; box-shadow: 0 18px 38px rgba(0,0,0,0.6); transform:translateY(0); }
-  .photo-block .side-photo{ width:150px; height:120px; margin-left:-48px; border-radius:6px; overflow:hidden; box-shadow: 0 14px 34px rgba(0,0,0,0.55); border:4px solid rgba(0,0,0,0.45); background:#111; }
-  .photo-block img{ width:100%; height:100%; object-fit:cover; display:block }
+
+  /* hero-main: noticeably larger and proportional to lead */
+  h1{
+    font-family:Playfair Display,serif;
+    font-weight:700;
+    margin:0 0 12px;
+    font-size:44px; /* increased */
+    letter-spacing:1px;
+    line-height:1.03;
+    color:var(--text);
+  }
+  .lead{
+    color:var(--muted);
+    font-size:15px;
+    margin:0 0 18px;
+    max-width:62ch;
+  }
+
+  /* Hide hero artwork elements — moved to Tattoo Flash */
+  .photo-block{ display:none !important; visibility:hidden; width:0; height:0; margin:0 }
+  .hero-right{ display:none !important; visibility:hidden; width:0; height:0; }
+
   .tagline{ margin-top:18px; background:var(--beige); color:#1b140f; padding:22px 28px; border-radius:6px; font-family:Playfair Display,serif; font-size:18px; letter-spacing:1px; box-shadow: inset 0 -6px 0 rgba(0,0,0,0.02); }
-  .hero-right{ border-radius:8px; overflow:hidden; height:100%; min-height:320px; background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.5)); display:flex; flex-direction:column; align-items:stretch; justify-content:center; padding:0; box-shadow: 0 16px 48px rgba(0,0,0,0.6); }
-  .hero-right img{ width:100%; height:100%; object-fit:cover; display:block; filter:contrast(.95) saturate(.85) }
   .portfolio{ margin-top:28px; background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005)); padding:34px 28px; border-radius:10px; }
   .portfolio h2{ font-family:Playfair Display,serif; margin:0 0 8px; font-size:20px }
   .portfolio p.lead{ color:var(--muted); margin:0 0 20px }
   .portfolio-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; margin-top:14px; }
   .portfolio-grid img{ width:100%; height:260px; object-fit:cover; border-radius:8px; display:block; box-shadow: 0 10px 30px rgba(0,0,0,0.5) }
-  .about{ display:grid; grid-template-columns:1fr 360px; gap:20px; margin-top:26px; align-items:start; }
-  .about .text h2{ font-family:Playfair Display,serif; margin:0 0 8px }
-  .about .text p{ color:var(--muted); margin:0 0 12px }
-  .about .portrait{ border-radius:8px; overflow:hidden; min-height:220px }
+
+  /* ABOUT: renamed + more spaced paragraphs */
+  .about{
+    display:grid;
+    grid-template-columns:1fr 360px;
+    gap:28px; /* increased gap between text and portrait */
+    margin-top:26px;
+    align-items:start;
+  }
+  .about .text h2{ font-family:Playfair Display,serif; margin:0 0 12px; font-size:22px; } /* slightly bigger */
+  .about .text p{
+    color:var(--muted);
+    margin:0 0 18px; /* more spacing between paragraphs */
+    line-height:1.85; /* more breathing room */
+    font-size:15px;
+  }
+  .about .portrait{ border-radius:8px; overflow:hidden; min-height:260px } /* slightly taller portrait */
   .about .portrait img{ width:100%; height:100%; object-fit:cover }
+
   .contact{ margin-top:26px; background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005)); padding:28px; border-radius:10px; }
   .contact .cols{ display:grid; grid-template-columns:1fr 420px; gap:18px; align-items:start }
   .contact a{ color:var(--muted); text-decoration:underline }
   .contact .form input,.contact .form textarea{ width:100%; padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:var(--text); margin-bottom:10px }
   .contact .form button{ padding:10px 14px; border-radius:8px; border:0; background:var(--accent); color:#111; font-weight:700; cursor:pointer }
   footer{ margin-top:26px; color:var(--muted); font-size:13px; text-align:center; padding-bottom:28px }
+
+  /* FLASH card styles (for moved hero artwork) */
+  .flash-cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:12px; }
+  .flash-card{ border:1px solid rgba(0,0,0,0.06); padding:10px; border-radius:8px; background:transparent; box-shadow: 0 10px 28px rgba(0,0,0,0.45); }
+  .flash-card img{ width:100%; height:220px; object-fit:cover; display:block; border-radius:6px; }
+
   @media (max-width:1040px){
     .hero{ grid-template-columns:1fr }
-    .hero-right{ order:2 }
-    .hero-left{ order:1 }
     .about{ grid-template-columns:1fr }
     .portfolio-grid{ grid-template-columns:repeat(2,1fr) }
     .wrap{ padding:18px }
@@ -87,13 +135,8 @@
     nav.desktop{ display:none }
     .hamburger{ display:inline-flex }
     .hero-left{ padding:22px }
-    .h1{ font-size:28px }
-    h1{ font-size:24px }
-    .photo-block .main-photo{ width:180px; height:220px }
-    .photo-block .side-photo{ display:none }
-    .tagline{ font-size:15px; padding:16px }
+    h1{ font-size:28px }
     .portfolio-grid{ grid-template-columns:1fr }
-    .hero-right{ min-height:200px }
     .about .portrait{ min-height:180px }
   }
   .muted{ color:var(--muted) }
@@ -132,28 +175,15 @@
       <div class="hero-left">
         <div class="eyebrow">SURREAL. ELEGANT. UNFORGETTABLE.</div>
         <h1 id="heroHeading">Let your floating mind express itself on the skin.</h1>
-        <p class="lead">The real, surreal and everything in between. Creating tattoo art and illustrations. </p>
+        <p class="lead">The real, surreal and everything in between. Creating tattoo art and illustrations.</p>
 
-        <div class="photo-block" aria-hidden="true" style="margin-top:14px">
-          <div class="main-photo">
-            <!-- main photo exists: hero-main.jpg -->
-            <img src="assets/hero-main.jpg" alt="Hero artwork" loading="lazy" decoding="async">
-          </div>
-          <div class="side-photo">
-            <!-- use hero-artwork.jpeg (you have hero-artwork.jpeg in assets) -->
-            <img src="assets/hero-artwork.jpeg" alt="Secondary artwork" loading="lazy" decoding="async">
-          </div>
-        </div>
-
+        <!-- hero artwork removed from hero area (moved to Tattoo Flash) -->
         <div class="tagline" style="margin-top:18px">
           Crafted for the few, worn by the extraordinary.
         </div>
       </div>
 
-      <aside class="hero-right" aria-label="Hero image">
-        <!-- hero-right.jpeg exists in assets -->
-        <img src="assets/hero-right.jpeg" alt="Hero right image" loading="lazy" decoding="async">
-      </aside>
+      <!-- hero-right intentionally removed (artwork moved to Tattoo Flash) -->
     </section>
 
     <!-- PORTFOLIO -->
@@ -188,31 +218,67 @@
       </div>
     </section>
 
-    <!-- TATTOO FLASH (renamed from Gallery) -->
+    <!-- TATTOO FLASH (artwork moved here) -->
     <section id="flash" class="portfolio" aria-label="Tattoo flash">
       <h2>Tattoo Flash</h2>
       <p class="lead">Small flash sheets & quick designs — click to open full size.</p>
 
-      <div class="portfolio-grid" role="list">
-        <a href="assets/flash-1.jpeg" target="_blank" rel="noopener noreferrer">
-          <img src="assets/flash-1.jpeg" alt="Flash 1" loading="lazy" decoding="async">
-        </a>
-        <a href="assets/flash-2.jpeg" target="_blank" rel="noopener noreferrer">
-          <img src="assets/flash-2.jpeg" alt="Flash 2" loading="lazy" decoding="async">
-        </a>
+      <!-- New: flash-cards grid including the hero artwork that used to be in the hero -->
+      <div class="flash-cards" role="list">
+        <!-- moved: hero-main.jpg -->
+        <div class="flash-card">
+          <a href="assets/hero-main.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="assets/hero-main.jpg" alt="Hero main artwork (flash)" loading="lazy" decoding="async">
+          </a>
+          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Floating Mind — study</h3>
+          <p style="margin:0;color:var(--muted);font-size:13px;">Original artwork moved from hero to flash gallery.</p>
+        </div>
+
+        <!-- moved: hero-artwork.jpeg -->
+        <div class="flash-card">
+          <a href="assets/hero-artwork.jpeg" target="_blank" rel="noopener noreferrer">
+            <img src="assets/hero-artwork.jpeg" alt="Secondary artwork (flash)" loading="lazy" decoding="async">
+          </a>
+          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Ethereal Study</h3>
+          <p style="margin:0;color:var(--muted);font-size:13px;">A flash-ready piece — click to view details.</p>
+        </div>
+
+        <!-- moved: hero-right.jpeg -->
+        <div class="flash-card">
+          <a href="assets/hero-right.jpeg" target="_blank" rel="noopener noreferrer">
+            <img src="assets/hero-right.jpeg" alt="Hero right artwork (flash)" loading="lazy" decoding="async">
+          </a>
+          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Nocturne Panel</h3>
+          <p style="margin:0;color:var(--muted);font-size:13px;">Panel originally used in the hero section.</p>
+        </div>
+
+        <!-- existing flash images (kept) -->
+        <div class="flash-card">
+          <a href="assets/flash-1.jpeg" target="_blank" rel="noopener noreferrer">
+            <img src="assets/flash-1.jpeg" alt="Flash 1" loading="lazy" decoding="async">
+          </a>
+          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 1</h3>
+        </div>
+
+        <div class="flash-card">
+          <a href="assets/flash-2.jpeg" target="_blank" rel="noopener noreferrer">
+            <img src="assets/flash-2.jpeg" alt="Flash 2" loading="lazy" decoding="async">
+          </a>
+          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 2</h3>
+        </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- ABOUT (renamed and cleaned) -->
     <section id="about" class="about" aria-label="About">
       <div class="text">
-        <h2>About us</h2>
-        <p class="muted">Hi, my name is Ivy and my path to tattooing was a little different. Art was always the only thing that gave me purpose and something I always came back to, after all I've been drawing since I could hold a pencil. Still, I've spent years in other industries as life seems to know better what one needs at any given moment. Tattooing came to me at the perfect time and since then I've been doing what I love most - I get to create, and together with you we create something lasting, endless, and that image when your eyes light up when you look at your new part and you're satisfied is priceless to me.
-The most important thing for me is that people feel comfortable and know that any type of person can find a safe space with me. I understand that sometimes arranging the whole process can be harder for someone, so I always adjust my approach based on the client and try to create a space for everyone..</p>
-        <p class="muted">You can add a "Learn more" button later that links to a deeper page or expands this section with studio details, press, or booking information.</p>
+        <h2>About me</h2>
+        <p class="muted">Hi, my name is Ivy and my path to tattooing was a little different. Art was always the only thing that gave me purpose and something I always came back to — I've been drawing since I could hold a pencil. I've spent years in other industries as life unfolded, and tattooing arrived at the perfect time. Since then I've been doing what I love most: creating work that lasts, and collaborating with clients to make pieces that feel right.</p>
+
+        <p class="muted">The most important thing for me is that people feel comfortable and know that any type of person can find a safe space here. I adjust my approach to each client so the process is approachable and respectful for everyone.</p>
       </div>
+
       <div class="portrait">
-        <!-- portrait.jpeg exists -->
         <img src="assets/portrait.jpeg" alt="Portrait" loading="lazy" decoding="async">
       </div>
     </section>
