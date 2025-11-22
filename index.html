@@ -82,10 +82,31 @@
     max-width:62ch;
   }
 
-  /* Hide hero artwork elements — moved to Tattoo Flash */
-  .photo-block{ display:none !important; visibility:hidden; width:0; height:0; margin:0 }
-  .hero-right{ display:none !important; visibility:hidden; width:0; height:0; }
-
+  /* hero-right: elf tattoo shown here — scaled and aesthetic */
+  .hero-right{
+    border-radius:8px;
+    overflow:hidden;
+    background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.5));
+    display:block;
+    align-self:center;
+    padding:12px;
+    height:100%;
+    min-height:320px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.6);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .hero-right .elf-img{
+    width:100%;
+    max-width:380px; /* keeps proportion to the hero text column */
+    height:auto;
+    display:block;
+    border-radius:8px;
+    object-fit:cover;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+    transform: translateY(0);
+  }
   .tagline{ margin-top:18px; background:var(--beige); color:#1b140f; padding:22px 28px; border-radius:6px; font-family:Playfair Display,serif; font-size:18px; letter-spacing:1px; box-shadow: inset 0 -6px 0 rgba(0,0,0,0.02); }
   .portfolio{ margin-top:28px; background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005)); padding:34px 28px; border-radius:10px; }
   .portfolio h2{ font-family:Playfair Display,serif; margin:0 0 8px; font-size:20px }
@@ -118,13 +139,21 @@
   .contact .form button{ padding:10px 14px; border-radius:8px; border:0; background:var(--accent); color:#111; font-weight:700; cursor:pointer }
   footer{ margin-top:26px; color:var(--muted); font-size:13px; text-align:center; padding-bottom:28px }
 
-  /* FLASH card styles (for moved hero artwork) */
+  /* FLASH card styles (for moved and remaining flash) */
   .flash-cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:12px; }
   .flash-card{ border:1px solid rgba(0,0,0,0.06); padding:10px; border-radius:8px; background:transparent; box-shadow: 0 10px 28px rgba(0,0,0,0.45); }
   .flash-card img{ width:100%; height:220px; object-fit:cover; display:block; border-radius:6px; }
 
+  /* Instagram grid */
+  .insta-section{ margin-top:28px; padding:18px 0; }
+  .insta-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(90px,1fr)); gap:8px; max-width:900px; margin-top:12px; }
+  .insta-tile{ width:100%; padding-top:100%; position:relative; overflow:hidden; border-radius:6px; background:#111; }
+  .insta-tile img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+  .insta-fallback{ color:var(--muted); font-size:14px; margin-top:8px; }
+
   @media (max-width:1040px){
     .hero{ grid-template-columns:1fr }
+    .hero-right{ order:2; max-width:100%; min-height:200px; }
     .about{ grid-template-columns:1fr }
     .portfolio-grid{ grid-template-columns:repeat(2,1fr) }
     .wrap{ padding:18px }
@@ -138,6 +167,7 @@
     h1{ font-size:28px }
     .portfolio-grid{ grid-template-columns:1fr }
     .about .portrait{ min-height:180px }
+    .hero-right{ display:none } /* hide elf on small screens to keep layout tidy */
   }
   .muted{ color:var(--muted) }
 </style>
@@ -156,6 +186,7 @@
         <a href="#about">ABOUT</a>
         <a href="#portfolio">PORTFOLIO</a>
         <a href="#flash">TATTOO FLASH</a>
+        <a href="#insta">IG</a>
         <a href="#contact">CONTACT</a>
       </nav>
 
@@ -167,6 +198,7 @@
       <a href="#about" style="display:block;padding:8px 6px;border-bottom:1px solid rgba(255,255,255,0.02);color:var(--muted)">ABOUT</a>
       <a href="#portfolio" style="display:block;padding:8px 6px;border-bottom:1px solid rgba(255,255,255,0.02);color:var(--muted)">PORTFOLIO</a>
       <a href="#flash" style="display:block;padding:8px 6px;border-bottom:1px solid rgba(255,255,255,0.02);color:var(--muted)">TATTOO FLASH</a>
+      <a href="#insta" style="display:block;padding:8px 6px;border-bottom:1px solid rgba(255,255,255,0.02);color:var(--muted)">IG</a>
       <a href="#contact" style="display:block;padding:8px 6px;color:var(--muted)">CONTACT</a>
     </div>
 
@@ -177,13 +209,16 @@
         <h1 id="heroHeading">Let your floating mind express itself on the skin.</h1>
         <p class="lead">The real, surreal and everything in between. Creating tattoo art and illustrations.</p>
 
-        <!-- hero artwork removed from hero area (moved to Tattoo Flash) -->
         <div class="tagline" style="margin-top:18px">
           Crafted for the few, worn by the extraordinary.
         </div>
       </div>
 
-      <!-- hero-right intentionally removed (artwork moved to Tattoo Flash) -->
+      <!-- ELF TATTOO placed next to the hero block (scaled and aesthetic) -->
+      <aside class="hero-right" aria-hidden="true" aria-label="Featured flash">
+        <!-- replace with your elf tattoo filename if different -->
+        <img src="assets/elf-tattoo.jpg" alt="Elf tattoo — featured flash" class="elf-img" loading="lazy" decoding="async">
+      </aside>
     </section>
 
     <!-- PORTFOLIO -->
@@ -218,41 +253,13 @@
       </div>
     </section>
 
-    <!-- TATTOO FLASH (artwork moved here) -->
+    <!-- TATTOO FLASH (no Nocturne Panel; elf moved out) -->
     <section id="flash" class="portfolio" aria-label="Tattoo flash">
       <h2>Tattoo Flash</h2>
       <p class="lead">Small flash sheets & quick designs — click to open full size.</p>
 
-      <!-- New: flash-cards grid including the hero artwork that used to be in the hero -->
+      <!-- flash grid: removed 'Nocturne Panel' and elf entry (they were moved or removed) -->
       <div class="flash-cards" role="list">
-        <!-- moved: hero-main.jpg -->
-        <div class="flash-card">
-          <a href="assets/hero-main.jpg" target="_blank" rel="noopener noreferrer">
-            <img src="assets/hero-main.jpg" alt="Hero main artwork (flash)" loading="lazy" decoding="async">
-          </a>
-          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Floating Mind — study</h3>
-          <p style="margin:0;color:var(--muted);font-size:13px;">Original artwork moved from hero to flash gallery.</p>
-        </div>
-
-        <!-- moved: hero-artwork.jpeg -->
-        <div class="flash-card">
-          <a href="assets/hero-artwork.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="assets/hero-artwork.jpeg" alt="Secondary artwork (flash)" loading="lazy" decoding="async">
-          </a>
-          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Ethereal Study</h3>
-          <p style="margin:0;color:var(--muted);font-size:13px;">A flash-ready piece — click to view details.</p>
-        </div>
-
-        <!-- moved: hero-right.jpeg -->
-        <div class="flash-card">
-          <a href="assets/hero-right.jpeg" target="_blank" rel="noopener noreferrer">
-            <img src="assets/hero-right.jpeg" alt="Hero right artwork (flash)" loading="lazy" decoding="async">
-          </a>
-          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Nocturne Panel</h3>
-          <p style="margin:0;color:var(--muted);font-size:13px;">Panel originally used in the hero section.</p>
-        </div>
-
-        <!-- existing flash images (kept) -->
         <div class="flash-card">
           <a href="assets/flash-1.jpeg" target="_blank" rel="noopener noreferrer">
             <img src="assets/flash-1.jpeg" alt="Flash 1" loading="lazy" decoding="async">
@@ -266,6 +273,22 @@
           </a>
           <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 2</h3>
         </div>
+
+        <!-- other flash cards (keep adding as needed) -->
+      </div>
+    </section>
+
+    <!-- INSTAGRAM LIVE GALLERY -->
+    <section id="insta" class="insta-section" aria-label="Instagram gallery">
+      <h2 style="font-family:Playfair Display,serif;margin:0 0 8px;">From my Instagram</h2>
+      <p class="muted" style="margin:0 0 10px">Live grid of latest posts from <a href="https://www.instagram.com/ivsleeps/" target="_blank" rel="noopener noreferrer">@ivsleeps</a>.</p>
+
+      <div id="instaGrid" class="insta-grid" aria-live="polite" aria-busy="true">
+        <!-- tiles will be injected here -->
+      </div>
+
+      <div id="instaFallback" class="insta-fallback" style="display:none;">
+        Could not load Instagram posts here — <a href="https://www.instagram.com/ivsleeps/" target="_blank" rel="noopener noreferrer">view on Instagram</a>.
       </div>
     </section>
 
@@ -289,7 +312,7 @@
       <div class="cols">
         <div>
           <p class="muted">Email: <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a></p>
-          <p class="muted">Instagram: <a href="https://www.instagram.com/ivsleeps?igsh=MXJ4cjlsbGgwM2lmNg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+          <p class="muted">Instagram: <a href="https://www.instagram.com/ivsleeps/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
 
           <p class="muted" style="margin-top:10px">If you'd like to book, use the form to send a message with your preferred dates and a short description. You will also receive a confirmation by email.</p>
         </div>
@@ -330,7 +353,7 @@
     hamburger.setAttribute('aria-expanded', open);
   });
 
-  // native lazy-loading already set on images; keep this as a safeguard
+  // native lazy-loading safeguard
   document.querySelectorAll('img').forEach(img=>{
     if(!('loading' in HTMLImageElement.prototype)) return;
     img.loading = img.loading || 'lazy';
@@ -346,6 +369,92 @@
       }
     });
   });
+
+  /* ---------------------------
+     Instagram live gallery
+     ---------------------------
+     Front-end expects a JSON endpoint at /api/instagram that returns an array of objects:
+     [{ id, permalink, media_url, thumbnail_url (optional), caption }, ...]
+     Example source: Instagram Graph API endpoint
+     GET https://graph.instagram.com/me/media?fields=id,caption,media_url,permalink,thumbnail_url&access_token=YOUR_ACCESS_TOKEN
+
+     For CORS and token safety: create a small serverless endpoint (Netlify/Vercel/Cloudflare Worker)
+     that fetches the Instagram API (server-to-server) and returns JSON to this front end.
+
+     If you want, I can generate the ready-to-deploy serverless function — tell me where you host and I'll produce it.
+  */
+
+  async function loadInstagram() {
+    const grid = document.getElementById('instaGrid');
+    const fallback = document.getElementById('instaFallback');
+    grid.setAttribute('aria-busy','true');
+
+    try {
+      // change this path if your server exposes the data elsewhere.
+      const res = await fetch('/api/instagram');
+      if(!res.ok) throw new Error('Network response not OK');
+      const data = await res.json();
+      // expected: data is an array of media objects
+      if(!Array.isArray(data) || data.length === 0) throw new Error('No media');
+
+      // limit number of tiles to show (e.g. latest 12)
+      const items = data.slice(0, 12);
+      grid.innerHTML = '';
+      items.forEach(item => {
+        const thumb = item.thumbnail_url || item.media_url;
+        const a = document.createElement('a');
+        a.href = item.permalink || '#';
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.className = 'insta-tile';
+
+        const img = document.createElement('img');
+        img.src = thumb;
+        img.alt = (item.caption || '').slice(0,80) || 'Instagram post';
+        img.loading = 'lazy';
+        a.appendChild(img);
+        grid.appendChild(a);
+      });
+
+      grid.setAttribute('aria-busy','false');
+      fallback.style.display = 'none';
+    } catch (err) {
+      // show fallback link to Instagram
+      console.warn('Instagram gallery failed to load:', err);
+      document.getElementById('instaGrid').innerHTML = '';
+      fallback.style.display = 'block';
+      grid.setAttribute('aria-busy','false');
+    }
+  }
+
+  // Try to load the gallery on page load
+  loadInstagram();
 </script>
+
+<!-- 
+  -- SERVERLESS EXAMPLE (Netlify function) --
+  Save as: netlify/functions/instagram.js
+  Replace YOUR_ACCESS_TOKEN with a valid Instagram Basic Display long-lived token.
+
+  exports.handler = async () => {
+    try {
+      const token = process.env.IG_TOKEN || 'YOUR_ACCESS_TOKEN';
+      const api = `https://graph.instagram.com/me/media?fields=id,caption,media_url,permalink,thumbnail_url&access_token=${token}`;
+      const r = await fetch(api);
+      if(!r.ok) return { statusCode: 502, body: 'Instagram fetch failed' };
+      const json = await r.json();
+      // json.data is array of media
+      return { statusCode: 200, headers: { 'Access-Control-Allow-Origin':'*', 'Content-Type':'application/json' }, body: JSON.stringify(json.data) };
+    } catch (e) {
+      return { statusCode: 500, body: 'Server error' };
+    }
+  }
+
+  Notes:
+  - Use environment variable IG_TOKEN (long-lived token). Do NOT hardcode tokens in client files.
+  - With this function deployed at /api/instagram (Netlify sets it up), the front-end fetch('/api/instagram') will return the JSON.
+  - If you need help creating the Instagram token or deploying the function, tell me which host you use (Netlify/Vercel/Cloudflare) and I’ll produce the exact deploy steps and code.
+-->
+
 </body>
 </html>
