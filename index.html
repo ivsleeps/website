@@ -153,49 +153,23 @@
   }
   .hero-right img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(.95) saturate(.85)}
 
-  /* services section */
-  .services{
+  /* portfolio section */
+  .portfolio{
     margin-top:28px;
     background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
     padding:34px 28px;
     border-radius:10px;
   }
-  .services h2{font-family:Playfair Display,serif;margin:0 0 8px;font-size:20px}
-  .services p.lead{color:var(--muted);margin:0 0 20px}
+  .portfolio h2{font-family:Playfair Display,serif;margin:0 0 8px;font-size:20px}
+  .portfolio p.lead{color:var(--muted);margin:0 0 20px}
 
-  .service-grid{
+  .portfolio-grid{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
-    gap:18px;
+    gap:12px;
     margin-top:14px;
   }
-  .service{
-    background:transparent;
-    border-radius:8px;
-    overflow:hidden;
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-    align-items:stretch;
-  }
-  .service .svc-img{height:160px;overflow:hidden;border-radius:6px}
-  .service img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(.05) contrast(.9)}
-  .service h3{font-family:Playfair Display,serif;margin:0;font-size:15px}
-  .service p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
-  .service .btn{
-    margin-top:auto;
-    align-self:flex-start;
-    margin-bottom:6px;
-    padding:10px 14px;
-    background:transparent;
-    color:var(--muted);
-    border:1px solid rgba(255,255,255,0.06);
-    border-radius:6px;
-    font-weight:600;
-    cursor:pointer;
-    transition:all .18s ease;
-  }
-  .service .btn:hover{background:rgba(255,255,255,0.02);color:var(--beige);border-color:rgba(191,166,255,0.12)}
+  .portfolio-grid img{width:100%;height:260px;object-fit:cover;border-radius:8px;display:block;box-shadow: 0 10px 30px rgba(0,0,0,0.5)}
 
   /* about section */
   .about{
@@ -210,6 +184,22 @@
   .about .portrait{border-radius:8px;overflow:hidden;min-height:220px}
   .about .portrait img{width:100%;height:100%;object-fit:cover}
 
+  /* contact */
+  .contact{
+    margin-top:26px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+    padding:28px;
+    border-radius:10px;
+  }
+  .contact .cols{display:grid;grid-template-columns:1fr 420px;gap:18px;align-items:start}
+  .contact a{color:var(--muted);text-decoration:underline}
+  .contact .form input,.contact .form textarea{
+    width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);margin-bottom:10px
+  }
+  .contact .form button{
+    padding:10px 14px;border-radius:8px;border:0;background:var(--accent);color:#111;font-weight:700;cursor:pointer
+  }
+
   footer{
     margin-top:26px;color:var(--muted);font-size:13px;text-align:center;padding-bottom:28px
   }
@@ -220,8 +210,9 @@
     .hero-right{order:2}
     .hero-left{order:1}
     .about{grid-template-columns:1fr}
-    .service-grid{grid-template-columns:repeat(2,1fr)}
+    .portfolio-grid{grid-template-columns:repeat(2,1fr)}
     .wrap{padding:18px}
+    .contact .cols{grid-template-columns:1fr}
   }
 
   @media (max-width:640px){
@@ -234,7 +225,7 @@
     .photo-block .main-photo{width:180px;height:220px}
     .photo-block .side-photo{display:none}
     .tagline{font-size:15px;padding:16px}
-    .service-grid{grid-template-columns:1fr}
+    .portfolio-grid{grid-template-columns:1fr}
     .hero-right{min-height:200px}
     .about .portrait{min-height:180px}
   }
@@ -255,7 +246,7 @@
 
       <nav class="desktop" aria-label="Main navigation">
         <a href="#about">ABOUT</a>
-        <a href="#services">SERVICES</a>
+        <a href="#portfolio">PORTFOLIO</a>
         <a href="#gallery">GALLERY</a>
         <a href="#contact">CONTACT</a>
       </nav>
@@ -266,7 +257,7 @@
     <!-- mobile nav -->
     <div class="mobile-nav" id="mobileNav" aria-hidden="true">
       <a href="#about" style="display:block;padding:8px 6px;border-bottom:1px solid rgba(255,255,255,0.02);color:var(--muted)">ABOUT</a>
-      <a href="#services" style="display:block;padding:8px 6px;border-bottom:1px solid rgba(255,255,255,0.02);color:var(--muted)">SERVICES</a>
+      <a href="#portfolio" style="display:block;padding:8px 6px;border-bottom:1px solid rgba(255,255,255,0.02);color:var(--muted)">PORTFOLIO</a>
       <a href="#gallery" style="display:block;padding:8px 6px;border-bottom:1px solid rgba(255,255,255,0.02);color:var(--muted)">GALLERY</a>
       <a href="#contact" style="display:block;padding:8px 6px;color:var(--muted)">CONTACT</a>
     </div>
@@ -280,10 +271,11 @@
 
         <div class="photo-block" aria-hidden="true" style="margin-top:14px">
           <div class="main-photo">
-            <img src="file:///C:/Users/42077/Downloads/IMG_8003%20(1).jpg" alt="Hero artwork">
+            <!-- example hero art: replace with your uploaded hero file if you prefer -->
+            <img src="/mnt/data/AF6740CE-C97A-4B23-80B0-2C0E292F7970.jpeg" alt="Hero artwork">
           </div>
           <div class="side-photo">
-            <img src="assets/hero-side.jpg" alt="Secondary artwork">
+            <img src="/mnt/data/09AE5E3D-FA51-4E87-B4C3-C9EA4720A10B.jpeg" alt="Secondary artwork">
           </div>
         </div>
 
@@ -293,36 +285,26 @@
       </div>
 
       <aside class="hero-right" aria-label="Hero image">
-        <img src="assets/hero-right.jpg" alt="Hero right image">
+        <img src="/mnt/data/5E13F094-9483-4CEA-A5E5-348D52CA7C22.jpeg" alt="Hero right image">
       </aside>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="services" aria-label="Services">
-      <h2>Our services / how it works</h2>
-      <p class="lead">Preliminary details about the services offered and how to get started. Short and evocative sentences that complement the visual pieces below.</p>
+    <!-- PORTFOLIO (replaces services) -->
+    <section id="portfolio" class="portfolio" aria-label="Portfolio">
+      <h2>Portfolio</h2>
+      <p class="lead">Selected recent works — a simple gallery grid. Click to view full size.</p>
 
-      <div class="service-grid" role="list">
-        <article class="service" role="listitem">
-          <div class="svc-img"><img src="assets/svc1.jpg" alt="Service one"></div>
-          <h3>Service / step one</h3>
-          <p>Preliminary details about this service or step that are easy to read and understand. Provide brief necessary copy explaining the offering and what to expect.</p>
-          <button class="btn" aria-label="Learn more about step one">BUTTON TEXT</button>
-        </article>
+      <div class="portfolio-grid" role="list">
+        <a href="/mnt/data/6CAE0B4A-FD1B-42BB-AA1E-6CE74B8CDD86.jpeg" target="_blank" rel="noopener"><img src="/mnt/data/6CAE0B4A-FD1B-42BB-AA1E-6CE74B8CDD86.jpeg" alt="Portfolio 1"></a>
+        <a href="/mnt/data/E03A1BBD-E134-45F2-BC9D-8585E61E1749.jpeg" target="_blank" rel="noopener"><img src="/mnt/data/E03A1BBD-E134-45F2-BC9D-8585E61E1749.jpeg" alt="Portfolio 2"></a>
+        <a href="/mnt/data/7D323B8F-9DE2-424F-AC4F-7AFC0B3B7D95.jpeg" target="_blank" rel="noopener"><img src="/mnt/data/7D323B8F-9DE2-424F-AC4F-7AFC0B3B7D95.jpeg" alt="Portfolio 3"></a>
 
-        <article class="service" role="listitem">
-          <div class="svc-img"><img src="assets/svc2.jpg" alt="Service two"></div>
-          <h3>Service / step two</h3>
-          <p>Preliminary details about this service or step that are easy to read and understand. Provide brief necessary copy explaining the offering and what to expect.</p>
-          <button class="btn" aria-label="Learn more about step two">BUTTON TEXT</button>
-        </article>
+        <a href="/mnt/data/8AAFFEAE-DCC5-4F52-86F9-C342F2105D98.jpeg" target="_blank" rel="noopener"><img src="/mnt/data/8AAFFEAE-DCC5-4F52-86F9-C342F2105D98.jpeg" alt="Portfolio 4"></a>
+        <a href="/mnt/data/D269BC11-1974-4805-AC31-B5A1E6EB66ED.jpeg" target="_blank" rel="noopener"><img src="/mnt/data/D269BC11-1974-4805-AC31-B5A1E6EB66ED.jpeg" alt="Portfolio 5"></a>
+        <a href="/mnt/data/AF6740CE-C97A-4B23-80B0-2C0E292F7970.jpeg" target="_blank" rel="noopener"><img src="/mnt/data/AF6740CE-C97A-4B23-80B0-2C0E292F7970.jpeg" alt="Portfolio 6"></a>
 
-        <article class="service" role="listitem">
-          <div class="svc-img"><img src="assets/svc3.jpg" alt="Service three"></div>
-          <h3>Service / step three</h3>
-          <p>Preliminary details about this service or step that are easy to read and understand. Provide brief necessary copy explaining the offering and what to expect.</p>
-          <button class="btn" aria-label="Learn more about step three">BUTTON TEXT</button>
-        </article>
+        <a href="/mnt/data/09AE5E3D-FA51-4E87-B4C3-C9EA4720A10B.jpeg" target="_blank" rel="noopener"><img src="/mnt/data/09AE5E3D-FA51-4E87-B4C3-C9EA4720A10B.jpeg" alt="Portfolio 7"></a>
+        <a href="/mnt/data/5E13F094-9483-4CEA-A5E5-348D52CA7C22.jpeg" target="_blank" rel="noopener"><img src="/mnt/data/5E13F094-9483-4CEA-A5E5-348D52CA7C22.jpeg" alt="Portfolio 8"></a>
       </div>
     </section>
 
@@ -332,11 +314,48 @@
         <h2>About us</h2>
         <p class="muted">Hi, my name is Ivy and my path to tattooing was a little different. Art was always the only thing that gave me purpose and something I always came back to, after all I've been drawing since I could hold a pencil. Still, I've spent years in other industries as life seems to know better what one needs at any given moment. Tattooing came to me at the perfect time and since then I've been doing what I love most - I get to create, and together with you we create something lasting, endless, and that image when your eyes light up when you look at your new part and you're satisfied is priceless to me.
 The most important thing for me is that people feel comfortable and know that any type of person can find a safe space with me. I understand that sometimes arranging the whole process can be harder for someone, so I always adjust my approach based on the client and try to create a space for everyone..</p>
-        <p class="muted">You can add a "Learn more" button that links to a deeper page or expands this section with studio details, press, or booking information.</p>
-        <p style="margin-top:12px"><a href="#contact" style="text-decoration:none;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:6px;color:var(--muted)">LEARN MORE</a></p>
+        <p class="muted">You can add a "Learn more" button later that links to a deeper page or expands this section with studio details, press, or booking information.</p>
       </div>
       <div class="portrait">
-        <img src="assets/about-portrait.jpg" alt="Portrait">
+        <!-- portrait: the photo where you're sitting and tattooing (provided) -->
+        <img src="/mnt/data/D269BC11-1974-4805-AC31-B5A1E6EB66ED.jpeg" alt="Portrait">
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact" aria-label="Contact">
+      <h2>Contact & Booking</h2>
+      <div class="cols">
+        <div>
+          <p class="muted">Email: <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a></p>
+          <p class="muted">Instagram: <a href="https://www.instagram.com/ivsleeps?igsh=MXJ4cjlsbGgwM2lmNg%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a></p>
+
+          <p class="muted" style="margin-top:10px">If you'd like to book, use the form to send a message with your preferred dates and a short description. You will also receive a confirmation by email.</p>
+        </div>
+
+        <div class="form">
+          <!--
+            Booking form:
+            - Replace the action URL with your Formspree endpoint (https://formspree.io/f/your-id)
+            - OR replace with another form backend (Netlify forms, third-party service).
+          -->
+          <form action="https://formspree.io/f/your-form-id" method="POST">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="phone" placeholder="Phone (optional)">
+            <input type="text" name="subject" placeholder="Subject (e.g. sleeve consult)">
+            <textarea name="message" rows="5" placeholder="Describe what you'd like & preferred dates" required></textarea>
+
+            <!-- helpful hidden field so you get source -->
+            <input type="hidden" name="_subject" value="New booking request from website">
+            <!-- after setup you can add a redirect page -->
+            <!-- <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html"> -->
+
+            <button type="submit">Send booking request</button>
+          </form>
+
+          <p class="muted" style="font-size:12px;margin-top:8px">Note: replace the form action with your Formspree endpoint or Netlify form attributes to actually receive submissions. For now visitors can also email you directly.</p>
+        </div>
       </div>
     </section>
 
