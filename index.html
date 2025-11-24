@@ -5,7 +5,7 @@
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,j);
 })(window,document,'script','dataLayer','GTM-K7TQCS33');</script>
 <!-- End Google Tag Manager -->
 <meta charset="utf-8" />
@@ -373,73 +373,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     margin-top:8px;
   }
 
+  /* Modal / Carousel styles */
+  .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.86);z-index:9999;padding:20px}
+  .modal.open{display:flex}
+  .viewer{position:relative;max-width:1100px;width:calc(100% - 48px);background:transparent}
+  .viewer img{max-width:100%;max-height:78vh;border-radius:12px;display:block;margin:0 auto}
+  .controls{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:20px;pointer-events:none}
+  button.ctrl{pointer-events:auto;background:rgba(6,10,18,0.55);border:1px solid rgba(255,255,255,0.06);backdrop-filter:blur(4px);color:#fff;padding:12px;border-radius:999px;cursor:pointer}
+  button.ctrl:active{transform:scale(.98)}
+  .close{position:absolute;right:14px;top:14px}
+  .caption{margin-top:12px;text-align:center;color:var(--muted);font-size:15px}
+  .dots{display:flex;gap:8px;margin-top:14px;justify-content:center}
+  .dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.12);cursor:pointer}
+  .dot.active{background:var(--accent)}
+
   @media (max-width:1040px){
-    .hero{
-      grid-template-columns:1fr;
-    }
-
-    .hero-main{
-      order:2;
-      max-width:100%;
-      min-height:200px;
-    }
-
-    .about{
-      grid-template-columns:1fr
-    }
-
-    .portfolio-grid{
-      grid-template-columns:repeat(2,1fr)
-    }
-
-    .wrap{
-      padding:18px
-    }
-
-    .contact .cols{
-      grid-template-columns:1fr
-    }
+    .hero{grid-template-columns:1fr}
   }
 
   @media (max-width:640px){
-    .brand .wordmark{
-      font-size:18px;
-      letter-spacing:4px
-    }
-
-    nav.desktop{
-      display:none
-    }
-
-    .hamburger{
-      display:inline-flex
-    }
-
-    .hero-left{
-      padding:22px
-    }
-
-    h1{
-      font-size:28px
-    }
-
-    .portfolio-grid{
-      grid-template-columns:1fr
-    }
-
-    .about .portrait{
-      min-height:180px
-    }
-
-    /* hides hero image on mobile — keep or remove */
-    .hero-main{
-      display:none
-    }
+    .brand .wordmark{font-size:18px;letter-spacing:4px}
+    nav.desktop{display:none}
+    .hamburger{display:inline-flex}
+    .hero-left{padding:22px}
+    h1{font-size:28px}
+    .portfolio-grid{grid-template-columns:1fr}
+    .about .portrait{min-height:180px}
+    .hero-main{display:none}
   }
 
-  .muted{
-    color:var(--muted)
-  }
+  .muted{color:var(--muted)}
 </style>
 </head>
 
@@ -494,32 +457,83 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- PORTFOLIO -->
     <section id="portfolio" class="portfolio" aria-label="Portfolio">
       <h2>Portfolio</h2>
-      <p class="lead">Selected recent works — a simple gallery grid. Click to view full size.</p>
+      <p class="lead">Selected recent works — click a thumbnail to open the carousel (stays on the same page).</p>
 
-      <div class="portfolio-grid" role="list">
-        <a href="assets/portfolio-1.jpg" target="_blank" rel="noopener noreferrer"><img src="assets/portfolio-1.jpg" alt="Portfolio 1"></a>
-        <a href="assets/portfolio-2.jpg" target="_blank" rel="noopener noreferrer"><img src="assets/portfolio-2.jpg" alt="Portfolio 2"></a>
-        <a href="assets/portfolio-3.jpg" target="_blank" rel="noopener noreferrer"><img src="assets/portfolio-3.jpg" alt="Portfolio 3"></a>
-        <a href="assets/portfolio-4.jpeg" target="_blank" rel="noopener noreferrer"><img src="assets/portfolio-4.jpeg" alt="Portfolio 4"></a>
-        <a href="assets/portfolio-5.jpg" target="_blank" rel="noopener noreferrer"><img src="assets/portfolio-5.jpg" alt="Portfolio 5"></a>
-        <a href="assets/portfolio-6.jpg" target="_blank" rel="noopener noreferrer"><img src="assets/portfolio-6.jpg" alt="Portfolio 6"></a>
-        <a href="assets/portfolio-7.jpeg" target="_blank" rel="noopener noreferrer"><img src="assets/portfolio-7.jpeg" alt="Portfolio 7"></a>
+      <div class="portfolio-grid" role="list" id="portfolioGrid">
+        <!-- 20 portfolio slots (replace the src with your real images) -->
+        <!-- Each item uses class="gallery-item" and data-full attribute to point to full image -->
+        <!-- We'll reference them in JS to build the carousel -->
+        
+        <!-- Portfolio items 1..20 -->
+        <a class="gallery-item" data-type="portfolio" data-index="0" data-full="assets/portfolio-1.jpg" href="#" aria-label="Open Portfolio 1"><img src="assets/portfolio-1.jpg" alt="Portfolio 1"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="1" data-full="assets/portfolio-2.jpg" href="#" aria-label="Open Portfolio 2"><img src="assets/portfolio-2.jpg" alt="Portfolio 2"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="2" data-full="assets/portfolio-3.jpg" href="#" aria-label="Open Portfolio 3"><img src="assets/portfolio-3.jpg" alt="Portfolio 3"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="3" data-full="assets/portfolio-4.jpeg" href="#" aria-label="Open Portfolio 4"><img src="assets/portfolio-4.jpeg" alt="Portfolio 4"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="4" data-full="assets/portfolio-5.jpg" href="#" aria-label="Open Portfolio 5"><img src="assets/portfolio-5.jpg" alt="Portfolio 5"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="5" data-full="assets/portfolio-6.jpg" href="#" aria-label="Open Portfolio 6"><img src="assets/portfolio-6.jpg" alt="Portfolio 6"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="6" data-full="assets/portfolio-7.jpeg" href="#" aria-label="Open Portfolio 7"><img src="assets/portfolio-7.jpeg" alt="Portfolio 7"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="7" data-full="assets/portfolio-8.jpg" href="#" aria-label="Open Portfolio 8"><img src="assets/portfolio-8.jpg" alt="Portfolio 8"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="8" data-full="assets/portfolio-9.jpg" href="#" aria-label="Open Portfolio 9"><img src="assets/portfolio-9.jpg" alt="Portfolio 9"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="9" data-full="assets/portfolio-10.jpg" href="#" aria-label="Open Portfolio 10"><img src="assets/portfolio-10.jpg" alt="Portfolio 10"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="10" data-full="assets/portfolio-11.jpg" href="#" aria-label="Open Portfolio 11"><img src="assets/portfolio-11.jpg" alt="Portfolio 11"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="11" data-full="assets/portfolio-12.jpg" href="#" aria-label="Open Portfolio 12"><img src="assets/portfolio-12.jpg" alt="Portfolio 12"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="12" data-full="assets/portfolio-13.jpg" href="#" aria-label="Open Portfolio 13"><img src="assets/portfolio-13.jpg" alt="Portfolio 13"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="13" data-full="assets/portfolio-14.jpg" href="#" aria-label="Open Portfolio 14"><img src="assets/portfolio-14.jpg" alt="Portfolio 14"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="14" data-full="assets/portfolio-15.jpg" href="#" aria-label="Open Portfolio 15"><img src="assets/portfolio-15.jpg" alt="Portfolio 15"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="15" data-full="assets/portfolio-16.jpg" href="#" aria-label="Open Portfolio 16"><img src="assets/portfolio-16.jpg" alt="Portfolio 16"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="16" data-full="assets/portfolio-17.jpg" href="#" aria-label="Open Portfolio 17"><img src="assets/portfolio-17.jpg" alt="Portfolio 17"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="17" data-full="assets/portfolio-18.jpg" href="#" aria-label="Open Portfolio 18"><img src="assets/portfolio-18.jpg" alt="Portfolio 18"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="18" data-full="assets/portfolio-19.jpg" href="#" aria-label="Open Portfolio 19"><img src="assets/portfolio-19.jpg" alt="Portfolio 19"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="19" data-full="assets/portfolio-20.jpg" href="#" aria-label="Open Portfolio 20"><img src="assets/portfolio-20.jpg" alt="Portfolio 20"></a>
       </div>
     </section>
 
     <!-- FLASH -->
     <section id="flash" class="portfolio" aria-label="Tattoo flash">
       <h2>Tattoo Flash</h2>
-      <p class="lead">Small flash sheets & quick designs — click to open full size.</p>
+      <p class="lead">Small flash sheets & quick designs — click to open in the same carousel.</p>
 
-      <div class="flash-cards" role="list">
+      <div class="flash-cards" role="list" id="flashGrid">
+        <!-- 10 flash slots -->
         <div class="flash-card">
-          <a href="assets/flash-1.jpeg" target="_blank" rel="noopener noreferrer"><img src="assets/flash-1.jpeg" alt="Flash 1"></a>
+          <a class="gallery-item" data-type="flash" data-index="20" data-full="assets/flash-1.jpeg" href="#" aria-label="Open Flash 1"><img src="assets/flash-1.jpeg" alt="Flash 1"></a>
           <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 1</h3>
         </div>
         <div class="flash-card">
-          <a href="assets/flash-2.jpeg" target="_blank" rel="noopener noreferrer"><img src="assets/flash-2.jpeg" alt="Flash 2"></a>
+          <a class="gallery-item" data-type="flash" data-index="21" data-full="assets/flash-2.jpeg" href="#" aria-label="Open Flash 2"><img src="assets/flash-2.jpeg" alt="Flash 2"></a>
           <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 2</h3>
+        </div>
+        <div class="flash-card">
+          <a class="gallery-item" data-type="flash" data-index="22" data-full="assets/flash-3.jpeg" href="#" aria-label="Open Flash 3"><img src="assets/flash-3.jpeg" alt="Flash 3"></a>
+          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 3</h3>
+        </div>
+        <div class="flash-card">
+          <a class="gallery-item" data-type="flash" data-index="23" data-full="assets/flash-4.jpeg" href="#" aria-label="Open Flash 4"><img src="assets/flash-4.jpeg" alt="Flash 4"></a>
+          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 4</h3>
+        </div>
+        <div class="flash-card">
+          <a class="gallery-item" data-type="flash" data-index="24" data-full="assets/flash-5.jpeg" href="#" aria-label="Open Flash 5"><img src="assets/flash-5.jpeg" alt="Flash 5"></a>
+          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 5</h3>
+        </div>
+        <div class="flash-card">
+          <a class="gallery-item" data-type="flash" data-index="25" data-full="assets/flash-6.jpeg" href="#" aria-label="Open Flash 6"><img src="assets/flash-6.jpeg" alt="Flash 6"></a>
+          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 6</h3>
+        </div>
+        <div class="flash-card">
+          <a class="gallery-item" data-type="flash" data-index="26" data-full="assets/flash-7.jpeg" href="#" aria-label="Open Flash 7"><img src="assets/flash-7.jpeg" alt="Flash 7"></a>
+          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 7</h3>
+        </div>
+        <div class="flash-card">
+          <a class="gallery-item" data-type="flash" data-index="27" data-full="assets/flash-8.jpeg" href="#" aria-label="Open Flash 8"><img src="assets/flash-8.jpeg" alt="Flash 8"></a>
+          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 8</h3>
+        </div>
+        <div class="flash-card">
+          <a class="gallery-item" data-type="flash" data-index="28" data-full="assets/flash-9.jpeg" href="#" aria-label="Open Flash 9"><img src="assets/flash-9.jpeg" alt="Flash 9"></a>
+          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 9</h3>
+        </div>
+        <div class="flash-card">
+          <a class="gallery-item" data-type="flash" data-index="29" data-full="assets/flash-10.jpeg" href="#" aria-label="Open Flash 10"><img src="assets/flash-10.jpeg" alt="Flash 10"></a>
+          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 10</h3>
         </div>
       </div>
     </section>
@@ -577,6 +591,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   </div>
 
+  <!-- Modal carousel (single modal used for both portfolio & flash) -->
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-label="Image viewer">
+    <div class="viewer" id="viewer">
+      <button class="ctrl close" id="closeBtn" aria-label="Close viewer">✕</button>
+      <div class="controls">
+        <button class="ctrl" id="prevBtn" aria-label="Previous">◀</button>
+        <button class="ctrl" id="nextBtn" aria-label="Next">▶</button>
+      </div>
+      <div id="slideWrap">
+        <img id="modalImage" src="" alt="" />
+      </div>
+      <div class="caption" id="modalCaption"></div>
+      <div class="dots" id="modalDots" aria-hidden="false"></div>
+    </div>
+  </div>
+
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -589,15 +619,134 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     hamburger.setAttribute('aria-expanded', open);
   });
 
+  // Smooth anchor scrolling
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click', e=>{
-      const target = document.querySelector(a.getAttribute('href'));
+      const href = a.getAttribute('href');
+      if(!href.startsWith('#') || href === '#') return;
+      const target = document.querySelector(href);
       if(target){
         e.preventDefault();
         target.scrollIntoView({behavior:'smooth',block:'start'});
       }
     });
   });
+
+  // Build list of gallery items (portfolio + flash)
+  const galleryNodes = Array.from(document.querySelectorAll('.gallery-item'));
+  const items = galleryNodes.map((node, idx) => ({
+    full: node.dataset.full || node.getAttribute('href'),
+    type: node.dataset.type || 'portfolio',
+    title: node.querySelector('img')?.alt || '',
+    thumb: node.querySelector('img')?.src || '',
+    index: idx
+  }));
+
+  // Modal elements
+  const modal = document.getElementById('modal');
+  const modalImage = document.getElementById('modalImage');
+  const modalCaption = document.getElementById('modalCaption');
+  const modalDots = document.getElementById('modalDots');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const closeBtn = document.getElementById('closeBtn');
+
+  let current = 0;
+
+  function openModal(startIndex){
+    current = startIndex;
+    updateModal();
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', onKey);
+  }
+
+  function closeModal(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+  }
+
+  function onKey(e){
+    if(e.key === 'Escape') closeModal();
+    if(e.key === 'ArrowLeft') showPrev();
+    if(e.key === 'ArrowRight') showNext();
+  }
+
+  function showPrev(){
+    current = (current - 1 + items.length) % items.length;
+    updateModal();
+  }
+  function showNext(){
+    current = (current + 1) % items.length;
+    updateModal();
+  }
+
+  function updateModal(){
+    const it = items[current];
+    modalImage.src = it.full;
+    modalImage.alt = it.title || '';
+    modalCaption.textContent = it.title ? it.title + ' — ' + it.type.toUpperCase() : it.type.toUpperCase();
+    // lazy load indicator
+    modalImage.loading = 'lazy';
+    // update dots
+    renderDots();
+    // focus for accessibility
+    closeBtn.focus();
+  }
+
+  function renderDots(){
+    modalDots.innerHTML = '';
+    items.forEach((it, i)=>{
+      const d = document.createElement('button');
+      d.className = 'dot' + (i===current? ' active':'');
+      d.setAttribute('aria-label','Go to image '+(i+1));
+      d.addEventListener('click', ()=>{ current=i; updateModal(); });
+      modalDots.appendChild(d);
+    });
+  }
+
+  // Attach click handlers to thumbnails to open modal
+  galleryNodes.forEach((node, i)=>{
+    node.addEventListener('click', (e)=>{
+      e.preventDefault();
+      openModal(i);
+    });
+  });
+
+  prevBtn.addEventListener('click', showPrev);
+  nextBtn.addEventListener('click', showNext);
+  closeBtn.addEventListener('click', closeModal);
+
+  // Click outside image to close
+  modal.addEventListener('click', (e)=>{
+    if(e.target === modal) closeModal();
+  });
+
+  // Simple touch swipe support
+  let touchStartX = 0;
+  let touchEndX = 0;
+  modalImage.addEventListener('touchstart', (e)=>{ touchStartX = e.changedTouches[0].screenX; });
+  modalImage.addEventListener('touchend', (e)=>{ touchEndX = e.changedTouches[0].screenX; handleGesture(); });
+  function handleGesture(){
+    if(touchEndX + 30 < touchStartX) showNext();
+    if(touchEndX - 30 > touchStartX) showPrev();
+  }
+
+  // Prevent accidental keyboard scroll when modal open
+  ['keydown','keyup'].forEach(ev=>{
+    window.addEventListener(ev, (e)=>{
+      if(modal.classList.contains('open') && ['ArrowLeft','ArrowRight'].includes(e.key)) e.preventDefault();
+    }, {passive:false});
+  });
+
+  // If you want to restrict carousel to portfolio only when opening from portfolio section,
+  // we could filter and rebuild items accordingly. For now it mixes portfolio + flash in the order
+  // they appear in the DOM (portfolio first, then flash). If you'd prefer separate galleries,
+  // tell me and I'll add a toggle to switch gallery collections.
+
 </script>
  <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7TQCS33"
