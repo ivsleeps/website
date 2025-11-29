@@ -1,13 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,j);
-})(window,document,'script','dataLayer','GTM-K7TQCS33');</script>
-<!-- End Google Tag Manager -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>ivsleeps</title>
@@ -18,397 +11,58 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-  :root{
-    --bg-very-dark:#080704;
-    --panel:#0d0b0b;
-    --beige:#e7dfcf;
-    --muted-beige:#cfc7b6;
-    --accent:#bfa6ff;
-    --text: #efede9;
-    --muted: rgba(239,237,233,0.68);
-    --radius:10px;
-    --container:1100px;
-  }
-
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0;
-    background: linear-gradient(180deg,var(--bg-very-dark) 0%, #0b0a0a 100%);
-    color:var(--text);
-    font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    line-height:1.5;
-    -webkit-text-size-adjust:100%;
-  }
-
-  a{color:inherit}
-
-  .wrap{
-    max-width:var(--container);
-    margin:28px auto;
-    padding:28px;
-  }
-
-  header{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-    margin-bottom:18px;
-  }
-
-  .brand{
-    display:flex;
-    align-items:center;
-    gap:16px;
-    text-decoration:none;
-    color:inherit;
-  }
-
-  .brand .wordmark{
-    font-family:Playfair Display,serif;
-    letter-spacing:6px;
-    font-weight:600;
-    font-size:20px;
-  }
-
-  .brand small{
-    display:block;
-    font-size:11px;
-    color:var(--muted);
-    margin-top:-6px
-  }
-
-  nav.desktop{
-    display:flex;
-    gap:18px;
-    align-items:center
-  }
-
-  nav.desktop a{
-    font-size:13px;
-    color:var(--muted);
-    text-decoration:none
-  }
-
-  nav.desktop a:hover{
-    color:var(--beige)
-  }
-
-  .hamburger{
-    display:none;
-    background:transparent;
-    border:0;
-    color:var(--muted);
-    font-size:22px;
-    cursor:pointer
-  }
-
-  .mobile-nav{
-    display:none
-  }
-
-  .mobile-nav.open{
-    display:block;
-    background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-    padding:12px;
-    border-radius:8px;
-    margin-top:12px
-  }
-
-  /* HERO */
-  .hero{
-    display:grid;
-    grid-template-columns:1fr 420px;
-    gap:28px;
-    align-items:start;
-    margin-bottom:0;
-    padding-top:6px;
-    padding-bottom:6px;
-    min-height:52vh;
-  }
-
-  .hero-left{
-    background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
-    padding:42px 40px;
-    border-radius:10px;
-    position:relative;
-    box-shadow: 0 14px 44px rgba(0,0,0,0.6);
-  }
-
-  .eyebrow{
-    font-size:12px;
-    color:var(--muted);
-    letter-spacing:2px;
-    margin-bottom:12px
-  }
-
-  h1{
-    font-family:Playfair Display,serif;
-    font-weight:700;
-    margin:0 0 12px;
-    font-size:44px;
-    letter-spacing:1px;
-    line-height:1.03;
-    color:var(--text);
-  }
-
-  .lead{
-    color:var(--muted);
-    font-size:15px;
-    margin:0 0 18px;
-    max-width:62ch;
-  }
-
-  /* FIXED: HERO MAIN IMAGE */
-  .hero-main{
-    border-radius:8px;
-    overflow:hidden;
-    background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.5));
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:12px;
-    height:100%;
-    min-height:320px;
-    box-shadow: 0 16px 48px rgba(0,0,0,0.6);
-  }
-
-  .hero-main .elf-img{
-    width:100%;
-    max-width:380px;
-    height:auto;
-    display:block;
-    border-radius:8px;
-    object-fit:cover;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.6);
-  }
-
-  .tagline{
-    margin-top:18px;
-    background:var(--beige);
-    color:#1b140f;
-    padding:22px 28px;
-    border-radius:6px;
-    font-family:Playfair Display,serif;
-    font-size:18px;
-    letter-spacing:1px;
-    box-shadow: inset 0 -6px 0 rgba(0,0,0,0.02);
-  }
-
-  .portfolio{
-    margin-top:28px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
-    padding:34px 28px;
-    border-radius:10px;
-  }
-
-  .portfolio h2{
-    font-family:Playfair Display,serif;
-    margin:0 0 8px;
-    font-size:20px
-  }
-
-  .portfolio p.lead{
-    color:var(--muted);
-    margin:0 0 20px
-  }
-
-  .portfolio-grid{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:12px;
-    margin-top:14px;
-  }
-
-  .portfolio-grid img{
-    width:100%;
-    height:260px;
-    object-fit:cover;
-    border-radius:8px;
-    display:block;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5)
-  }
-
-  .about{
-    display:grid;
-    grid-template-columns:1fr 360px;
-    gap:28px;
-    margin-top:26px;
-    align-items:start;
-  }
-
-  .about .text h2{
-    font-family:Playfair Display,serif;
-    margin:0 0 12px;
-    font-size:22px;
-  }
-
-  .about .text p{
-    color:var(--muted);
-    margin:0 0 18px;
-    line-height:1.85;
-    font-size:15px;
-  }
-
-  .about .portrait{
-    border-radius:8px;
-    overflow:hidden;
-    min-height:260px
-  }
-
-  .about .portrait img{
-    width:100%;
-    height:100%;
-    object-fit:cover
-  }
-
-  .contact{
-    margin-top:26px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
-    padding:28px;
-    border-radius:10px;
-  }
-
-  .contact .cols{
-    display:grid;
-    grid-template-columns:1fr 420px;
-    gap:18px;
-    align-items:start
-  }
-
-  .contact a{
-    color:var(--muted);
-    text-decoration:underline
-  }
-
-  .contact .form input,
-  .contact .form textarea{
-    width:100%;
-    padding:10px;
-    border-radius:8px;
-    border:1px solid rgba(255,255,255,0.06);
-    background:transparent;
-    color:var(--text);
-    margin-bottom:10px
-  }
-
-  .contact .form button{
-    padding:10px 14px;
-    border-radius:8px;
-    border:0;
-    background:var(--accent);
-    color:#111;
-    font-weight:700;
-    cursor:pointer
-  }
-
-  footer{
-    margin-top:26px;
-    color:var(--muted);
-    font-size:13px;
-    text-align:center;
-    padding-bottom:28px
-  }
-
-  .flash-cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:14px;
-    margin-top:12px;
-  }
-
-  .flash-card{
-    border:1px solid rgba(0,0,0,0.06);
-    padding:10px;
-    border-radius:8px;
-    background:transparent;
-    box-shadow: 0 10px 28px rgba(0,0,0,0.45);
-  }
-
-  .flash-card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-    display:block;
-    border-radius:6px;
-  }
-
-  .insta-section{
-    margin-top:28px;
-    padding:18px 0;
-  }
-
-  .insta-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(90px,1fr));
-    gap:8px;
-    max-width:900px;
-    margin-top:12px;
-  }
-
-  .insta-tile{
-    width:100%;
-    padding-top:100%;
-    position:relative;
-    overflow:hidden;
-    border-radius:6px;
-    background:#111;
-  }
-
-  .insta-tile img{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-  }
-
-  .insta-fallback{
-    color:var(--muted);
-    font-size:14px;
-    margin-top:8px;
-  }
-
-  /* Modal / Carousel styles */
-  .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.86);z-index:9999;padding:20px}
-  .modal.open{display:flex}
-  .viewer{position:relative;max-width:1100px;width:calc(100% - 48px);background:transparent}
-  .viewer img{max-width:100%;max-height:78vh;border-radius:12px;display:block;margin:0 auto}
-  .controls{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:20px;pointer-events:none}
-  button.ctrl{pointer-events:auto;background:rgba(6,10,18,0.55);border:1px solid rgba(255,255,255,0.06);backdrop-filter:blur(4px);color:#fff;padding:12px;border-radius:999px;cursor:pointer}
-  button.ctrl:active{transform:scale(.98)}
-  .close{position:absolute;right:14px;top:14px}
-  .caption{margin-top:12px;text-align:center;color:var(--muted);font-size:15px}
-  .dots{display:flex;gap:8px;margin-top:14px;justify-content:center}
-  .dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.12);cursor:pointer}
-  .dot.active{background:var(--accent)}
-
-  @media (max-width:1040px){
-    .hero{grid-template-columns:1fr}
-  }
-
-  @media (max-width:640px){
-    .brand .wordmark{font-size:18px;letter-spacing:4px}
-    nav.desktop{display:none}
-    .hamburger{display:inline-flex}
-    .hero-left{padding:22px}
-    h1{font-size:28px}
-    .portfolio-grid{grid-template-columns:1fr}
-    .about .portrait{min-height:180px}
-    .hero-main{display:none}
-  }
-
+  :root{--bg-very-dark:#080704;--panel:#0d0b0b;--beige:#e7dfcf;--muted-beige:#cfc7b6;--accent:#bfa6ff;--text:#efede9;--muted:rgba(239,237,233,0.68);--radius:10px;--container:1100px}
+  *{box-sizing:border-box}html,body{height:100%}body{margin:0;background:linear-gradient(180deg,var(--bg-very-dark) 0%,#0b0a0a 100%);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.5;-webkit-text-size-adjust:100%}a{color:inherit}
+  .wrap{max-width:var(--container);margin:28px auto;padding:28px}
+  header{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:18px}
+  .brand{display:flex;align-items:center;gap:16px;text-decoration:none;color:inherit}
+  .brand .wordmark{font-family:Playfair Display,serif;letter-spacing:6px;font-weight:600;font-size:20px}
+  .brand small{display:block;font-size:11px;color:var(--muted);margin-top:-6px}
+  nav.desktop{display:flex;gap:18px;align-items:center}
+  nav.desktop a{font-size:13px;color:var(--muted);text-decoration:none}
+  nav.desktop a:hover{color:var(--beige)}
+  .hamburger{display:none;background:transparent;border:0;color:var(--muted);font-size:22px;cursor:pointer}
+  .mobile-nav{display:none}
+  .mobile-nav.open{display:block;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:12px;border-radius:8px;margin-top:12px}
+  .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start;margin-bottom:0;padding-top:6px;padding-bottom:6px;min-height:52vh}
+  .hero-left{background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));padding:42px 40px;border-radius:10px;position:relative;box-shadow:0 14px 44px rgba(0,0,0,0.6)}
+  .eyebrow{font-size:12px;color:var(--muted);letter-spacing:2px;margin-bottom:12px}
+  h1{font-family:Playfair Display,serif;font-weight:700;margin:0 0 12px;font-size:44px;letter-spacing:1px;line-height:1.03;color:var(--text)}
+  .lead{color:var(--muted);font-size:15px;margin:0 0 18px;max-width:62ch}
+  .hero-main{border-radius:8px;overflow:hidden;background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.5));display:flex;align-items:center;justify-content:center;padding:12px;height:100%;min-height:320px;box-shadow:0 16px 48px rgba(0,0,0,0.6)}
+  .hero-main .elf-img{width:100%;max-width:380px;height:auto;display:block;border-radius:8px;object-fit:cover;box-shadow:0 18px 40px rgba(0,0,0,0.6)}
+  .tagline{margin-top:18px;background:var(--beige);color:#1b140f;padding:22px 28px;border-radius:6px;font-family:Playfair Display,serif;font-size:18px;letter-spacing:1px;box-shadow:inset 0 -6px 0 rgba(0,0,0,0.02)}
+  .portfolio{margin-top:28px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));padding:34px 28px;border-radius:10px}
+  .portfolio h2{font-family:Playfair Display,serif;margin:0 0 8px;font-size:20px}
+  .portfolio p.lead{color:var(--muted);margin:0 0 20px}
+  .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+  .portfolio-grid img{width:100%;height:260px;object-fit:cover;border-radius:8px;display:block;box-shadow:0 10px 30px rgba(0,0,0,0.5)}
+  .about{display:grid;grid-template-columns:1fr 360px;gap:28px;margin-top:26px;align-items:start}
+  .about .text h2{font-family:Playfair Display,serif;margin:0 0 12px;font-size:22px}
+  .about .text p{color:var(--muted);margin:0 0 18px;line-height:1.85;font-size:15px}
+  .about .portrait{border-radius:8px;overflow:hidden;min-height:260px}
+  .about .portrait img{width:100%;height:100%;object-fit:cover}
+  .contact{margin-top:26px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));padding:28px;border-radius:10px}
+  .contact .cols{display:grid;grid-template-columns:1fr 420px;gap:18px;align-items:start}
+  .contact a{color:var(--muted);text-decoration:underline}
+  .contact .form input,.contact .form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);margin-bottom:10px}
+  .contact .form button{padding:10px 14px;border-radius:8px;border:0;background:var(--accent);color:#111;font-weight:700;cursor:pointer}
+  footer{margin-top:26px;color:var(--muted);font-size:13px;text-align:center;padding-bottom:28px}
+  .flash-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:12px}
+  .flash-card{border:1px solid rgba(0,0,0,0.06);padding:10px;border-radius:8px;background:transparent;box-shadow:0 10px 28px rgba(0,0,0,0.45)}
+  .flash-card img{width:100%;height:220px;object-fit:cover;display:block;border-radius:6px}
+  .insta-section{margin-top:28px;padding:18px 0}
+  .insta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:8px;max-width:900px;margin-top:12px}
+  .insta-tile{width:100%;padding-top:100%;position:relative;overflow:hidden;border-radius:6px;background:#111}
+  .insta-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .insta-fallback{color:var(--muted);font-size:14px;margin-top:8px}
+  .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.86);z-index:9999;padding:20px}.modal.open{display:flex}.viewer{position:relative;max-width:1100px;width:calc(100% - 48px);background:transparent}.viewer img{max-width:100%;max-height:78vh;border-radius:12px;display:block;margin:0 auto}.controls{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:20px;pointer-events:none}button.ctrl{pointer-events:auto;background:rgba(6,10,18,0.55);border:1px solid rgba(255,255,255,0.06);backdrop-filter:blur(4px);color:#fff;padding:12px;border-radius:999px;cursor:pointer}button.ctrl:active{transform:scale(.98)}.close{position:absolute;right:14px;top:14px}.caption{margin-top:12px;text-align:center;color:var(--muted);font-size:15px}.dots{display:flex;gap:8px;margin-top:14px;justify-content:center}.dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.12);cursor:pointer}.dot.active{background:var(--accent)}
+  @media (max-width:1040px){.hero{grid-template-columns:1fr}}@media (max-width:640px){.brand .wordmark{font-size:18px;letter-spacing:4px}nav.desktop{display:none}.hamburger{display:inline-flex}.hero-left{padding:22px}h1{font-size:28px}.portfolio-grid{grid-template-columns:1fr}.about .portrait{min-height:180px}.hero-main{display:none}}
   .muted{color:var(--muted)}
 </style>
 </head>
-
 <body>
   <div class="wrap" id="top">
-
     <header>
       <a class="brand" href="#top" aria-label="ivsleeps home">
         <div>
@@ -416,15 +70,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <small class="muted">Let your mind express itself on your skin.</small>
         </div>
       </a>
-
       <nav class="desktop" aria-label="Main navigation">
         <a href="#about">ABOUT</a>
         <a href="#portfolio">PORTFOLIO</a>
         <a href="#flash">TATTOO FLASH</a>
+        <a href="#prints">PRINTS</a>
         <a href="#insta">IG</a>
         <a href="#contact">CONTACT</a>
       </nav>
-
       <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
     </header>
 
@@ -432,47 +85,44 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <a href="#about" style="display:block;padding:8px 6px;border-bottom:1px solid rgba(255,255,255,0.02);color:var(--muted)">ABOUT</a>
       <a href="#portfolio" style="display:block;padding:8px 6px;border-bottom:1px solid rgba(255,255,255,0.02);color:var(--muted)">PORTFOLIO</a>
       <a href="#flash" style="display:block;padding:8px 6px;border-bottom:1px solid rgba(255,255,255,0.02);color:var(--muted)">TATTOO FLASH</a>
+      <a href="#prints" style="display:block;padding:8px 6px;border-bottom:1px solid rgba(255,255,255,0.02);color:var(--muted)">PRINTS</a>
       <a href="#insta" style="display:block;padding:8px 6px;border-bottom:1px solid rgba(255,255,255,0.02);color:var(--muted)">IG</a>
       <a href="#contact" style="display:block;padding:8px 6px;color:var(--muted)">CONTACT</a>
     </div>
 
-    <!-- HERO -->
     <section class="hero" aria-labelledby="heroHeading">
-
       <div class="hero-left">
         <div class="eyebrow">SURREAL. ELEGANT. UNFORGETTABLE.</div>
         <h1 id="heroHeading">Let your floating mind express itself on the skin.</h1>
         <p class="lead">The real, surreal and everything in between. Creating tattoo art and illustrations.</p>
-
         <div class="tagline">Crafted for the few, worn by the extraordinary.</div>
       </div>
-
-      <!-- FIXED HERO IMAGE -->
       <aside class="hero-main" aria-hidden="true" aria-label="Featured flash">
         <img src="assets/hero-main.jpeg" alt="Featured artwork — hero main" class="elf-img" loading="lazy" decoding="async">
       </aside>
-
     </section>
 
     <!-- PORTFOLIO -->
     <section id="portfolio" class="portfolio" aria-label="Portfolio">
       <h2>Portfolio</h2>
       <p class="lead">Selected recent works — click a thumbnail to open the carousel (stays on the same page).</p>
-
       <div class="portfolio-grid" role="list" id="portfolioGrid">
-        <!-- Portfolio items (updated to match assets folder) -->
-        <a class="gallery-item" data-type="portfolio" data-index="0" data-full="assets/portfolio-1.jpg" href="#" aria-label="Open Portfolio 1"><img src="assets/portfolio-1.jpg" alt="Portfolio 1"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="1" data-full="assets/portfolio-2.jpg" href="#" aria-label="Open Portfolio 2"><img src="assets/portfolio-2.jpg" alt="Portfolio 2"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="2" data-full="assets/portfolio-3.jpg" href="#" aria-label="Open Portfolio 3"><img src="assets/portfolio-3.jpg" alt="Portfolio 3"></a>
+        <!-- Portfolio items ordered 1 → 15 -->
+        <a class="gallery-item" data-type="portfolio" data-index="0" data-full="assets/portfolio-1.jpeg" href="#" aria-label="Open Portfolio 1"><img src="assets/portfolio-1.jpeg" alt="Portfolio 1"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="1" data-full="assets/portfolio-2.jpeg" href="#" aria-label="Open Portfolio 2"><img src="assets/portfolio-2.jpeg" alt="Portfolio 2"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="2" data-full="assets/portfolio-3.jpeg" href="#" aria-label="Open Portfolio 3"><img src="assets/portfolio-3.jpeg" alt="Portfolio 3"></a>
         <a class="gallery-item" data-type="portfolio" data-index="3" data-full="assets/portfolio-4.jpeg" href="#" aria-label="Open Portfolio 4"><img src="assets/portfolio-4.jpeg" alt="Portfolio 4"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="4" data-full="assets/portfolio-5.jpg" href="#" aria-label="Open Portfolio 5"><img src="assets/portfolio-5.jpg" alt="Portfolio 5"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="5" data-full="assets/portfolio-6.jpg" href="#" aria-label="Open Portfolio 6"><img src="assets/portfolio-6.jpg" alt="Portfolio 6"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="4" data-full="assets/portfolio-5.jpeg" href="#" aria-label="Open Portfolio 5"><img src="assets/portfolio-5.jpeg" alt="Portfolio 5"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="5" data-full="assets/portfolio-6.jpeg" href="#" aria-label="Open Portfolio 6"><img src="assets/portfolio-6.jpeg" alt="Portfolio 6"></a>
         <a class="gallery-item" data-type="portfolio" data-index="6" data-full="assets/portfolio-7.jpeg" href="#" aria-label="Open Portfolio 7"><img src="assets/portfolio-7.jpeg" alt="Portfolio 7"></a>
         <a class="gallery-item" data-type="portfolio" data-index="7" data-full="assets/portfolio-8.jpeg" href="#" aria-label="Open Portfolio 8"><img src="assets/portfolio-8.jpeg" alt="Portfolio 8"></a>
         <a class="gallery-item" data-type="portfolio" data-index="8" data-full="assets/portfolio-9.jpeg" href="#" aria-label="Open Portfolio 9"><img src="assets/portfolio-9.jpeg" alt="Portfolio 9"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="9" data-full="assets/portfolio-11.jpg" href="#" aria-label="Open Portfolio 11"><img src="assets/portfolio-11.jpg" alt="Portfolio 11"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="10" data-full="assets/portfolio-14.jpeg" href="#" aria-label="Open Portfolio 14"><img src="assets/portfolio-14.jpeg" alt="Portfolio 14"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="11" data-full="assets/portfolio-15.jpeg" href="#" aria-label="Open Portfolio 15"><img src="assets/portfolio-15.jpeg" alt="Portfolio 15"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="9" data-full="assets/portfolio-10.jpeg" href="#" aria-label="Open Portfolio 10"><img src="assets/portfolio-10.jpeg" alt="Portfolio 10"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="10" data-full="assets/portfolio-11.jpeg" href="#" aria-label="Open Portfolio 11"><img src="assets/portfolio-11.jpeg" alt="Portfolio 11"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="11" data-full="assets/portfolio-12.JPEG" href="#" aria-label="Open Portfolio 12"><img src="assets/portfolio-12.JPEG" alt="Portfolio 12"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="12" data-full="assets/portfolio-13.jpeg" href="#" aria-label="Open Portfolio 13"><img src="assets/portfolio-13.jpeg" alt="Portfolio 13"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="13" data-full="assets/portfolio-14.jpeg" href="#" aria-label="Open Portfolio 14"><img src="assets/portfolio-14.jpeg" alt="Portfolio 14"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="14" data-full="assets/portfolio-15.JPG" href="#" aria-label="Open Portfolio 15"><img src="assets/portfolio-15.JPG" alt="Portfolio 15"></a>
       </div>
     </section>
 
@@ -480,16 +130,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <section id="prints" class="portfolio" aria-label="Prints & Paintings">
       <h2>Prints & Paintings</h2>
       <p class="lead">Small prints and original paintings available — click to preview.</p>
-
       <div class="portfolio-grid" role="list" id="printsGrid">
-        <!-- Prints -->
         <a class="gallery-item" data-type="print" data-index="50" data-full="assets/print-1.JPEG" href="#" aria-label="Open Print 1"><img src="assets/print-1.JPEG" alt="Print 1"></a>
         <a class="gallery-item" data-type="print" data-index="51" data-full="assets/print-2.JPEG" href="#" aria-label="Open Print 2"><img src="assets/print-2.JPEG" alt="Print 2"></a>
         <a class="gallery-item" data-type="print" data-index="52" data-full="assets/print-3.jpeg" href="#" aria-label="Open Print 3"><img src="assets/print-3.jpeg" alt="Print 3"></a>
         <a class="gallery-item" data-type="print" data-index="53" data-full="assets/print-4.jpeg" href="#" aria-label="Open Print 4"><img src="assets/print-4.jpeg" alt="Print 4"></a>
-        <!-- Paintings / originals -->
         <a class="gallery-item" data-type="painting" data-index="60" data-full="assets/painting-1.JPEG" href="#" aria-label="Open Painting 1"><img src="assets/painting-1.JPEG" alt="Painting 1"></a>
-        <a class="gallery-item" data-type="painting" data-index="61" data-full="assets/portrait.jpeg" href="#" aria-label="Open Painting 2"><img src="assets/portrait.jpeg" alt="Portrait"></a>
       </div>
     </section>
 
@@ -497,9 +143,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <section id="flash" class="portfolio" aria-label="Tattoo flash">
       <h2>Tattoo Flash</h2>
       <p class="lead">Small flash sheets & quick designs — click to open in the same carousel.</p>
-
       <div class="flash-cards" role="list" id="flashGrid">
-        <!-- 10 flash slots -->
         <div class="flash-card">
           <a class="gallery-item" data-type="flash" data-index="20" data-full="assets/flash-1.jpeg" href="#" aria-label="Open Flash 1"><img src="assets/flash-1.jpeg" alt="Flash 1"></a>
           <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 1</h3>
@@ -527,7 +171,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <section id="insta" class="insta-section" aria-label="Instagram gallery">
       <h2 style="font-family:Playfair Display,serif;margin:0 0 8px;">From my Instagram</h2>
       <p class="muted" style="margin:0 0 10px">Latest posts from <a href="https://www.instagram.com/ivsleeps/" target="_blank">@ivsleeps</a></p>
-
       <div id="instaGrid" class="insta-grid" aria-live="polite" aria-busy="true"></div>
       <div id="instaFallback" class="insta-fallback" style="display:none;">Could not load Instagram posts — <a href="https://www.instagram.com/ivsleeps/" target="_blank">view on IG</a>.</div>
     </section>
@@ -538,7 +181,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <h2>About me</h2>
         <p class="muted">Art has always been my grounding force — something I’ve returned to since the moment I first picked up a pencil. My journey took me through different industries, but tattooing found me at exactly the right time, allowing me to create the kind of work that feels both intimate and enduring.</p>
         <p class="muted">What I treasure most is the experience we share: creating something timeless together and seeing your eyes light up when you look at your new piece. That moment is priceless to me.</p>
-        <p class="muted">Above all, I want everyone who steps into my space to feel comfortable, welcomed, and safe — a place where anyone can trust the process and enjoy the art we bring to life.
+        <p class="muted">Above all, I want everyone who steps into my space to feel comfortable, welcomed, and safe — a place where anyone can trust the process and enjoy the art we bring to life.</p>
+      </div>
       <div class="portrait">
         <img src="assets/portrait.jpeg" alt="Portrait" loading="lazy">
       </div>
@@ -548,13 +192,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <section id="contact" class="contact">
       <h2>Contact & Booking</h2>
       <div class="cols">
-
         <div>
           <p class="muted">Email: <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a></p>
           <p class="muted">Instagram: <a href="https://www.instagram.com/ivsleeps/" target="_blank">Instagram</a></p>
           <p class="muted" style="margin-top:10px">If you'd like to book, send a message with your preferred dates & description.</p>
         </div>
-
         <div class="form">
           <form action="https://formspree.io/f/xkgeryrk" method="POST">
             <input type="text" name="name" placeholder="Your name" required>
@@ -566,17 +208,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <button type="submit">Send booking request</button>
           </form>
         </div>
-
       </div>
     </section>
 
-    <footer>
-      © <span id="year"></span> ivsleeps · Prague, CZ · <span class="muted">All rights reserved</span>
-    </footer>
-
+    <footer>© <span id="year"></span> ivsleeps · Prague, CZ · <span class="muted">All rights reserved</span></footer>
   </div>
 
-  <!-- Modal carousel (single modal used for both portfolio & flash) -->
   <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-label="Image viewer">
     <div class="viewer" id="viewer">
       <button class="ctrl close" id="closeBtn" aria-label="Close viewer">✕</button>
@@ -584,9 +221,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <button class="ctrl" id="prevBtn" aria-label="Previous">◀</button>
         <button class="ctrl" id="nextBtn" aria-label="Next">▶</button>
       </div>
-      <div id="slideWrap">
-        <img id="modalImage" src="" alt="" />
-      </div>
+      <div id="slideWrap"><img id="modalImage" src="" alt="" /></div>
       <div class="caption" id="modalCaption"></div>
       <div class="dots" id="modalDots" aria-hidden="false"></div>
     </div>
@@ -594,144 +229,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
-
-  hamburger.addEventListener('click', () => {
-    const open = mobileNav.classList.toggle('open');
-    mobileNav.setAttribute('aria-hidden', !open);
-    hamburger.setAttribute('aria-expanded', open);
-  });
-
-  // Smooth anchor scrolling
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click', e=>{
-      const href = a.getAttribute('href');
-      if(!href.startsWith('#') || href === '#') return;
-      const target = document.querySelector(href);
-      if(target){
-        e.preventDefault();
-        target.scrollIntoView({behavior:'smooth',block:'start'});
-      }
-    });
-  });
-
-  // Build list of gallery items (portfolio + flash + prints + paintings)
+  hamburger.addEventListener('click', () => {const open = mobileNav.classList.toggle('open');mobileNav.setAttribute('aria-hidden', !open);hamburger.setAttribute('aria-expanded', open);});
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click', e=>{const href=a.getAttribute('href');if(!href.startsWith('#')||href===' #')return;const target=document.querySelector(href);if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}});});
   const galleryNodes = Array.from(document.querySelectorAll('.gallery-item'));
-  const items = galleryNodes.map((node, idx) => ({
-    full: node.dataset.full || node.getAttribute('href'),
-    type: node.dataset.type || 'portfolio',
-    title: node.querySelector('img')?.alt || '',
-    thumb: node.querySelector('img')?.src || '',
-    index: idx
-  }));
-
-  // Modal elements
-  const modal = document.getElementById('modal');
-  const modalImage = document.getElementById('modalImage');
-  const modalCaption = document.getElementById('modalCaption');
-  const modalDots = document.getElementById('modalDots');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const closeBtn = document.getElementById('closeBtn');
-
-  let current = 0;
-
-  function openModal(startIndex){
-    current = startIndex;
-    updateModal();
-    modal.classList.add('open');
-    modal.setAttribute('aria-hidden','false');
-    document.body.style.overflow = 'hidden';
-    document.addEventListener('keydown', onKey);
-  }
-
-  function closeModal(){
-    modal.classList.remove('open');
-    modal.setAttribute('aria-hidden','true');
-    document.body.style.overflow = '';
-    document.removeEventListener('keydown', onKey);
-  }
-
-  function onKey(e){
-    if(e.key === 'Escape') closeModal();
-    if(e.key === 'ArrowLeft') showPrev();
-    if(e.key === 'ArrowRight') showNext();
-  }
-
-  function showPrev(){
-    current = (current - 1 + items.length) % items.length;
-    updateModal();
-  }
-  function showNext(){
-    current = (current + 1) % items.length;
-    updateModal();
-  }
-
-  function updateModal(){
-    const it = items[current];
-    modalImage.src = it.full;
-    modalImage.alt = it.title || '';
-    modalCaption.textContent = it.title ? it.title + ' — ' + it.type.toUpperCase() : it.type.toUpperCase();
-    // lazy load indicator
-    modalImage.loading = 'lazy';
-    // update dots
-    renderDots();
-    // focus for accessibility
-    closeBtn.focus();
-  }
-
-  function renderDots(){
-    modalDots.innerHTML = '';
-    items.forEach((it, i)=>{
-      const d = document.createElement('button');
-      d.className = 'dot' + (i===current? ' active':'');
-      d.setAttribute('aria-label','Go to image '+(i+1));
-      d.addEventListener('click', ()=>{ current=i; updateModal(); });
-      modalDots.appendChild(d);
-    });
-  }
-
-  // Attach click handlers to thumbnails to open modal
-  galleryNodes.forEach((node, i)=>{
-    node.addEventListener('click', (e)=>{
-      e.preventDefault();
-      openModal(i);
-    });
-  });
-
-  prevBtn.addEventListener('click', showPrev);
-  nextBtn.addEventListener('click', showNext);
-  closeBtn.addEventListener('click', closeModal);
-
-  // Click outside image to close
-  modal.addEventListener('click', (e)=>{
-    if(e.target === modal) closeModal();
-  });
-
-  // Simple touch swipe support
-  let touchStartX = 0;
-  let touchEndX = 0;
-  modalImage.addEventListener('touchstart', (e)=>{ touchStartX = e.changedTouches[0].screenX; });
-  modalImage.addEventListener('touchend', (e)=>{ touchEndX = e.changedTouches[0].screenX; handleGesture(); });
-  function handleGesture(){
-    if(touchEndX + 30 < touchStartX) showNext();
-    if(touchEndX - 30 > touchStartX) showPrev();
-  }
-
-  // Prevent accidental keyboard scroll when modal open
-  ['keydown','keyup'].forEach(ev=>{
-    window.addEventListener(ev, (e)=>{
-      if(modal.classList.contains('open') && ['ArrowLeft','ArrowRight'].includes(e.key)) e.preventDefault();
-    }, {passive:false});
-  });
-
+  const items = galleryNodes.map((node, idx) => ({full: node.dataset.full || node.getAttribute('href'),type: node.dataset.type || 'portfolio',title: node.querySelector('img')?.alt || '',thumb: node.querySelector('img')?.src || '',index: idx}));
+  const modal = document.getElementById('modal');const modalImage = document.getElementById('modalImage');const modalCaption = document.getElementById('modalCaption');const modalDots = document.getElementById('modalDots');const prevBtn = document.getElementById('prevBtn');const nextBtn = document.getElementById('nextBtn');const closeBtn = document.getElementById('closeBtn');let current=0;
+  function openModal(startIndex){current=startIndex;updateModal();modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';document.addEventListener('keydown', onKey);}function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';document.removeEventListener('keydown', onKey);}function onKey(e){if(e.key==='Escape')closeModal();if(e.key==='ArrowLeft')showPrev();if(e.key==='ArrowRight')showNext();}function showPrev(){current=(current-1+items.length)%items.length;updateModal();}function showNext(){current=(current+1)%items.length;updateModal();}function updateModal(){const it=items[current];modalImage.src=it.full;modalImage.alt=it.title||'';modalCaption.textContent=it.title?it.title+' — '+it.type.toUpperCase():it.type.toUpperCase();modalImage.loading='lazy';renderDots();closeBtn.focus();}function renderDots(){modalDots.innerHTML='';items.forEach((it,i)=>{const d=document.createElement('button');d.className='dot'+(i===current?' active':'');d.setAttribute('aria-label','Go to image '+(i+1));d.addEventListener('click',()=>{current=i;updateModal();});modalDots.appendChild(d);});}
+  galleryNodes.forEach((node,i)=>{node.addEventListener('click',(e)=>{e.preventDefault();openModal(i);});});
+  prevBtn.addEventListener('click',showPrev);nextBtn.addEventListener('click',showNext);closeBtn.addEventListener('click',closeModal);modal.addEventListener('click',(e)=>{if(e.target===modal)closeModal();});
+  let touchStartX=0;let touchEndX=0;modalImage.addEventListener('touchstart',(e)=>{touchStartX=e.changedTouches[0].screenX;});modalImage.addEventListener('touchend',(e)=>{touchEndX=e.changedTouches[0].screenX;handleGesture();});function handleGesture(){if(touchEndX+30<touchStartX)showNext();if(touchEndX-30>touchStartX)showPrev();}
+  ['keydown','keyup'].forEach(ev=>{window.addEventListener(ev,(e)=>{if(modal.classList.contains('open')&&['ArrowLeft','ArrowRight'].includes(e.key))e.preventDefault();},{passive:false});});
 </script>
- <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7TQCS33"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
 </body>
 </html>
