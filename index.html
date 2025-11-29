@@ -460,11 +460,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <p class="lead">Selected recent works — click a thumbnail to open the carousel (stays on the same page).</p>
 
       <div class="portfolio-grid" role="list" id="portfolioGrid">
-        <!-- 20 portfolio slots (replace the src with your real images) -->
-        <!-- Each item uses class="gallery-item" and data-full attribute to point to full image -->
-        <!-- We'll reference them in JS to build the carousel -->
-        
-        <!-- Portfolio items 1..20 -->
+        <!-- Portfolio items (updated to match assets folder) -->
         <a class="gallery-item" data-type="portfolio" data-index="0" data-full="assets/portfolio-1.jpg" href="#" aria-label="Open Portfolio 1"><img src="assets/portfolio-1.jpg" alt="Portfolio 1"></a>
         <a class="gallery-item" data-type="portfolio" data-index="1" data-full="assets/portfolio-2.jpg" href="#" aria-label="Open Portfolio 2"><img src="assets/portfolio-2.jpg" alt="Portfolio 2"></a>
         <a class="gallery-item" data-type="portfolio" data-index="2" data-full="assets/portfolio-3.jpg" href="#" aria-label="Open Portfolio 3"><img src="assets/portfolio-3.jpg" alt="Portfolio 3"></a>
@@ -474,17 +470,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <a class="gallery-item" data-type="portfolio" data-index="6" data-full="assets/portfolio-7.jpeg" href="#" aria-label="Open Portfolio 7"><img src="assets/portfolio-7.jpeg" alt="Portfolio 7"></a>
         <a class="gallery-item" data-type="portfolio" data-index="7" data-full="assets/portfolio-8.jpeg" href="#" aria-label="Open Portfolio 8"><img src="assets/portfolio-8.jpeg" alt="Portfolio 8"></a>
         <a class="gallery-item" data-type="portfolio" data-index="8" data-full="assets/portfolio-9.jpeg" href="#" aria-label="Open Portfolio 9"><img src="assets/portfolio-9.jpeg" alt="Portfolio 9"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="9" data-full="assets/portfolio-10.jpeg" href="#" aria-label="Open Portfolio 10"><img src="assets/portfolio-10.jpeg" alt="Portfolio 10"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="10" data-full="assets/portfolio-11.jpeg" href="#" aria-label="Open Portfolio 11"><img src="assets/portfolio-11.jpeg" alt="Portfolio 11"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="11" data-full="assets/portfolio-12.jpeg" href="#" aria-label="Open Portfolio 12"><img src="assets/portfolio-12.jpeg" alt="Portfolio 12"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="12" data-full="assets/portfolio-13.jpg" href="#" aria-label="Open Portfolio 13"><img src="assets/portfolio-13.jpg" alt="Portfolio 13"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="13" data-full="assets/portfolio-14.jpg" href="#" aria-label="Open Portfolio 14"><img src="assets/portfolio-14.jpg" alt="Portfolio 14"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="14" data-full="assets/portfolio-15.jpg" href="#" aria-label="Open Portfolio 15"><img src="assets/portfolio-15.jpg" alt="Portfolio 15"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="15" data-full="assets/portfolio-16.jpg" href="#" aria-label="Open Portfolio 16"><img src="assets/portfolio-16.jpg" alt="Portfolio 16"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="16" data-full="assets/portfolio-17.jpg" href="#" aria-label="Open Portfolio 17"><img src="assets/portfolio-17.jpg" alt="Portfolio 17"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="17" data-full="assets/portfolio-18.jpg" href="#" aria-label="Open Portfolio 18"><img src="assets/portfolio-18.jpg" alt="Portfolio 18"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="18" data-full="assets/portfolio-19.jpg" href="#" aria-label="Open Portfolio 19"><img src="assets/portfolio-19.jpg" alt="Portfolio 19"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="19" data-full="assets/portfolio-20.jpg" href="#" aria-label="Open Portfolio 20"><img src="assets/portfolio-20.jpg" alt="Portfolio 20"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="9" data-full="assets/portfolio-11.jpg" href="#" aria-label="Open Portfolio 11"><img src="assets/portfolio-11.jpg" alt="Portfolio 11"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="10" data-full="assets/portfolio-14.jpeg" href="#" aria-label="Open Portfolio 14"><img src="assets/portfolio-14.jpeg" alt="Portfolio 14"></a>
+        <a class="gallery-item" data-type="portfolio" data-index="11" data-full="assets/portfolio-15.jpeg" href="#" aria-label="Open Portfolio 15"><img src="assets/portfolio-15.jpeg" alt="Portfolio 15"></a>
+      </div>
+    </section>
+
+    <!-- PRINTS & PAINTINGS -->
+    <section id="prints" class="portfolio" aria-label="Prints & Paintings">
+      <h2>Prints & Paintings</h2>
+      <p class="lead">Small prints and original paintings available — click to preview.</p>
+
+      <div class="portfolio-grid" role="list" id="printsGrid">
+        <!-- Prints -->
+        <a class="gallery-item" data-type="print" data-index="50" data-full="assets/print-1.JPEG" href="#" aria-label="Open Print 1"><img src="assets/print-1.JPEG" alt="Print 1"></a>
+        <a class="gallery-item" data-type="print" data-index="51" data-full="assets/print-2.JPEG" href="#" aria-label="Open Print 2"><img src="assets/print-2.JPEG" alt="Print 2"></a>
+        <a class="gallery-item" data-type="print" data-index="52" data-full="assets/print-3.jpeg" href="#" aria-label="Open Print 3"><img src="assets/print-3.jpeg" alt="Print 3"></a>
+        <a class="gallery-item" data-type="print" data-index="53" data-full="assets/print-4.jpeg" href="#" aria-label="Open Print 4"><img src="assets/print-4.jpeg" alt="Print 4"></a>
+        <!-- Paintings / originals -->
+        <a class="gallery-item" data-type="painting" data-index="60" data-full="assets/painting-1.JPEG" href="#" aria-label="Open Painting 1"><img src="assets/painting-1.JPEG" alt="Painting 1"></a>
+        <a class="gallery-item" data-type="painting" data-index="61" data-full="assets/portrait.jpeg" href="#" aria-label="Open Painting 2"><img src="assets/portrait.jpeg" alt="Portrait"></a>
       </div>
     </section>
 
@@ -504,7 +509,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 2</h3>
         </div>
         <div class="flash-card">
-          <a class="gallery-item" data-type="flash" data-index="22" data-full="assets/flash-3.jpeg" href="#" aria-label="Open Flash 3"><img src="assets/flash-3.jpeg" alt="Flash 3"></a>
+          <a class="gallery-item" data-type="flash" data-index="22" data-full="assets/flash-3.JPEG" href="#" aria-label="Open Flash 3"><img src="assets/flash-3.JPEG" alt="Flash 3"></a>
           <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 3</h3>
         </div>
         <div class="flash-card">
@@ -514,26 +519,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="flash-card">
           <a class="gallery-item" data-type="flash" data-index="24" data-full="assets/flash-5.jpeg" href="#" aria-label="Open Flash 5"><img src="assets/flash-5.jpeg" alt="Flash 5"></a>
           <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 5</h3>
-        </div>
-        <div class="flash-card">
-          <a class="gallery-item" data-type="flash" data-index="25" data-full="assets/flash-6.jpeg" href="#" aria-label="Open Flash 6"><img src="assets/flash-6.jpeg" alt="Flash 6"></a>
-          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 6</h3>
-        </div>
-        <div class="flash-card">
-          <a class="gallery-item" data-type="flash" data-index="26" data-full="assets/flash-7.jpeg" href="#" aria-label="Open Flash 7"><img src="assets/flash-7.jpeg" alt="Flash 7"></a>
-          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 7</h3>
-        </div>
-        <div class="flash-card">
-          <a class="gallery-item" data-type="flash" data-index="27" data-full="assets/flash-8.jpeg" href="#" aria-label="Open Flash 8"><img src="assets/flash-8.jpeg" alt="Flash 8"></a>
-          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 8</h3>
-        </div>
-        <div class="flash-card">
-          <a class="gallery-item" data-type="flash" data-index="28" data-full="assets/flash-9.jpeg" href="#" aria-label="Open Flash 9"><img src="assets/flash-9.jpeg" alt="Flash 9"></a>
-          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 9</h3>
-        </div>
-        <div class="flash-card">
-          <a class="gallery-item" data-type="flash" data-index="29" data-full="assets/flash-10.jpeg" href="#" aria-label="Open Flash 10"><img src="assets/flash-10.jpeg" alt="Flash 10"></a>
-          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 10</h3>
         </div>
       </div>
     </section>
@@ -632,7 +617,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     });
   });
 
-  // Build list of gallery items (portfolio + flash)
+  // Build list of gallery items (portfolio + flash + prints + paintings)
   const galleryNodes = Array.from(document.querySelectorAll('.gallery-item'));
   const items = galleryNodes.map((node, idx) => ({
     full: node.dataset.full || node.getAttribute('href'),
@@ -741,11 +726,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       if(modal.classList.contains('open') && ['ArrowLeft','ArrowRight'].includes(e.key)) e.preventDefault();
     }, {passive:false});
   });
-
-  // If you want to restrict carousel to portfolio only when opening from portfolio section,
-  // we could filter and rebuild items accordingly. For now it mixes portfolio + flash in the order
-  // they appear in the DOM (portfolio first, then flash). If you'd prefer separate galleries,
-  // tell me and I'll add a toggle to switch gallery collections.
 
 </script>
  <!-- Google Tag Manager (noscript) -->
