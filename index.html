@@ -60,8 +60,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   h1{font-family:Playfair Display,serif;font-weight:700;margin:0 0 12px;font-size:44px;letter-spacing:1px;line-height:1.03;color:var(--text);}
   .lead{color:var(--muted);font-size:15px;margin:0 0 18px;max-width:62ch;}
 
-  .hero-main{border-radius:8px;overflow:hidden;background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.5));display:flex;align-items:center;justify-content:center;padding:12px;height:100%;min-height:320px;box-shadow: 0 16px 48px rgba(0,0,0,0.6);} 
-  .hero-main .elf-img{width:100%;max-width:380px;height:auto;display:block;border-radius:8px;object-fit:cover;box-shadow: 0 18px 40px rgba(0,0,0,0.6);} 
+  /* HERO AS BACKGROUND */
+  .hero-main{
+    border-radius:8px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:0;
+    height:100%;
+    min-height:360px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.6);
+    background-image: url('assets/hero-main.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .hero-main img{display:none;}
 
   .tagline{margin-top:18px;background:var(--beige);color:#1b140f;padding:22px 28px;border-radius:6px;font-family:Playfair Display,serif;font-size:18px;letter-spacing:1px;box-shadow: inset 0 -6px 0 rgba(0,0,0,0.02);} 
 
@@ -118,7 +133,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     h1{font-size:28px}
     .portfolio-grid{grid-template-columns:1fr}
     .about .portrait{min-height:180px}
-    .hero-main{display:none}
+
+    .hero-main{
+      min-height:260px;
+      background-position:center;
+    }
   }
 
   .muted{color:var(--muted)}
@@ -148,15 +167,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
     </header>
 
-    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
-      <a href="#about" style="display:block;padding:8px 6px;border-bottom:1px solid rgba(255,255,255,0.02);color:var(--muted)">ABOUT</a>
-      <a href="#portfolio" style="display:block;padding:8px 6px;border-bottom:1px solid rgba(255,255,255,0.02);color:var(--muted)">PORTFOLIO</a>
-      <a href="#flash" style="display:block;padding:8px 6px;border-bottom:1px solid rgba(255,255,255,0.02);color:var(--muted)">TATTOO FLASH</a>
-      <a href="#prints" style="display:block;padding:8px 6px;border-bottom:1px solid rgba(255,255,255,0.02);color:var(--muted)">PRINTS</a>
-      <a href="#insta" style="display:block;padding:8px 6px;border-bottom:1px solid rgba(255,255,255,0.02);color:var(--muted)">IG</a>
-      <a href="#contact" style="display:block;padding:8px 6px;color:var(--muted)">CONTACT</a>
-    </div>
-
     <!-- HERO -->
     <section class="hero" aria-labelledby="heroHeading">
       <div class="hero-left">
@@ -166,9 +176,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="tagline">Crafted for the few, worn by the extraordinary.</div>
       </div>
 
-      <aside class="hero-main" aria-hidden="true" aria-label="Featured flash">
-        <img src="assets/hero-main.jpeg" alt="Featured artwork — hero main" class="elf-img" loading="lazy" decoding="async">
-      </aside>
+      <aside class="hero-main" aria-hidden="true" aria-label="Featured flash"></aside>
     </section>
 
     <!-- PORTFOLIO -->
@@ -272,24 +280,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <p class="muted">What I treasure most is the experience we share: creating something timeless together and seeing your eyes light up when you look at your new piece. That moment is priceless to me.</p>
         <p class="muted">Above all, I want everyone who steps into my space to feel comfortable, welcomed, and safe — a place where anyone can trust the process and enjoy the art we bring to life.</p>
       </div>
-
-      <div class="portrait">
-        <!-- portrait.jpeg only in portrait / about section -->
-        <img src="assets/portrait.jpeg" alt="Portrait" loading="lazy">
-      </div>
+      <div class="portrait"><img src="assets/portrait.jpeg" alt="Portrait"></div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact" class="contact">
       <h2>Contact & Booking</h2>
       <div class="cols">
-
         <div>
           <p class="muted">Email: <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a></p>
           <p class="muted">Instagram: <a href="https://www.instagram.com/ivsleeps/" target="_blank">Instagram</a></p>
           <p class="muted" style="margin-top:10px">If you'd like to book, send a message with your preferred dates & description.</p>
         </div>
-
         <div class="form">
           <form action="https://formspree.io/f/xkgeryrk" method="POST">
             <input type="text" name="name" placeholder="Your name" required>
@@ -301,7 +303,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <button type="submit">Send booking request</button>
           </form>
         </div>
-
       </div>
     </section>
 
@@ -312,4 +313,182 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
 
   <!-- Modal carousel (single modal used for all items) -->
-  <div id="modal" class="modal" aria-hidden="true" role="dialog`
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-label="Image viewer">
+    <div class="viewer" id="viewer">
+      <button class="ctrl close" id="closeBtn" aria-label="Close viewer">✕</button>
+      <div class="controls">
+        <button class="ctrl" id="prevBtn" aria-label="Previous">◀</button>
+        <button class="ctrl" id="nextBtn" aria-label="Next">▶</button>
+      </div>
+      <div id="slideWrap">
+        <img id="modalImage" src="" alt="" />
+      </div>
+      <div class="caption" id="modalCaption"></div>
+      <div class="dots" id="modalDots" aria-hidden="false"></div>
+    </div>
+  </div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+
+  hamburger.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    mobileNav.setAttribute('aria-hidden', !open);
+    hamburger.setAttribute('aria-expanded', open);
+  });
+
+  // Smooth anchor scrolling
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      const href = a.getAttribute('href');
+      if(!href.startsWith('#') || href === '#') return;
+      const target = document.querySelector(href);
+      if(target){
+        e.preventDefault();
+        target.scrollIntoView({behavior:'smooth',block:'start'});
+      }
+    });
+  });
+
+  // Build list of gallery items (portfolio + flash + prints + paintings)
+  const galleryNodes = Array.from(document.querySelectorAll('.gallery-item'));
+  const items = galleryNodes.map((node, idx) => ({
+    full: node.dataset.full || node.getAttribute('href'),
+    type: node.dataset.type || 'portfolio',
+    title: node.querySelector('img')?.alt || '',
+    thumb: node.querySelector('img')?.src || '',
+    index: idx
+  }));
+
+  // Modal elements
+  const modal = document.getElementById('modal');
+  const modalImage = document.getElementById('modalImage');
+  const modalCaption = document.getElementById('modalCaption');
+  const modalDots = document.getElementById('modalDots');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const closeBtn = document.getElementById('closeBtn');
+
+  let current = 0;
+
+  function openModal(startIndex){
+    current = startIndex;
+    updateModal();
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', onKey);
+  }
+
+  function closeModal(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+  }
+
+  function onKey(e){
+    if(e.key === 'Escape') closeModal();
+    if(e.key === 'ArrowLeft') showPrev();
+    if(e.key === 'ArrowRight') showNext();
+  }
+
+  function showPrev(){
+    current = (current - 1 + items.length) % items.length;
+    updateModal();
+  }
+  function showNext(){
+    current = (current + 1) % items.length;
+    updateModal();
+  }
+
+  function updateModal(){
+    const it = items[current];
+    modalImage.src = it.full;
+    modalImage.alt = it.title || '';
+    modalCaption.textContent = it.title ? it.title + ' — ' + it.type.toUpperCase() : it.type.toUpperCase();
+    modalImage.loading = 'lazy';
+    renderDots();
+    closeBtn.focus();
+  }
+
+  function renderDots(){
+    modalDots.innerHTML = '';
+    items.forEach((it, i)=>{
+      const d = document.createElement('button');
+      d.className = 'dot' + (i===current? ' active':'');
+      d.setAttribute('aria-label','Go to image '+(i+1));
+      d.addEventListener('click', ()=>{ current=i; updateModal(); });
+      modalDots.appendChild(d);
+    });
+  }
+
+  // Attach click handlers to thumbnails to open modal
+  galleryNodes.forEach((node, i)=>{
+    node.addEventListener('click', (e)=>{
+      e.preventDefault();
+      openModal(i);
+    });
+  });
+
+  prevBtn.addEventListener('click', showPrev);
+  nextBtn.addEventListener('click', showNext);
+  closeBtn.addEventListener('click', closeModal);
+
+  // Click outside image to close
+  modal.addEventListener('click', (e)=>{
+    if(e.target === modal) closeModal();
+  });
+
+  // Simple touch swipe support
+  let touchStartX = 0;
+  let touchEndX = 0;
+  modalImage.addEventListener('touchstart', (e)=>{ touchStartX = e.changedTouches[0].screenX; });
+  modalImage.addEventListener('touchend', (e)=>{ touchEndX = e.changedTouches[0].screenX; handleGesture(); });
+  function handleGesture(){
+    if(touchEndX + 30 < touchStartX) showNext();
+    if(touchEndX - 30 > touchStartX) showPrev();
+  }
+
+  // Prevent accidental keyboard scroll when modal open
+  ['keydown','keyup'].forEach(ev=>{
+    window.addEventListener(ev, (e)=>{
+      if(modal.classList.contains('open') && ['ArrowLeft','ArrowRight'].includes(e.key)) e.preventDefault();
+    }, {passive:false});
+  });
+
+  // --- DEBUG: check exact asset availability (will log missing files to console) ---
+  (function checkAssets(){
+    const imgs = Array.from(document.querySelectorAll('.wrap img'));
+    const tests = imgs.map(img=>{
+      const url = img.getAttribute('src');
+      return new Promise(resolve=>{
+        const t = new Image();
+        t.onload = ()=>resolve({url, ok:true});
+        t.onerror = ()=>resolve({url, ok:false});
+        t.src = url + '?_check=' + Date.now();
+      });
+    });
+    Promise.all(tests).then(results=>{
+      const missing = results.filter(r=>!r.ok);
+      if(missing.length){
+        console.warn('Missing assets (check names/letter-case in `website/assets`):');
+        missing.forEach(m=>console.warn(' -', m.url));
+      } else {
+        console.log('All listed assets loaded successfully.');
+      }
+    });
+  })();
+  // --- end debug ---
+
+</script>
+ <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7TQCS33"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+</body>
+</html>
