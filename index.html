@@ -54,13 +54,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .mobile-nav{display:none}
   .mobile-nav.open{display:block;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:12px;border-radius:8px;margin-top:12px}
 
+/* language selector */
+.lang-switch { display:flex; gap:8px; align-items:center; }
+.lang-btn {
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.06);
+  color:var(--muted);
+  padding:6px 10px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:13px;
+}
+.lang-btn[aria-pressed="true"] {
+  background:var(--accent);
+  color:#120c18;
+  border-color:var(--accent);
+  font-weight:700;
+}
+
   .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start;margin-bottom:0;padding-top:6px;padding-bottom:6px;min-height:52vh}
   .hero-left{background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));padding:42px 40px;border-radius:10px;position:relative;box-shadow: 0 14px 44px rgba(0,0,0,0.6);}
   .eyebrow{font-size:12px;color:var(--muted);letter-spacing:2px;margin-bottom:12px}
   h1{font-family:Playfair Display,serif;font-weight:700;margin:0 0 12px;font-size:44px;letter-spacing:1px;line-height:1.03;color:var(--text);}
   .lead{color:var(--muted);font-size:15px;margin:0 0 18px;max-width:62ch;}
 
-  /* HERO AS BACKGROUND */
+  /* HERO — pure-CSS fix: same visible size across devices, show full image (no cropping) */
   .hero-main{
     border-radius:8px;
     overflow:hidden;
@@ -68,13 +86,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     align-items:center;
     justify-content:center;
     padding:0;
-    height:100%;
-    min-height:360px;
+
+    /* fixed visual height across devices — adjust to taste */
+    height:360px;         /* <-- consistent visible size on desktop & mobile */
+    min-height:260px;
+    max-height:420px;
+
     box-shadow: 0 16px 48px rgba(0,0,0,0.6);
+
+    /* keep your existing background-image (no markup change required) */
     background-image: url('assets/hero-main.jpeg');
-    background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
+
+    /* show the entire image (no cropping) */
+    background-size: contain;
+
+    /* center image; change to 'center top' if subject is nearer the top */
+    background-position: center center;
+
+    /* letterbox fill — harmonious with page background */
+    background-color: #0b0a0a;
   }
   .hero-main img{display:none;}
 
@@ -135,12 +166,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .about .portrait{min-height:180px}
 
     .hero-main{
-      min-height:260px;
+      /* slightly shorter on small screens while keeping full-image visible */
+      height:340px;
       background-position:center;
     }
   }
 
   .muted{color:var(--muted)}
+
+/* FAQ styling (appended) */
+.faq { max-width:var(--container); margin:28px auto; padding:18px; background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent); border-radius:10px; }
+.faq h2 { font-size:20px; margin-bottom:10px; color:var(--text); }
+.faq-item { border-top:1px solid rgba(255,255,255,0.03); padding:10px 0; }
+.faq-question { cursor:pointer; font-weight:600; font-size:15px; color:var(--muted); padding:6px 0; }
+.faq-answer { padding:8px 6px 14px 6px; color:var(--muted); line-height:1.6; }
+details[open] .faq-question { color:var(--beige); }
+summary::-webkit-details-marker { display:none; }
+summary::after { content:"▸"; float:right; transition: transform .18s ease; }
+details[open] summary::after { transform:rotate(90deg); content:"▾"; }
+.faq ul { margin:8px 0 0 1.1rem; color:var(--muted); }
+.faq a { color:var(--muted); text-decoration:underline; }
+@media (max-width:640px){ .faq { padding:14px; margin:18px 16px; } .faq h2{font-size:18px} }
+
 </style>
 </head>
 
@@ -151,18 +198,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <a class="brand" href="#top" aria-label="ivsleeps home">
         <div>
           <div class="wordmark">IVSLEEPS</div>
-          <small class="muted">Let your mind express itself on your skin.</small>
+          <small class="muted">
+            <span data-lang="en">Let your mind express itself on your skin.</span>
+            <span data-lang="sk" style="display:none">Nechaj svoju myseľ vyjadriť sa na svojej koži.</span>
+          </small>
         </div>
       </a>
 
       <nav class="desktop" aria-label="Main navigation">
-        <a href="#about">ABOUT</a>
-        <a href="#portfolio">PORTFOLIO</a>
-        <a href="#flash">TATTOO FLASH</a>
-        <a href="#prints">PRINTS</a>
-        <a href="#insta">IG</a>
-        <a href="#contact">CONTACT</a>
+        <a href="#about"><span data-lang="en">ABOUT</span><span data-lang="sk" style="display:none">O MNE</span></a>
+        <a href="#portfolio"><span data-lang="en">PORTFOLIO</span><span data-lang="sk" style="display:none">PORTFÓLIO</span></a>
+        <a href="#flash"><span data-lang="en">TATTOO FLASH</span><span data-lang="sk" style="display:none">FLASH</span></a>
+        <a href="#prints"><span data-lang="en">PRINTS</span><span data-lang="sk" style="display:none">TLAČE</span></a>
+        <a href="#insta"><span data-lang="en">IG</span><span data-lang="sk" style="display:none">IG</span></a>
+        <a href="#contact"><span data-lang="en">CONTACT</span><span data-lang="sk" style="display:none">KONTAKT</span></a>
       </nav>
+
+      <div class="lang-switch" aria-hidden="false">
+        <button class="lang-btn" id="btn-en" aria-pressed="true" data-lang-toggle="en">EN</button>
+        <button class="lang-btn" id="btn-sk" aria-pressed="false" data-lang-toggle="sk">SK</button>
+      </div>
 
       <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
     </header>
@@ -170,10 +225,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- HERO -->
     <section class="hero" aria-labelledby="heroHeading">
       <div class="hero-left">
-        <div class="eyebrow">SURREAL. ELEGANT. UNFORGETTABLE.</div>
-        <h1 id="heroHeading">Let your floating mind express itself on the skin.</h1>
-        <p class="lead">My name is Ivy and this is my portfolio. I focus on surrealistic themes, with a touch of macabre, dark elements and japanese influence. I love anime & manga and I often times create designs inspired by these art forms as well. I am currently located in Prague, but I do travel to Slovakia and I am planning to tattoo in other countries as well.</p>
-        <div class="tagline">Crafted for the few, worn by the extraordinary.</div>
+        <div class="eyebrow">
+          <span data-lang="en">SURREAL. ELEGANT. UNFORGETTABLE.</span>
+          <span data-lang="sk" style="display:none">SURREÁLNE. ELEGANTNÉ. NEZABUDNUTEĽNÉ.</span>
+        </div>
+        <h1 id="heroHeading">
+          <span data-lang="en">Let your floating mind express itself on the skin.</span>
+          <span data-lang="sk" style="display:none">Nechaj svoju plávajúcu myseľ vyjadriť sa na koži.</span>
+        </h1>
+        <p class="lead">
+          <span data-lang="en">My name is Ivy and this is my portfolio. I focus on surrealistic themes, with a touch of macabre, dark elements and japanese influence. I love anime & manga and I often times create designs inspired by these art forms as well. I am currently located in Prague, but I do travel to Slovakia and I am planning to tattoo in other countries as well.</span>
+          <span data-lang="sk" style="display:none">Volám sa Ivy a toto je moje portfólio. Zameriavam sa na surrealistické motívy s nádychom makabrózneho, temných prvkov a japonských vplyvov. Milujem anime a mangu a často vytváram návrhy inšpirované týmito umeleckými formami. Aktuálne sa nachádzam v Prahe, ale cestujem aj na Slovensko a plánujem tetovať aj v iných krajinách.</span>
+        </p>
+        <div class="tagline">
+          <span data-lang="en">Crafted for the few, worn by the extraordinary.</span>
+          <span data-lang="sk" style="display:none">Vytvorené pre vyvolených, nosené výnimočnými.</span>
+        </div>
       </div>
 
       <aside class="hero-main" aria-hidden="true" aria-label="Featured flash"></aside>
@@ -181,8 +248,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <!-- PORTFOLIO -->
     <section id="portfolio" class="portfolio" aria-label="Portfolio">
-      <h2>Portfolio</h2>
-      <p class="lead">Selected recent works — click a thumbnail to open the carousel (stays on the same page).</p>
+      <h2><span data-lang="en">Portfolio</span><span data-lang="sk" style="display:none">Portfólio</span></h2>
+      <p class="lead">
+        <span data-lang="en">Selected recent works — click a thumbnail to open the carousel (stays on the same page).</span>
+        <span data-lang="sk" style="display:none">Vybrané nedávne práce — kliknite na náhľad pre otvorenie galérie (zostane na tejto stránke).</span>
+      </p>
 
       <div class="portfolio-grid" role="list" id="portfolioGrid">
         <!-- ordered 1 → 15 (exact filenames & extensions) -->
@@ -206,8 +276,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <!-- PRINTS & PAINTINGS -->
     <section id="prints" class="portfolio" aria-label="Prints & Paintings">
-      <h2>Prints & Paintings</h2>
-      <p class="lead">Small prints and original paintings available — click to preview.</p>
+      <h2><span data-lang="en">Prints & Paintings</span><span data-lang="sk" style="display:none">Tlače & Maľby</span></h2>
+      <p class="lead">
+        <span data-lang="en">Small prints and original paintings available — click to preview.</span>
+        <span data-lang="sk" style="display:none">Malé tlače a originálne maľby na predaj — kliknite pre náhľad.</span>
+      </p>
 
       <div class="portfolio-grid" role="list" id="printsGrid">
         <a class="gallery-item" data-type="print" data-index="50" data-full="assets/print-1.JPEG" href="#" aria-label="Open Print 1"><img src="assets/print-1.JPEG" alt="Print 1"></a>
@@ -221,8 +294,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <!-- FLASH -->
     <section id="flash" class="portfolio" aria-label="Tattoo flash">
-      <h2>Tattoo Flash</h2>
-      <p class="lead">Small flash sheets & quick designs — click to open in the same carousel.</p>
+      <h2><span data-lang="en">Tattoo Flash</span><span data-lang="sk" style="display:none">Tattoo Flash</span></h2>
+      <p class="lead">
+        <span data-lang="en">Small flash sheets & quick designs — click to open in the same carousel.</span>
+        <span data-lang="sk" style="display:none">Malé flash sheety a rýchle návrhy — kliknite pre otvorenie v galérii.</span>
+      </p>
 
       <div class="flash-cards" role="list" id="flashGrid">
         <div class="flash-card">
@@ -246,7 +322,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 5</h3>
         </div>
 
-        <!-- additional flashes that exist in your assets (seen in screenshot) -->
+        <!-- additional flashes that exist in your assets -->
         <div class="flash-card">
           <a class="gallery-item" data-type="flash" data-index="25" data-full="assets/flash-6.jpg" href="#" aria-label="Open Flash 6"><img src="assets/flash-6.jpg" alt="Flash 6"></a>
           <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 6</h3>
@@ -265,49 +341,202 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <!-- INSTAGRAM -->
     <section id="insta" class="insta-section" aria-label="Instagram gallery">
-      <h2 style="font-family:Playfair Display,serif;margin:0 0 8px;">From my Instagram</h2>
-      <p class="muted" style="margin:0 0 10px">Latest posts from <a href="https://www.instagram.com/ivsleeps/" target="_blank">@ivsleeps</a></p>
+      <h2 style="font-family:Playfair Display,serif;margin:0 0 8px;">
+        <span data-lang="en">From my Instagram</span>
+        <span data-lang="sk" style="display:none">Z môjho Instagramu</span>
+      </h2>
+      <p class="muted" style="margin:0 0 10px">
+        <span data-lang="en">Latest posts from <a href="https://www.instagram.com/ivsleeps/" target="_blank">@ivsleeps</a></span>
+        <span data-lang="sk" style="display:none">Najnovšie príspevky z <a href="https://www.instagram.com/ivsleeps/" target="_blank">@ivsleeps</a></span>
+      </p>
 
       <div id="instaGrid" class="insta-grid" aria-live="polite" aria-busy="true"></div>
-      <div id="instaFallback" class="insta-fallback" style="display:none;">Could not load Instagram posts — <a href="https://www.instagram.com/ivsleeps/" target="_blank">view on IG</a>.</div>
+      <div id="instaFallback" class="insta-fallback" style="display:none;">
+        <span data-lang="en">Could not load Instagram posts — <a href="https://www.instagram.com/ivsleeps/" target="_blank">view on IG</a>.</span>
+        <span data-lang="sk" style="display:none">Nepodarilo sa načítať príspevky z Instagramu — <a href="https://www.instagram.com/ivsleeps/" target="_blank">pozrieť na IG</a>.</span>
+      </div>
     </section>
 
     <!-- ABOUT -->
     <section id="about" class="about">
       <div class="text">
-        <h2>About me</h2>
-        <p class="muted">Art has always been my grounding force — something I’ve returned to since the moment I first picked up a pencil. My journey took me through different industries, but tattooing found me at exactly the right time, allowing me to create the kind of work that feels both intimate and expressive.</p>
-        <p class="muted">What I treasure most is the experience we share: creating something timeless together and seeing your eyes light up when you look at your new piece. That moment is priceless to me.</p>
-        <p class="muted">Above all, I want everyone who steps into my space to feel comfortable, welcomed, and safe — a place where anyone can trust the process and enjoy the art we bring to life.</p>
+        <h2><span data-lang="en">About me</span><span data-lang="sk" style="display:none">O mne</span></h2>
+        <p class="muted">
+          <span data-lang="en">Art has always been my grounding force — something I’ve returned to since the moment I first picked up a pencil. My journey took me through different industries, but tattooing found me at exactly the right time, allowing me to create the kind of work that feels both intimate and expressive.</span>
+          <span data-lang="sk" style="display:none">Umenie bolo vždy mojím ukotvením — niečo, ku čomu sa vraciam od prvého okamihu, keď som vzala ceruzku do ruky. Moja cesta ma prešla rôznymi odvetviami, no tetovanie ma našlo presne v správny čas a umožnilo mi tvoriť diela, ktoré sú intímne a výrazné.</span>
+        </p>
+        <p class="muted">
+          <span data-lang="en">What I treasure most is the experience we share: creating something timeless together and seeing your eyes light up when you look at your new piece. That moment is priceless to me.</span>
+          <span data-lang="sk" style="display:none">Najviac si cením zážitok, ktorý spolu zdieľame: vytvoriť niečo nadčasové a vidieť, ako sa vám rozžiaria oči pri pohľade na nové dielo. Ten moment je pre mňa bezcenný.</span>
+        </p>
+        <p class="muted">
+          <span data-lang="en">Above all, I want everyone who steps into my space to feel comfortable, welcomed, and safe — a place where anyone can trust the process and enjoy the art we bring to life.</span>
+          <span data-lang="sk" style="display:none">Predovšetkým chcem, aby sa každý, kto vstúpi do môjho priestoru, cítil pohodlne, vítaný a v bezpečí — miesto, kde môže každý dôverovať procesu a užívať si umenie, ktoré oživíme.</span>
+        </p>
       </div>
       <div class="portrait"><img src="assets/portrait.jpeg" alt="Portrait"></div>
     </section>
 
+    <!-- FAQ (inserted before CONTACT) -->
+    <section id="faq" class="faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading" style="font-family:Playfair Display,serif;margin:0 0 8px;">
+        <span data-lang="en">Frequently asked questions</span>
+        <span data-lang="sk" style="display:none">Často kladené otázky</span>
+      </h2>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span data-lang="en">1. How do I book?</span>
+          <span data-lang="sk" style="display:none">1. Ako si rezervovať termín?</span>
+        </summary>
+        <div class="faq-answer">
+          <p>
+            <span data-lang="en">You can either contact me through the contact form on this website or write me an email at <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a>.</span>
+            <span data-lang="sk" style="display:none">Môžete ma kontaktovať prostredníctvom kontaktného formulára na tejto stránke alebo napísať e-mail na <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a>.</span>
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span data-lang="en">2. What is your deposit / cancellation policy?</span>
+          <span data-lang="sk" style="display:none">2. Aké sú podmienky zálohy / zrušenia?</span>
+        </summary>
+        <div class="faq-answer">
+          <p>
+            <span data-lang="en">Once we set up an appointment I take a 1000–1500 CZK deposit for drafting a sketch of the design. This deposit is deducted from the final price of the tattoo.</span>
+            <span data-lang="sk" style="display:none">Po dohodnutí termínu si beriem zálohu 1000–1500 CZK za navrhnutie skice dizajnu. Táto záloha sa odpočíta z konečnej ceny tetovania.</span>
+          </p>
+          <p>
+            <span data-lang="en">If we have not created a design and you change your mind, something unexpected happens, or you simply do not want to proceed with the appointment (and you let me know at least 48 hours before), the deposit is returned. In other cases, the deposit is not returned.</span>
+            <span data-lang="sk" style="display:none">Ak sme ešte nevytvorili dizajn a rozmyslíte si, stane sa niečo neočakávané alebo jednoducho nechcete pokračovať v termíne (a oznámite mi to aspoň 48 hodín vopred), záloha sa vracia. V iných prípadoch záloha nevracia.</span>
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span data-lang="en">3. What payment methods do you accept?</span>
+          <span data-lang="sk" style="display:none">3. Aké platobné metódy akceptujete?</span>
+        </summary>
+        <div class="faq-answer">
+          <p>
+            <span data-lang="en">I accept major credit and debit cards, Apple Pay / Google Pay, and bank transfers. If you prefer a different method, contact me at <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a>.</span>
+            <span data-lang="sk" style="display:none">Akceptujem hlavné kreditné a debetné karty, Apple Pay / Google Pay a bankový prevod. Ak preferujete inú metódu, kontaktujte ma na <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a>.</span>
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span data-lang="en">4. Do you accept group bookings or events?</span>
+          <span data-lang="sk" style="display:none">4. Prijímate skupinové rezervácie alebo eventy?</span>
+        </summary>
+        <div class="faq-answer">
+          <p>
+            <span data-lang="en">Yes — contact me at <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a> for quotes and availability.</span>
+            <span data-lang="sk" style="display:none">Áno — kontaktujte ma na <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a> pre cenovú ponuku a dostupnosť.</span>
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span data-lang="en">5. Are there any age or health requirements?</span>
+          <span data-lang="sk" style="display:none">5. Sú nejaké vekové alebo zdravotné požiadavky?</span>
+        </summary>
+        <div class="faq-answer">
+          <p>
+            <span data-lang="en">If you are under the age of 18, you need to come to the studio with your guardian and fill out the paperwork where they confirm that you can get tattooed.</span>
+            <span data-lang="sk" style="display:none">Ak ste mladší ako 18 rokov, musíte prísť do štúdia so zákonným zástupcom a vyplniť papierovanie, v ktorom potvrdí váš súhlas s tetovaním.</span>
+          </p>
+
+          <p><strong><span data-lang="en">Health / Contraindications (common examples):</span><span data-lang="sk" style="display:none">Zdravotné kontraindikácie (bežné príklady):</span></strong></p>
+          <ul>
+            <li><span data-lang="en">Pregnancy or breastfeeding — generally advised to postpone tattooing until after pregnancy/breastfeeding.</span><span data-lang="sk" style="display:none">Tehotenstvo alebo dojčenie — zvyčajne sa odporúča odložiť tetovanie až po ukončení tehotenstva/dojčenia.</span></li>
+            <li><span data-lang="en">Current or recent use of isotretinoin (Roaccutane) — wait the recommended period after finishing treatment.</span><span data-lang="sk" style="display:none">Súčasné alebo nedávne užívanie izotretinoínu (Roaccutane) — počkajte odporúčanú dobu po ukončení liečby.</span></li>
+            <li><span data-lang="en">Active or unstable skin disease at the tattoo site (eczema, psoriasis flare, severe acne, infected skin).</span><span data-lang="sk" style="display:none">Aktívne alebo nestabilné kožné ochorenie v oblasti tetovania (ekzém, psoriáza, ťažké akné, infikovaná koža).</span></li>
+            <li><span data-lang="en">Weakened immune system or immunosuppressive treatments — consult your physician first.</span><span data-lang="sk" style="display:none">Oslabený imunitný systém alebo imunosupresívne lieky — najprv konzultujte s lekárom.</span></li>
+            <li><span data-lang="en">Bleeding or clotting disorders, or use of blood-thinning medication — increased bleeding risk.</span><span data-lang="sk" style="display:none">Poruchy zrážania krvi alebo užívanie krvácavých liekov — zvýšené riziko krvácania.</span></li>
+            <li><span data-lang="en">Known allergy to tattoo pigments or a previous adverse reaction to a tattoo.</span><span data-lang="sk" style="display:none">Známá alergia na tetovacie pigmenty alebo predchádzajúca nežiaduca reakcia na tetovanie.</span></li>
+            <li><span data-lang="en">Severe systemic illnesses (uncontrolled hepatitis, other serious conditions) — consult your doctor.</span><span data-lang="sk" style="display:none">Vážnejšie systémové choroby (nekontrolovaná hepatitída, iné závažné stavy) — konzultujte s lekárom.</span></li>
+          </ul>
+
+          <p>
+            <span data-lang="en">If you have any chronic illness, take prescription medications, or have doubts, please consult your doctor and let me know before booking so we can confirm it’s safe to proceed.</span>
+            <span data-lang="sk" style="display:none">Ak máte chronické ochorenie, užívate predpisované lieky alebo máte pochybnosti, prosím konzultujte s lekárom a dajte mi vedieť pred rezerváciou, aby sme potvrdili bezpečnosť procedúry.</span>
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span data-lang="en">6. Where are you located and what are your opening hours?</span>
+          <span data-lang="sk" style="display:none">6. Kde sa nachádzate a aké sú otváracie hodiny?</span>
+        </summary>
+        <div class="faq-answer">
+          <p>
+            <span data-lang="en">My home studio is True Love Tattoo Club in Prague. If you'd like the exact address and hours to appear here on the site, tell me the preferred opening hours and I’ll update this text.</span>
+            <span data-lang="sk" style="display:none">Moje domáce štúdio je True Love Tattoo Club v Prahe. Ak chcete, aby sa tu zobrazila presná adresa a otváracie hodiny, povedzte mi preferované hodiny a ja to upravím.</span>
+          </p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span data-lang="en">7. Do you offer gift cards or vouchers?</span>
+          <span data-lang="sk" style="display:none">7. Ponúkate darčekové poukážky?</span>
+        </summary>
+        <div class="faq-answer">
+          <p>
+            <span data-lang="en">Yes — feel free to contact me at <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a> for details.</span>
+            <span data-lang="sk" style="display:none">Áno — neváhajte ma kontaktovať na <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a> pre detaily.</span>
+          </p>
+        </div>
+      </details>
+
+    </section>
+
     <!-- CONTACT -->
     <section id="contact" class="contact">
-      <h2>Contact & Booking</h2>
+      <h2><span data-lang="en">Contact & Booking</span><span data-lang="sk" style="display:none">Kontakt & Rezervácia</span></h2>
       <div class="cols">
         <div>
-          <p class="muted">Email: <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a></p>
-          <p class="muted">Instagram: <a href="https://www.instagram.com/ivsleeps/" target="_blank">Instagram</a></p>
-          <p class="muted" style="margin-top:10px">If you'd like to book, send a message with your preferred dates & description.</p>
+          <p class="muted">
+            <span data-lang="en">Email: <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a></span>
+            <span data-lang="sk" style="display:none">E-mail: <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a></span>
+          </p>
+          <p class="muted">
+            <span data-lang="en">Instagram: <a href="https://www.instagram.com/ivsleeps/" target="_blank">Instagram</a></span>
+            <span data-lang="sk" style="display:none">Instagram: <a href="https://www.instagram.com/ivsleeps/" target="_blank">Instagram</a></span>
+          </p>
+          <p class="muted" style="margin-top:10px">
+            <span data-lang="en">If you'd like to book, send a message with your preferred dates & description.</span>
+            <span data-lang="sk" style="display:none">Ak chcete rezervovať, pošlite správu s preferovanými dátumami a popisom.</span>
+          </p>
         </div>
         <div class="form">
           <form action="https://formspree.io/f/xkgeryrk" method="POST">
-            <input type="text" name="name" placeholder="Your name" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="text" name="phone" placeholder="Phone (optional)">
-            <input type="text" name="subject" placeholder="Subject">
-            <textarea name="message" rows="5" placeholder="Describe what you'd like" required></textarea>
+            <input type="text" name="name" placeholder="" id="inp-name" required>
+            <input type="email" name="email" placeholder="" id="inp-email" required>
+            <input type="text" name="phone" placeholder="" id="inp-phone">
+            <input type="text" name="subject" placeholder="" id="inp-subject">
+            <textarea name="message" rows="5" placeholder="" id="inp-message" required></textarea>
             <input type="hidden" name="_subject" value="New booking request from website">
-            <button type="submit">Send booking request</button>
+            <button type="submit">
+              <span data-lang="en">Send booking request</span>
+              <span data-lang="sk" style="display:none">Poslať žiadosť o rezerváciu</span>
+            </button>
           </form>
         </div>
       </div>
     </section>
 
     <footer>
-      © <span id="year"></span> ivsleeps · Prague, CZ · <span class="muted">All rights reserved</span>
+      © <span id="year"></span> ivsleeps · Prague, CZ · <span class="muted">
+        <span data-lang="en">All rights reserved</span>
+        <span data-lang="sk" style="display:none">Všetky práva vyhradené</span>
+      </span>
     </footer>
 
   </div>
@@ -329,6 +558,76 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
 
 <script>
+  // --- language toggle ---
+  (function(){
+    const SUPPORTED = ['en','sk'];
+    function setLang(lang){
+      if(!SUPPORTED.includes(lang)) lang = 'en';
+      // set document lang for accessibility
+      document.documentElement.lang = lang === 'sk' ? 'sk' : 'en';
+      // toggle visible nodes
+      document.querySelectorAll('[data-lang]').forEach(el=>{
+        el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
+      });
+      // update placeholders in form
+      const placeholders = {
+        en: {
+          name: 'Your name',
+          email: 'Email',
+          phone: 'Phone (optional)',
+          subject: 'Subject',
+          message: 'Describe what you\'d like',
+        },
+        sk: {
+          name: 'Vaše meno',
+          email: 'E-mail',
+          phone: 'Telefón (nepovinné)',
+          subject: 'Predmet',
+          message: 'Opíšte, čo by ste chceli',
+        }
+      };
+      const p = placeholders[lang] || placeholders.en;
+      document.getElementById('inp-name').placeholder = p.name;
+      document.getElementById('inp-email').placeholder = p.email;
+      document.getElementById('inp-phone').placeholder = p.phone;
+      document.getElementById('inp-subject').placeholder = p.subject;
+      document.getElementById('inp-message').placeholder = p.message;
+
+      // update language buttons aria-pressed
+      document.querySelectorAll('[data-lang-toggle]').forEach(btn=>{
+        const bLang = btn.getAttribute('data-lang-toggle');
+        btn.setAttribute('aria-pressed', String(bLang === lang));
+      });
+
+      // persist
+      try{ localStorage.setItem('site-lang', lang); }catch(e){}
+    }
+
+    // init: load from localStorage or browser language
+    let lang = 'en';
+    try{
+      const saved = localStorage.getItem('site-lang');
+      if(saved && SUPPORTED.includes(saved)) lang = saved;
+      else {
+        const nav = navigator.language || navigator.userLanguage || 'en';
+        if(nav.startsWith('sk')) lang = 'sk';
+      }
+    }catch(e){}
+
+    // set initial
+    setLang(lang);
+
+    // attach handlers
+    document.querySelectorAll('[data-lang-toggle]').forEach(btn=>{
+      btn.addEventListener('click', ()=> setLang(btn.getAttribute('data-lang-toggle')));
+    });
+
+    // expose for debugging
+    window.setSiteLang = setLang;
+  })();
+
+  // --- end language toggle ---
+
   document.getElementById('year').textContent = new Date().getFullYear();
 
   const hamburger = document.getElementById('hamburger');
