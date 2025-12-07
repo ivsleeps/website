@@ -73,12 +73,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 
   .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start;margin-bottom:0;padding-top:6px;padding-bottom:6px;min-height:52vh}
-  .hero-left{background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));padding:42px 40px;border-radius:10px;position:relative;box-shadow: 0 14px 44px rgba(0,0,0,0.6);}
+  .hero-left{background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));padding:56px 48px;border-radius:10px;position:relative;box-shadow: 0 14px 44px rgba(0,0,0,0.6);}
   .eyebrow{font-size:12px;color:var(--muted);letter-spacing:2px;margin-bottom:12px}
   h1{font-family:Playfair Display,serif;font-weight:700;margin:0 0 12px;font-size:44px;letter-spacing:1px;line-height:1.03;color:var(--text);}
   .lead{color:var(--muted);font-size:15px;margin:0 0 18px;max-width:62ch;}
 
-  /* HERO — increased size and same-image visible across devices */
+  /* HERO — bigger, same-image visible across devices */
   .hero-main{
     border-radius:8px;
     overflow:hidden;
@@ -87,10 +87,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     justify-content:center;
     padding:0;
 
-    /* increased visual height across devices to make first section bigger */
-    height:460px;         /* <-- bigger, proportional to site */
-    min-height:320px;
-    max-height:640px;
+    /* even bigger visual height requested */
+    height:540px;        /* <-- increased */
+    min-height:420px;
+    max-height:820px;
 
     box-shadow: 0 16px 48px rgba(0,0,0,0.6);
 
@@ -160,14 +160,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .brand .wordmark{font-size:18px;letter-spacing:4px}
     nav.desktop{display:none}
     .hamburger{display:inline-flex}
-    .hero-left{padding:22px}
+    .hero-left{padding:36px 22px}
     h1{font-size:28px}
     .portfolio-grid{grid-template-columns:1fr}
     .about .portrait{min-height:180px}
 
     .hero-main{
       /* slightly shorter on very small screens while keeping full-image visible */
-      height:420px;
+      height:500px;
+      min-height:380px;
       background-position:center;
     }
   }
@@ -199,8 +200,8 @@ details[open] summary::after { transform:rotate(90deg); content:"▾"; }
         <div>
           <div class="wordmark">IVSLEEPS</div>
           <small class="muted">
-            <span data-lang="en">Let your mind express itself on your skin.</span>
-            <span data-lang="sk" style="display:none">Nechaj svoju myseľ vyjadriť sa na svojej koži.</span>
+            <span data-lang="en"></span>
+            <span data-lang="sk" style="display:none"></span>
           </small>
         </div>
       </a>
@@ -225,21 +226,18 @@ details[open] summary::after { transform:rotate(90deg); content:"▾"; }
     <!-- HERO -->
     <section class="hero" aria-labelledby="heroHeading">
       <div class="hero-left">
-        <div class="eyebrow">
-          <span data-lang="en">SURREAL. ELEGANT. UNFORGETTABLE.</span>
-          <span data-lang="sk" style="display:none">SURREÁLNE. ELEGANTNÉ. NEZABUDNUTEĽNÉ.</span>
-        </div>
+        <div class="eyebrow" aria-hidden="true"></div>
         <h1 id="heroHeading">
-          <span data-lang="en">Let your floating mind express itself on the skin.</span>
-          <span data-lang="sk" style="display:none">Nechaj svoju plávajúcu myseľ vyjadriť sa na koži.</span>
+          <span data-lang="en">surrealism, fantasy and anime tattoos.</span>
+          <span data-lang="sk" style="display:none">surrealizmus, fantasy a anime tetovania.</span>
         </h1>
         <p class="lead">
           <span data-lang="en">My name is Ivy and this is my portfolio. I focus on surrealistic themes, with a touch of macabre, dark elements and japanese influence. I love anime & manga and I often times create designs inspired by these art forms as well. I am currently located in Prague, but I do travel to Slovakia and I am planning to tattoo in other countries as well.</span>
           <span data-lang="sk" style="display:none">Volám sa Ivy a toto je moje portfólio. Zameriavam sa na surrealistické motívy s nádychom makabrózneho, temných prvkov a japonských vplyvov. Milujem anime a mangu a často vytváram návrhy inšpirované týmito umeleckými formami. Aktuálne sa nachádzam v Prahe, ale cestujem aj na Slovensko a plánujem tetovať aj v iných krajinách.</span>
         </p>
         <div class="tagline">
-          <span data-lang="en">Crafted for the few, worn by the extraordinary.</span>
-          <span data-lang="sk" style="display:none">Vytvorené pre vyvolených, nosené výnimočnými.</span>
+          <span data-lang="en">Booking 2026 open</span>
+          <span data-lang="sk" style="display:none">Rezervácie 2026 otvorené</span>
         </div>
       </div>
 
