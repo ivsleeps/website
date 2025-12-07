@@ -78,7 +78,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   h1{font-family:Playfair Display,serif;font-weight:700;margin:0 0 12px;font-size:44px;letter-spacing:1px;line-height:1.03;color:var(--text);}
   .lead{color:var(--muted);font-size:15px;margin:0 0 18px;max-width:62ch;}
 
-  /* HERO — pure-CSS fix: same visible size across devices, show full image (no cropping) */
+  /* HERO — increased size and same-image visible across devices */
   .hero-main{
     border-radius:8px;
     overflow:hidden;
@@ -87,14 +87,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     justify-content:center;
     padding:0;
 
-    /* fixed visual height across devices — adjust to taste */
-    height:360px;         /* <-- consistent visible size on desktop & mobile */
-    min-height:260px;
-    max-height:420px;
+    /* increased visual height across devices to make first section bigger */
+    height:460px;         /* <-- bigger, proportional to site */
+    min-height:320px;
+    max-height:640px;
 
     box-shadow: 0 16px 48px rgba(0,0,0,0.6);
 
-    /* keep your existing background-image (no markup change required) */
+    /* keep your existing background image */
     background-image: url('assets/hero-main.jpeg');
     background-repeat: no-repeat;
 
@@ -166,8 +166,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .about .portrait{min-height:180px}
 
     .hero-main{
-      /* slightly shorter on small screens while keeping full-image visible */
-      height:340px;
+      /* slightly shorter on very small screens while keeping full-image visible */
+      height:420px;
       background-position:center;
     }
   }
@@ -391,8 +391,8 @@ details[open] summary::after { transform:rotate(90deg); content:"▾"; }
         </summary>
         <div class="faq-answer">
           <p>
-            <span data-lang="en">You can either contact me through the contact form on this website or write me an email at <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a>.</span>
-            <span data-lang="sk" style="display:none">Môžete ma kontaktovať prostredníctvom kontaktného formulára na tejto stránke alebo napísať e-mail na <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a>.</span>
+            <span data-lang="en">To reserve an appointment you can either use the booking form on this site or write me an email at <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a>. Please include: placement of the tattoo, approximate size, references if any, budget if relevant, and your ideal dates for the appointment.</span>
+            <span data-lang="sk" style="display:none">Pre rezerváciu termínu môžete použiť rezervačný formulár na stránke alebo mi napísať e-mail na <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a>. Prosím uveďte: miesto tetovania, približnú veľkosť, referencie ak máte, rozpočet ak je relevantný a preferované dátumy pre termín.</span>
           </p>
         </div>
       </details>
@@ -416,21 +416,8 @@ details[open] summary::after { transform:rotate(90deg); content:"▾"; }
 
       <details class="faq-item">
         <summary class="faq-question">
-          <span data-lang="en">3. What payment methods do you accept?</span>
-          <span data-lang="sk" style="display:none">3. Aké platobné metódy akceptujete?</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            <span data-lang="en">I accept major credit and debit cards, Apple Pay / Google Pay, and bank transfers. If you prefer a different method, contact me at <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a>.</span>
-            <span data-lang="sk" style="display:none">Akceptujem hlavné kreditné a debetné karty, Apple Pay / Google Pay a bankový prevod. Ak preferujete inú metódu, kontaktujte ma na <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a>.</span>
-          </p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span data-lang="en">4. Do you accept group bookings or events?</span>
-          <span data-lang="sk" style="display:none">4. Prijímate skupinové rezervácie alebo eventy?</span>
+          <span data-lang="en">3. Do you accept group bookings or events?</span>
+          <span data-lang="sk" style="display:none">3. Prijímate skupinové rezervácie alebo eventy?</span>
         </summary>
         <div class="faq-answer">
           <p>
@@ -442,8 +429,8 @@ details[open] summary::after { transform:rotate(90deg); content:"▾"; }
 
       <details class="faq-item">
         <summary class="faq-question">
-          <span data-lang="en">5. Are there any age or health requirements?</span>
-          <span data-lang="sk" style="display:none">5. Sú nejaké vekové alebo zdravotné požiadavky?</span>
+          <span data-lang="en">4. Are there any age or health requirements?</span>
+          <span data-lang="sk" style="display:none">4. Sú nejaké vekové alebo zdravotné požiadavky?</span>
         </summary>
         <div class="faq-answer">
           <p>
@@ -471,21 +458,21 @@ details[open] summary::after { transform:rotate(90deg); content:"▾"; }
 
       <details class="faq-item">
         <summary class="faq-question">
-          <span data-lang="en">6. Where are you located and what are your opening hours?</span>
-          <span data-lang="sk" style="display:none">6. Kde sa nachádzate a aké sú otváracie hodiny?</span>
+          <span data-lang="en">5. Where are you located and do you travel?</span>
+          <span data-lang="sk" style="display:none">5. Kde sa nachádzate a cestujete?</span>
         </summary>
         <div class="faq-answer">
           <p>
-            <span data-lang="en">My home studio is True Love Tattoo Club in Prague. If you'd like the exact address and hours to appear here on the site, tell me the preferred opening hours and I’ll update this text.</span>
-            <span data-lang="sk" style="display:none">Moje domáce štúdio je True Love Tattoo Club v Prahe. Ak chcete, aby sa tu zobrazila presná adresa a otváracie hodiny, povedzte mi preferované hodiny a ja to upravím.</span>
+            <span data-lang="en">I tattoo in the center of Prague, and I often work in Bratislava and Košice. I am also open to work in other European cities.</span>
+            <span data-lang="sk" style="display:none">Tetujem v centre Prahy a často pracujem v Bratislave a Košiciach. Som otvorená aj práci v iných európskych mestách.</span>
           </p>
         </div>
       </details>
 
       <details class="faq-item">
         <summary class="faq-question">
-          <span data-lang="en">7. Do you offer gift cards or vouchers?</span>
-          <span data-lang="sk" style="display:none">7. Ponúkate darčekové poukážky?</span>
+          <span data-lang="en">6. Do you offer gift cards or vouchers?</span>
+          <span data-lang="sk" style="display:none">6. Ponúkate darčekové poukážky?</span>
         </summary>
         <div class="faq-answer">
           <p>
