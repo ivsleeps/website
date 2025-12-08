@@ -117,11 +117,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .portfolio-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-top:14px;}
   .portfolio-grid img{width:100%;height:260px;object-fit:cover;border-radius:8px;display:block;box-shadow: 0 10px 30px rgba(0,0,0,0.5)}
 
+  /* ABOUT: 2 columns on desktop, single column on small screens */
   .about{display:grid;grid-template-columns:1fr 360px;gap:28px;margin-top:26px;align-items:start}
   .about .text h2{font-family:Playfair Display,serif;margin:0 0 12px;font-size:22px}
   .about .text p{color:var(--muted);margin:0 0 18px;line-height:1.85;font-size:15px}
   .about .portrait{border-radius:8px;overflow:hidden;min-height:260px}
-  .about .portrait img{width:100%;height:100%;object-fit:cover}
+  .about .portrait img{width:100%;height:100%;object-fit:cover;display:block}
 
   .contact{margin-top:26px;background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));padding:28px;border-radius:10px;}
   .contact .cols{display:grid;grid-template-columns:1fr 420px;gap:18px;align-items:start}
@@ -156,6 +157,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .dot.active{background:var(--accent)}
 
   @media (max-width:1040px){ .hero{grid-template-columns:1fr} }
+
   @media (max-width:640px){
     .brand .wordmark{font-size:18px;letter-spacing:4px}
     nav.desktop{display:none}
@@ -171,6 +173,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       min-height:380px;
       background-position:center;
     }
+
+    /* important: make ABOUT one column on small screens so text uses full width */
+    .about{grid-template-columns:1fr; padding-bottom:6px;}
+    .about .portrait{margin-top:16px;}
   }
 
   .muted{color:var(--muted)}
@@ -235,7 +241,7 @@ details[open] summary::after { transform:rotate(90deg); content:"▾"; }
           <span data-lang="en">My name is Ivy and this is my portfolio. I focus on surrealistic themes, with a touch of dark elements and japanese influence. 
             I love anime & manga and I often times create designs inspired by these art forms as well. 
             I am currently located in Prague, but I do travel to Slovakia and I am planning to tattoo in other countries as well.</span>
-          <span data-lang="sk" style="display:none">Volám sa Ivy a dole môžete nájsť  moje portfólio. Zameriavam sa na surrealistické motívy s nádychom japonských vplyvov. Milujem anime a mangu a často vytváram návrhy inšpirované práve tým. 
+          <span data-lang="sk" style="display:none">Volám sa Ivy a dole môžete nájsť moje portfólio. Zameriavam sa na surrealistické motívy s nádychom japonských vplyvov. Milujem anime a mangu a často vytváram návrhy inšpirované práve tým. 
             Aktuálne sa nachádzam v Prahe, ale cestujem aj na Slovensko a plánujem tetovať aj v iných krajinách.</span>
         </p>
         <div class="tagline">
@@ -368,13 +374,15 @@ details[open] summary::after { transform:rotate(90deg); content:"▾"; }
         </p>
         <p class="muted">
           <span data-lang="en">What I treasure most is the experience we share: creating something timeless together and seeing your eyes light up when you look at your new piece. That moment is priceless to me.</span>
-          <span data-lang="sk" style="display:none">Najviac si vážim momenty, ktoré spolu zdieľame: hlavne ak spolu vytvoríme  niečo nadčasové a Vám sa rozžiaria oči pri pohľade na Vaše telo.</span>
+          <span data-lang="sk" style="display:none">Najviac si vážim momenty, ktoré spolu zdieľame: hlavne ak spolu vytvoríme niečo nadčasové a Vám sa rozžiaria oči pri pohľade na Vaše telo.</span>
         </p>
         <p class="muted">
-          <span data-lang="en">Above all, I want everyone who steps into my space to feel comfortable, welcomed, and safe. </span>
-          <span data-lang="sk" style="display:none">Predovšetkým chcem, aby sa každý, kto vstúpi do štúdia, cítil pohodlne, vítaný a v bezpečí. </span>
+          <span data-lang="en">Above all, I want everyone who steps into my space to feel comfortable, welcomed, and safe.</span>
+          <span data-lang="sk" style="display:none">Predovšetkým chcem, aby sa každý, kto vstúpi do štúdia, cítil pohodlne, vítaný a v bezpečí.</span>
+        </p>
+      </div>
       <div class="portrait"><img src="assets/portrait.jpeg" alt="Portrait"></div>
-    </section
+    </section>
 
     <!-- FAQ (inserted before CONTACT) -->
     <section id="faq" class="faq" aria-labelledby="faq-heading">
