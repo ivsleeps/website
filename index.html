@@ -1,270 +1,68 @@
 <!doctype html>
+
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
+
+
+
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>IVSLEEPS — Tattoo Artist &amp; Visual Artist</title>
+<meta content="ivsleeps — Surreal, dark &amp; ethereal tattoo portfolio" name="description"/>
+
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+
+
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="styles.css" rel="stylesheet"/><!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1NEE71QLVD"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-1NEE71QLVD');
 </script>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>ivsleeps</title>
-<meta name="description" content="ivsleeps — Surreal, dark & ethereal tattoo portfolio" />
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-<style>
-  :root{
-    --bg-very-dark:#080704;
-    --panel:#0d0b0b;
-    --beige:#e7dfcf;
-    --muted-beige:#cfc7b6;
-    --accent:#bfa6ff;
-    --text: #efede9;
-    --muted: rgba(239,237,233,0.68);
-    --radius:10px;
-    --container:1100px;
-  }
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0;
-    background: linear-gradient(180deg,var(--bg-very-dark) 0%, #0b0a0a 100%);
-    color:var(--text);
-    font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    line-height:1.5;
-    -webkit-text-size-adjust:100%;
-  }
-  a{color:inherit}
-  .wrap{max-width:var(--container);margin:28px auto;padding:28px}
-  header{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:18px}
-  .brand{display:flex;align-items:center;gap:16px;text-decoration:none;color:inherit}
-  .brand .wordmark{font-family:Playfair Display,serif;letter-spacing:6px;font-weight:600;font-size:20px}
-  .brand small{display:block;font-size:11px;color:var(--muted);margin-top:-6px}
-  nav.desktop{display:flex;gap:18px;align-items:center}
-  nav.desktop a{font-size:13px;color:var(--muted);text-decoration:none}
-  nav.desktop a:hover{color:var(--beige)}
-  .hamburger{display:none;background:transparent;border:0;color:var(--muted);font-size:22px;cursor:pointer}
-  .mobile-nav{display:none}
-  .mobile-nav.open{display:block;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:12px;border-radius:8px;margin-top:12px}
-
-/* language selector */
-.lang-switch { display:flex; gap:8px; align-items:center; }
-.lang-btn {
-  background:transparent;
-  border:1px solid rgba(255,255,255,0.06);
-  color:var(--muted);
-  padding:6px 10px;
-  border-radius:8px;
-  cursor:pointer;
-  font-size:13px;
-}
-.lang-btn[aria-pressed="true"] {
-  background:var(--accent);
-  color:#120c18;
-  border-color:var(--accent);
-  font-weight:700;
-}
-
-  .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start;margin-bottom:0;padding-top:6px;padding-bottom:6px;min-height:52vh}
-  .hero-left{background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));padding:56px 48px;border-radius:10px;position:relative;box-shadow: 0 14px 44px rgba(0,0,0,0.6);}
-  .eyebrow{font-size:12px;color:var(--muted);letter-spacing:2px;margin-bottom:12px}
-  h1{font-family:Playfair Display,serif;font-weight:700;margin:0 0 12px;font-size:44px;letter-spacing:1px;line-height:1.03;color:var(--text);}
-  .lead{color:var(--muted);font-size:15px;margin:0 0 18px;max-width:62ch;}
-
-  /* HERO — bigger, same-image visible across devices */
-  .hero-main{
-    border-radius:8px;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:0;
-
-    /* even bigger visual height requested */
-    height:540px;        /* <-- increased */
-    min-height:420px;
-    max-height:820px;
-
-    box-shadow: 0 16px 48px rgba(0,0,0,0.6);
-
-    /* keep your existing background image */
-    background-image: url('assets/hero-main.JPG');
-    background-repeat: no-repeat;
-
-    /* show the entire image (no cropping) */
-    background-size: contain;
-
-    /* center image; change to 'center top' if subject is nearer the top */
-    background-position: center center;
-
-    /* letterbox fill — harmonious with page background */
-    background-color: #0b0a0a;
-  }
-  .hero-main img{display:none;}
-
-  .tagline{margin-top:18px;background:var(--beige);color:#1b140f;padding:22px 28px;border-radius:6px;font-family:Playfair Display,serif;font-size:18px;letter-spacing:1px;box-shadow: inset 0 -6px 0 rgba(0,0,0,0.02);} 
-
-  .portfolio{margin-top:28px;background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));padding:34px 28px;border-radius:10px;}
-  .portfolio h2{font-family:Playfair Display,serif;margin:0 0 8px;font-size:20px}
-  .portfolio p.lead{color:var(--muted);margin:0 0 20px}
-  .portfolio-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-top:14px;}
-  .portfolio-grid img{width:100%;height:260px;object-fit:cover;border-radius:8px;display:block;box-shadow: 0 10px 30px rgba(0,0,0,0.5)}
-
-  /* ABOUT: 2 columns on desktop, single column on small screens */
-  .about{display:grid;grid-template-columns:1fr 360px;gap:28px;margin-top:26px;align-items:start}
-  .about .text h2{font-family:Playfair Display,serif;margin:0 0 12px;font-size:22px}
-  .about .text p{color:var(--muted);margin:0 0 18px;line-height:1.85;font-size:15px}
-  .about .portrait{border-radius:8px;overflow:hidden;min-height:260px}
-  .about .portrait img{width:100%;height:100%;object-fit:cover;display:block}
-
-  .contact{margin-top:26px;background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));padding:28px;border-radius:10px;}
-  .contact .cols{display:grid;grid-template-columns:1fr 420px;gap:18px;align-items:start}
-  .contact a{color:var(--muted);text-decoration:underline}
-  .contact .form input,.contact .form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);margin-bottom:10px}
-  .contact .form button{padding:10px 14px;border-radius:8px;border:0;background:var(--accent);color:#111;font-weight:700;cursor:pointer}
-
-  footer{margin-top:26px;color:var(--muted);font-size:13px;text-align:center;padding-bottom:28px}
-
-  .flash-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:12px;}
-  .flash-card{border:1px solid rgba(0,0,0,0.06);padding:10px;border-radius:8px;background:transparent;box-shadow: 0 10px 28px rgba(0,0,0,0.45);} 
-  .flash-card img{width:100%;height:220px;object-fit:cover;display:block;border-radius:6px;}
-
-  .insta-section{margin-top:28px;padding:18px 0;}
-  .insta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:8px;max-width:900px;margin-top:12px;}
-  .insta-tile{width:100%;padding-top:100%;position:relative;overflow:hidden;border-radius:6px;background:#111;}
-  .insta-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
-  .insta-fallback{color:var(--muted);font-size:14px;margin-top:8px;}
-
-  /* Modal / Carousel styles */
-  .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.86);z-index:9999;padding:20px}
-  .modal.open{display:flex}
-  .viewer{position:relative;max-width:1100px;width:calc(100% - 48px);background:transparent}
-  .viewer img{max-width:100%;max-height:78vh;border-radius:12px;display:block;margin:0 auto}
-  .controls{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:20px;pointer-events:none}
-  button.ctrl{pointer-events:auto;background:rgba(6,10,18,0.55);border:1px solid rgba(255,255,255,0.06);backdrop-filter:blur(4px);color:#fff;padding:12px;border-radius:999px;cursor:pointer}
-  button.ctrl:active{transform:scale(.98)}
-  .close{position:absolute;right:14px;top:14px}
-  .caption{margin-top:12px;text-align:center;color:var(--muted);font-size:15px}
-  .dots{display:flex;gap:8px;margin-top:14px;justify-content:center}
-  .dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.12);cursor:pointer}
-  .dot.active{background:var(--accent)}
-
-  @media (max-width:1040px){ .hero{grid-template-columns:1fr} }
-
-  @media (max-width:640px){
-    .brand .wordmark{font-size:18px;letter-spacing:4px}
-    nav.desktop{display:none}
-    .hamburger{display:inline-flex}
-    .hero-left{padding:36px 22px}
-    h1{font-size:28px}
-    .portfolio-grid{grid-template-columns:1fr}
-    .about .portrait{min-height:180px}
-
-    .hero-main{
-      /* slightly shorter on very small screens while keeping full-image visible */
-      height:500px;
-      min-height:380px;
-      background-position:center;
-    }
-
-    /* important: make ABOUT one column on small screens so text uses full width */
-    .about{grid-template-columns:1fr; padding-bottom:6px;}
-    .about .portrait{margin-top:16px;}
-  }
-
-  .muted{color:var(--muted)}
-
-/* FAQ styling (appended) */
-.faq { max-width:var(--container); margin:28px auto; padding:18px; background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent); border-radius:10px; }
-.faq h2 { font-size:20px; margin-bottom:10px; color:var(--text); }
-.faq-item { border-top:1px solid rgba(255,255,255,0.03); padding:10px 0; }
-.faq-question { cursor:pointer; font-weight:600; font-size:15px; color:var(--muted); padding:6px 0; }
-.faq-answer { padding:8px 6px 14px 6px; color:var(--muted); line-height:1.6; }
-details[open] .faq-question { color:var(--beige); }
-summary::-webkit-details-marker { display:none; }
-summary::after { content:"▸"; float:right; transition: transform .18s ease; }
-details[open] summary::after { transform:rotate(90deg); content:"▾"; }
-.faq ul { margin:8px 0 0 1.1rem; color:var(--muted); }
-.faq a { color:var(--muted); text-decoration:underline; }
-@media (max-width:640px){ .faq { padding:14px; margin:18px 16px; } .faq h2{font-size:18px} }
-
-</style>
 </head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1NEE71QLVD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-1NEE71QLVD');
-</script>
-<body>
-  <div class="wrap" id="top">
 
-    <header>
-      <a class="brand" href="#top" aria-label="ivsleeps home">
-        <div>
-          <div class="wordmark">IVSLEEPS</div>
-          <small class="muted">
-            <span data-lang="en"></span>
-            <span data-lang="sk" style="display:none"></span>
-          </small>
-        </div>
-      </a>
-
-      <nav class="desktop" aria-label="Main navigation">
-        <a href="#about"><span data-lang="en">ABOUT</span><span data-lang="sk" style="display:none">O MNE</span></a>
-        <a href="#portfolio"><span data-lang="en">PORTFOLIO</span><span data-lang="sk" style="display:none">PORTFÓLIO</span></a>
-        <a href="#flash"><span data-lang="en">TATTOO FLASH</span><span data-lang="sk" style="display:none">FLASH</span></a>
-        <a href="#prints"><span data-lang="en">PRINTS</span><span data-lang="sk" style="display:none">TLAČE</span></a>
-        <a href="#insta"><span data-lang="en">IG</span><span data-lang="sk" style="display:none">IG</span></a>
-        <a href="#contact"><span data-lang="en">CONTACT</span><span data-lang="sk" style="display:none">KONTAKT</span></a>
-      </nav>
-
-      <div class="lang-switch" aria-hidden="false">
-        <button class="lang-btn" id="btn-en" aria-pressed="true" data-lang-toggle="en">EN</button>
-        <button class="lang-btn" id="btn-sk" aria-pressed="false" data-lang-toggle="sk">SK</button>
-      </div>
-
-      <button class="hamburger" id="hamburger" aria-label="Open menu">☰</button>
-      <!-- Mobile nav (required for hamburger) -->
-<nav id="mobileNav" class="mobile-nav" aria-hidden="true" aria-label="Mobile navigation">
-  <a href="#about"><span data-lang="en">ABOUT</span><span data-lang="sk" style="display:none">O MNE</span></a>
-  <a href="#portfolio"><span data-lang="en">PORTFOLIO</span><span data-lang="sk" style="display:none">PORTFÓLIO</span></a>
-  <a href="#flash"><span data-lang="en">TATTOO FLASH</span><span data-lang="sk" style="display:none">FLASH</span></a>
-  <a href="#prints"><span data-lang="en">PRINTS</span><span data-lang="sk" style="display:none">TLAČE</span></a>
-  <a href="#insta"><span data-lang="en">IG</span><span data-lang="sk" style="display:none">IG</span></a>
-  <a href="#contact"><span data-lang="en">CONTACT</span><span data-lang="sk" style="display:none">KONTAKT</span></a>
-</nav>
-    </header>
-
-    <!-- HERO -->
-    <section class="hero" aria-labelledby="heroHeading">
-      <div class="hero-left">
-        <div class="eyebrow" aria-hidden="true"></div>
-        <h1 id="heroHeading">
-          <span data-lang="en">Surrealism, fantasy and anime tattoos.</span>
-          <span data-lang="sk" style="display:none">Surrealizmus, fantasy a anime tetovania.</span>
-        </h1>
-        <p class="lead">
-          <span data-lang="en">Since I was a child, I have been inclined towards art as such, whether it was drawing, painting, music, creating clothes, make-up - it was very much so, I was looking for ways in which a person could bring their 'self' into the space around them.
+<body class="site-body">
+<div class="wrap" id="top"><a class="skip-link" href="#portfolio">Skip to content</a>
+<header>
+<a aria-label="ivsleeps home" class="brand" href="#top">
+<div>
+<div class="wordmark">IVSLEEPS</div>
+<small class="muted">
+<span data-lang="en"></span>
+<span data-lang="sk" style="display:none"></span>
+</small>
+</div>
+</a>
+<nav aria-label="Main navigation" class="desktop"><a href="#top"><span data-lang="en">HOME</span><span data-lang="sk" style="display:none">DOMOV</span></a><a href="#portfolio"><span data-lang="en">PORTFOLIO</span><span data-lang="sk" style="display:none">PORTFÓLIO</span></a><a href="#prints"><span data-lang="en">PRINTS</span><span data-lang="sk" style="display:none">TLAČE</span></a><a href="#flash"><span data-lang="en">FLASH</span><span data-lang="sk" style="display:none">FLASH</span></a><a href="#about"><span data-lang="en">ABOUT</span><span data-lang="sk" style="display:none">O MNE</span></a><a href="#faq"><span data-lang="en">FAQ</span><span data-lang="sk" style="display:none">FAQ</span></a><a href="#contact"><span data-lang="en">CONTACT</span><span data-lang="sk" style="display:none">KONTAKT</span></a></nav>
+<div aria-hidden="false" class="lang-switch">
+<button aria-pressed="true" class="lang-btn" data-lang-toggle="en" id="btn-en">EN</button>
+<button aria-pressed="false" class="lang-btn" data-lang-toggle="sk" id="btn-sk">SK</button>
+</div>
+<button aria-label="Open menu" class="hamburger" id="hamburger">☰</button>
+<!-- Mobile nav (required for hamburger) -->
+<nav aria-hidden="true" aria-label="Mobile navigation" class="mobile-nav" id="mobileNav"><a href="#top"><span data-lang="en">HOME</span><span data-lang="sk" style="display:none">DOMOV</span></a><a href="#portfolio"><span data-lang="en">PORTFOLIO</span><span data-lang="sk" style="display:none">PORTFÓLIO</span></a><a href="#prints"><span data-lang="en">PRINTS</span><span data-lang="sk" style="display:none">TLAČE</span></a><a href="#flash"><span data-lang="en">FLASH</span><span data-lang="sk" style="display:none">FLASH</span></a><a href="#about"><span data-lang="en">ABOUT</span><span data-lang="sk" style="display:none">O MNE</span></a><a href="#faq"><span data-lang="en">FAQ</span><span data-lang="sk" style="display:none">FAQ</span></a><a href="#contact"><span data-lang="en">CONTACT</span><span data-lang="sk" style="display:none">KONTAKT</span></a></nav>
+</header>
+<!-- HERO -->
+<section aria-labelledby="heroHeading" class="hero">
+<div class="hero-left">
+<div aria-hidden="true" class="eyebrow"></div>
+<h1 id="heroHeading">
+<span data-lang="en">Surrealism, fantasy and anime tattoos.</span>
+<span data-lang="sk" style="display:none">Surrealizmus, fantasy a anime tetovania.</span>
+</h1>
+<p class="lead">
+<span data-lang="en">Since I was a child, I have been inclined towards art as such, whether it was drawing, painting, music, creating clothes, make-up - it was very much so, I was looking for ways in which a person could bring their 'self' into the space around them.
 
 Later, thanks to alternative music and culture, I naturally found myself in communities where tattoos are an important form of self-expression and identity. That is how my relationship with this began to shape.
 
 Even as a child, I liked to invent characters and stories, and this is still reflected in my work today. My tattoos often move on the border of surrealism, dark aesthetics and subtle elegance. I am fascinated by the contrast between darkness and tenderness, which I try to convey in my designs.
 
 Currently, I tattoo at the True Love Tattoo Club studio in the heart of Prague, but I like to travel and occasionally work in other countries as guest spots. No matter where I tattoo, I always strive to provide a welcoming and inclusive space for anyone who decides to trust me and wear my art on their body.</span>
-          <span data-lang="sk" style="display:none">Už od mala som inklinovala k umeniu ako takému, či to bolo kreslenie, maľby, hudba, tvorenie oblečenia, make up - čokoľvek to bolo, hľadala som spôsoby, ako človek môže vniesť to svoje 'ja' do priestoru okolo seba. 
+<span data-lang="sk" style="display:none">Už od mala som inklinovala k umeniu ako takému, či to bolo kreslenie, maľby, hudba, tvorenie oblečenia, make up - čokoľvek to bolo, hľadala som spôsoby, ako človek môže vniesť to svoje 'ja' do priestoru okolo seba. 
 
 Neskôr som sa vďaka alternatívnej hudbe a kultúre prirodzene ocitla v komunitách, kde sú tetovania dôležitou formou sebavyjadrenia a identity. Práve tam sa začal formovať môj vzťah k tomuto médiu. 
 
@@ -272,570 +70,315 @@ Už ako dieťa som si rada vymýšľala postavy a príbehy, a to sa dodnes odrá
 
 Momentálne tetujem v štúdiu True Love Tattoo Club v srdci Prahy, no rada cestujem a príležitostne pracujem aj v iných krajinách formou guest spotov. Nech už tetujem kdekoľvek, vždy sa snažím vytvoriť príjemný a inkluzívny priestor pre každého, kto sa rozhodne zveriť mi svoju dôveru a nosiť moje umenie na svojom tele.
 </span>
-        </p>
-        <div class="tagline">
-          <span data-lang="en">Booking 2026 open</span>
-          <span data-lang="sk" style="display:none">Rezervácie pre 2026 otvorené</span>
-        </div>
-      </div>
-
-      <aside class="hero-main" aria-hidden="true" aria-label="Featured flash"></aside>
-    </section>
-
-    <!-- PORTFOLIO -->
-    <section id="portfolio" class="portfolio" aria-label="Portfolio">
-      <h2><span data-lang="en">Portfolio</span><span data-lang="sk" style="display:none">Portfólio</span></h2>
-      <p class="lead">
-        <span data-lang="en">Selected recent works — click a thumbnail to open the carousel (stays on the same page).</span>
-        <span data-lang="sk" style="display:none">Vybrané nedávne práce — kliknite na náhľad pre otvorenie galérie (zostane na tejto stránke).</span>
-      </p>
-
-      <div class="portfolio-grid" role="list" id="portfolioGrid">
-        <!-- ordered 1 → 15 (exact filenames & extensions) -->
-        <a class="gallery-item" data-type="portfolio" data-index="0" data-full="assets/portfolio-1.jpg" href="#" aria-label="Open Portfolio 1"><img src="assets/portfolio-1.jpg" alt="Portfolio 1"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="1" data-full="assets/portfolio-2.jpg" href="#" aria-label="Open Portfolio 2"><img src="assets/portfolio-2.jpg" alt="Portfolio 2"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="2" data-full="assets/portfolio-3.JPG" href="#" aria-label="Open Portfolio 3"><img src="assets/portfolio-3.JPG" alt="Portfolio 3"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="3" data-full="assets/portfolio-4.jpeg" href="#" aria-label="Open Portfolio 4"><img src="assets/portfolio-4.jpeg" alt="Portfolio 4"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="4" data-full="assets/portfolio-5.jpg" href="#" aria-label="Open Portfolio 5"><img src="assets/portfolio-5.jpg" alt="Portfolio 5"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="5" data-full="assets/portfolio-6.jpg" href="#" aria-label="Open Portfolio 6"><img src="assets/portfolio-6.jpg" alt="Portfolio 6"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="6" data-full="assets/portfolio-7.jpeg" href="#" aria-label="Open Portfolio 7"><img src="assets/portfolio-7.jpeg" alt="Portfolio 7"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="7" data-full="assets/portfolio-8.jpeg" href="#" aria-label="Open Portfolio 8"><img src="assets/portfolio-8.jpeg" alt="Portfolio 8"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="8" data-full="assets/portfolio-9.jpeg" href="#" aria-label="Open Portfolio 9"><img src="assets/portfolio-9.jpeg" alt="Portfolio 9"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="9" data-full="assets/portfolio-10.jpeg" href="#" aria-label="Open Portfolio 10"><img src="assets/portfolio-10.jpeg" alt="Portfolio 10"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="10" data-full="assets/portfolio-11.jpg" href="#" aria-label="Open Portfolio 11"><img src="assets/portfolio-11.jpg" alt="Portfolio 11"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="11" data-full="assets/portfolio-12.JPG" href="#" aria-label="Open Portfolio 12"><img src="assets/portfolio-12.JPG" alt="Portfolio 12"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="12" data-full="assets/portfolio-13.jpeg" href="#" aria-label="Open Portfolio 13"><img src="assets/portfolio-13.jpeg" alt="Portfolio 13"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="13" data-full="assets/portfolio-14.jpeg" href="#" aria-label="Open Portfolio 14"><img src="assets/portfolio-14.jpeg" alt="Portfolio 14"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="14" data-full="assets/portfolio-15.JPG" href="#" aria-label="Open Portfolio 15"><img src="assets/portfolio-15.JPG" alt="Portfolio 15"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="15" data-full="assets/portfolio-16.JPG" href="#" aria-label="Open Portfolio 16"><img src="assets/portfolio-16.jpg" alt="Portfolio 16"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="16" data-full="assets/portfolio-17.JPG" href="#" aria-label="Open Portfolio 17"><img src="assets/portfolio-17.JPG" alt="Portfolio 17"></a>
-        <a class="gallery-item" data-type="portfolio" data-index="17" data-full="assets/portfolio-18.JPG" href="#" aria-label="Open Portfolio 18"><img src="assets/temp_image_A87B6D21-34B3-43DA-8A85-3605297E87B5.jpeg" alt="Portfolio 18"></a> 
-        <a class="gallery-item" data-type="portfolio" data-index="18" data-full="assets/portfolio-19.JPG" href="#" aria-label="Open Portfolio 19"><img src="assets/temp_image_9DA4EFBD-A134-41A3-B5A7-AE7059E678C8.jpeg" alt="Portfolio 18"></a>   
-      </div>
-    </section>
-
-    <!-- PRINTS & PAINTINGS -->
-    <section id="prints" class="portfolio" aria-label="Prints & Paintings">
-      <h2><span data-lang="en">Prints & Paintings</span><span data-lang="sk" style="display:none">Tlače & Maľby</span></h2>
-      <p class="lead">
-        <span data-lang="en">Small prints and original paintings available — click to preview.</span>
-        <span data-lang="sk" style="display:none">Malé tlače a originálne maľby na predaj — kliknite pre náhľad.</span>
-      </p>
-
-      <div class="portfolio-grid" role="list" id="printsGrid">
-        <a class="gallery-item" data-type="print" data-index="50" data-full="assets/print-1.JPEG" href="#" aria-label="Open Print 1"><img src="assets/print-1.JPEG" alt="Print 1"></a>
-        <a class="gallery-item" data-type="print" data-index="51" data-full="assets/print-2.JPEG" href="#" aria-label="Open Print 2"><img src="assets/print-2.JPEG" alt="Print 2"></a>
-        <a class="gallery-item" data-type="print" data-index="52" data-full="assets/print-3.jpeg" href="#" aria-label="Open Print 3"><img src="assets/print-3.jpeg" alt="Print 3"></a>
-        <a class="gallery-item" data-type="print" data-index="53" data-full="assets/print-4.JPG" href="#" aria-label="Open Print 4"><img src="assets/print-4.JPG" alt="Print 4"></a>
-        <a class="gallery-item" data-type="print" data-index="53" data-full="assets/print-4.JPG" href="#" aria-label="Open Print 4"><img src="assets/print-5.JPG" alt="Print 5"></a>
-
-        <a class="gallery-item" data-type="painting" data-index="60" data-full="assets/painting-1.JPEG" href="#" aria-label="Open Painting 1"><img src="assets/painting-1.JPEG" alt="Painting 1"></a>
-      </div>
-    </section>
-
-    <!-- FLASH -->
-    <section id="flash" class="portfolio" aria-label="Tattoo flash">
-      <h2><span data-lang="en">Tattoo Flash</span><span data-lang="sk" style="display:none">Tattoo Flash</span></h2>
-      <p class="lead">
-        <span data-lang="en">Small flash sheets & quick designs — click to open in the same carousel.</span>
-        <span data-lang="sk" style="display:none">Malé flash sheety a rýchle návrhy — kliknite pre otvorenie v galérii.</span>
-      </p>
-
-      <div class="flash-cards" role="list" id="flashGrid">
-        <div class="flash-card">
-          <a class="gallery-item" data-type="flash" data-index="20" data-full="assets/flash-1.jpeg" href="#" aria-label="Open Flash 1"><img src="assets/flash-1.jpeg" alt="Flash 1"></a>
-          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 1</h3>
-        </div>
-        <div class="flash-card">
-          <a class="gallery-item" data-type="flash" data-index="21" data-full="assets/flash-2.jpeg" href="#" aria-label="Open Flash 2"><img src="assets/flash-2.jpeg" alt="Flash 2"></a>
-          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 2</h3>
-        </div>
-        <div class="flash-card">
-          <a class="gallery-item" data-type="flash" data-index="22" data-full="assets/flash-3.JPEG" href="#" aria-label="Open Flash 3"><img src="assets/flash-3.JPEG" alt="Flash 3"></a>
-          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 3</h3>
-        </div>
-        <div class="flash-card">
-          <a class="gallery-item" data-type="flash" data-index="23" data-full="assets/flash-4.jpeg" href="#" aria-label="Open Flash 4"><img src="assets/flash-4.jpeg" alt="Flash 4"></a>
-          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 4</h3>
-        </div>
-        <div class="flash-card">
-          <a class="gallery-item" data-type="flash" data-index="24" data-full="assets/flash-5.jpg" href="#" aria-label="Open Flash 5"><img src="assets/flash-5.jpg" alt="Flash 5"></a>
-          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 5</h3>
-        </div>
-
-        <!-- additional flashes that exist in your assets -->
-        <div class="flash-card">
-          <a class="gallery-item" data-type="flash" data-index="25" data-full="assets/flash-6.jpg" href="#" aria-label="Open Flash 6"><img src="assets/flash-6.jpg" alt="Flash 6"></a>
-          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 6</h3>
-        </div>
-        <div class="flash-card">
-          <a class="gallery-item" data-type="flash" data-index="26" data-full="assets/flash-7.jpg" href="#" aria-label="Open Flash 7"><img src="assets/flash-7.jpg" alt="Flash 7"></a>
-          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 7</h3>
-        </div>
-        <div class="flash-card">
-          <a class="gallery-item" data-type="flash" data-index="27" data-full="assets/flash-8.jpg" href="#" aria-label="Open Flash 8"><img src="assets/flash-8.jpg" alt="Flash 8"></a>
-          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 8</h3>
-        </div>
-        <div class="flash-card">
-          <a class="gallery-item" data-type="flash" data-index="28" data-full="assets/flash-9.jpeg" href="#" aria-label="Open Flash 9"><img src="assets/flash-9.jpeg" alt="Flash 9"></a>
-          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 9</h3>
-        </div>
-        <div class="flash-card">
-          <a class="gallery-item" data-type="flash" data-index="29" data-full="assets/flash-10.jpg" href="#" aria-label="Open Flash 10"><img src="assets/flash-10.jpg" alt="Flash 10"></a>
-          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 10</h3> 
-        </div>
-        <div class="flash-card">
-          <a class="gallery-item" data-type="flash" data-index="30" data-full="assets/IMG_2650 (1).jpeg" href="#" aria-label="Open Flash 10"><img src="assets/IMG_2650 (1).jpeg" alt="Flash 11"></a>
-          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 11</h3>
-        </div>
-        <div class="flash-card">
-          <a class="gallery-item" data-type="flash" data-index="31" data-full="assets/IMG_5111.jpeg" href="#" aria-label="Open Flash 10"><img src="assets/IMG_5111.jpeg" alt="Flash 12"></a>
-          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 12</h3>
-        </div>
-        <div class="flash-card">
-          <a class="gallery-item" data-type="flash" data-index="32" data-full="assets/1A564487-6B7B-46C3-AC3A-F88800A56A80.jpeg" href="#" aria-label="Open Flash 13"><img src="assets/1A564487-6B7B-46C3-AC3A-F88800A56A80.jpeg" alt="Flash 12"></a>
-          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 13</h3>
-           </div>
-        <div class="flash-card">
-          <a class="gallery-item" data-type="flash" data-index="33" data-full="assets/flash-14.jpg" href="#" aria-label="Open Flash 14"><img src="aflash-14.jpg" alt="Flash 14"></a>
-          <h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 14</h3>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- INSTAGRAM -->
-    <section id="insta" class="insta-section" aria-label="Instagram gallery">
-      <h2 style="font-family:Playfair Display,serif;margin:0 0 8px;">
-        <span data-lang="en">From my Instagram</span>
-        <span data-lang="sk" style="display:none">Z môjho Instagramu</span>
-      </h2>
-      <p class="muted" style="margin:0 0 10px">
-        <span data-lang="en">Latest posts from <a href="https://www.instagram.com/ivsleeps/" target="_blank">@ivsleeps</a></span>
-        <span data-lang="sk" style="display:none">Najnovšie príspevky z <a href="https://www.instagram.com/ivsleeps/" target="_blank">@ivsleeps</a></span>
-      </p>
-
-      <div id="instaGrid" class="insta-grid" aria-live="polite" aria-busy="true"></div>
-      <div id="instaFallback" class="insta-fallback" style="display:none;">
-        <span data-lang="en">Could not load Instagram posts — <a href="https://www.instagram.com/ivsleeps/" target="_blank">view on IG</a>.</span>
-        <span data-lang="sk" style="display:none">Nepodarilo sa načítať príspevky z Instagramu — <a href="https://www.instagram.com/ivsleeps/" target="_blank">pozrieť na IG</a>.</span>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="about">
-      <div class="text">
-        <h2><span data-lang="en">About me</span><span data-lang="sk" style="display:none">O mne</span></h2>
-        <p class="muted">
-          <span data-lang="en">Art has always been my grounding force — something I’ve returned to since the moment I first picked up a pencil. My journey took me through different industries, but tattooing found me at exactly the right time, allowing me to create the kind of work that feels both intimate and expressive.</span>
-          <span data-lang="sk" style="display:none">Umenie bolo vždy mojím ukotvením — niečo, ku čomu sa vraciam od prvého okamihu, keď som vzala ceruzku do ruky. Moja cesta ma prešla rôznymi odvetviami, no tetovanie ma našlo presne v správny čas a umožnilo mi tvoriť diela, ktoré sú osobné a výrazné.</span>
-        </p>
-        <p class="muted">
-          <span data-lang="en">What I treasure most is the experience we share: creating something timeless together and seeing your eyes light up when you look at your new piece. That moment is priceless to me.</span>
-          <span data-lang="sk" style="display:none">Najviac si vážim momenty, ktoré spolu zdieľame: hlavne ak spolu vytvoríme niečo nadčasové a Vám sa rozžiaria oči pri pohľade na Vaše telo.</span>
-        </p>
-        <p class="muted">
-          <span data-lang="en">Above all, I want everyone who steps into my space to feel comfortable, welcomed, and safe.</span>
-          <span data-lang="sk" style="display:none">Predovšetkým chcem, aby sa každý, kto vstúpi do štúdia, cítil pohodlne, vítaný a v bezpečí.</span>
-        </p>
-      </div>
-      <div class="portrait"><img src="assets/portrait.jpg" alt="Portrait"></div>
-    </section>
-
-    <!-- FAQ (inserted before CONTACT) -->
-    <section id="faq" class="faq" aria-labelledby="faq-heading">
-      <h2 id="faq-heading" style="font-family:Playfair Display,serif;margin:0 0 8px;">
-        <span data-lang="en">Frequently asked questions</span>
-        <span data-lang="sk" style="display:none">Často kladené otázky</span>
-      </h2>
-
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span data-lang="en">1. How do I book?</span>
-          <span data-lang="sk" style="display:none">1. Ako si rezervovať termín?</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            <span data-lang="en">To reserve an appointment you can either use the booking form on this site or write me an email at <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a>. Please include: placement of the tattoo, approximate size, references if any, budget if relevant, and your ideal dates for the appointment.</span>
-            <span data-lang="sk" style="display:none">Pre rezerváciu termínu môžete použiť rezervačný formulár na stránke alebo mi napísať e-mail na <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a>. Prosím uveďte: miesto tetovania, približnú veľkosť, referencie ak máte, rozpočet ak je relevantný a preferované dátumy pre termín.</span>
-          </p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span data-lang="en">2. What is your deposit / cancellation policy?</span>
-          <span data-lang="sk" style="display:none">2. Aké sú podmienky zálohy / zrušenia?</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            <span data-lang="en">Once we set up an appointment I take a 1000–1500 CZK deposit for drafting a sketch of the design. This deposit is deducted from the final price of the tattoo.</span>
-            <span data-lang="sk" style="display:none">Po dohodnutí termínu si beriem zálohu 1000–1500 CZK za navrhnutie skice dizajnu. Táto záloha sa odpočíta z konečnej ceny tetovania.</span>
-          </p>
-          <p>
-            <span data-lang="en">If we have not created a design and you change your mind, something unexpected happens, or you simply do not want to proceed with the appointment (and you let me know at least 48 hours before), the deposit is returned. In other cases, the deposit is not returned.</span>
-            <span data-lang="sk" style="display:none">Ak sme ešte nevytvorili dizajn a rozmyslíte si, stane sa niečo neočakávané alebo jednoducho nechcete pokračovať v termíne (a oznámite mi to aspoň 48 hodín vopred), záloha sa vracia. V iných prípadoch záloha nevracia.</span>
-          </p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span data-lang="en">3. Do you accept group bookings or events?</span>
-          <span data-lang="sk" style="display:none">3. Prijímate skupinové rezervácie alebo eventy?</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            <span data-lang="en">Yes — contact me at <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a> for quotes and availability.</span>
-            <span data-lang="sk" style="display:none">Áno — kontaktujte ma na <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a> pre cenovú ponuku a dostupnosť.</span>
-          </p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span data-lang="en">4. Are there any age or health requirements?</span>
-          <span data-lang="sk" style="display:none">4. Sú nejaké vekové alebo zdravotné požiadavky?</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            <span data-lang="en">If you are under the age of 18, you need to come to the studio with your guardian and fill out the paperwork where they confirm that you can get tattooed.</span>
-            <span data-lang="sk" style="display:none">Ak ste mladší ako 18 rokov, musíte prísť do štúdia so zákonným zástupcom a vyplniť papierovanie, v ktorom potvrdí váš súhlas s tetovaním.</span>
-          </p>
-
-          <p><strong><span data-lang="en">Health / Contraindications (common examples):</span><span data-lang="sk" style="display:none">Zdravotné kontraindikácie (bežné príklady):</span></strong></p>
-          <ul>
-            <li><span data-lang="en">Pregnancy or breastfeeding — generally advised to postpone tattooing until after pregnancy/breastfeeding.</span><span data-lang="sk" style="display:none">Tehotenstvo alebo dojčenie — zvyčajne sa odporúča odložiť tetovanie až po ukončení tehotenstva/dojčenia.</span></li>
-            <li><span data-lang="en">Current or recent use of isotretinoin (Roaccutane) — wait the recommended period after finishing treatment.</span><span data-lang="sk" style="display:none">Súčasné alebo nedávne užívanie izotretinoínu (Roaccutane) — počkajte odporúčanú dobu po ukončení liečby.</span></li>
-            <li><span data-lang="en">Active or unstable skin disease at the tattoo site (eczema, psoriasis flare, severe acne, infected skin).</span><span data-lang="sk" style="display:none">Aktívne alebo nestabilné kožné ochorenie v oblasti tetovania (ekzém, psoriáza, ťažké akné, infikovaná koža).</span></li>
-            <li><span data-lang="en">Weakened immune system or immunosuppressive treatments — consult your physician first.</span><span data-lang="sk" style="display:none">Oslabený imunitný systém alebo imunosupresívne lieky — najprv konzultujte s lekárom.</span></li>
-            <li><span data-lang="en">Bleeding or clotting disorders, or use of blood-thinning medication — increased bleeding risk.</span><span data-lang="sk" style="display:none">Poruchy zrážania krvi alebo užívanie krvácavých liekov — zvýšené riziko krvácania.</span></li>
-            <li><span data-lang="en">Known allergy to tattoo pigments or a previous adverse reaction to a tattoo.</span><span data-lang="sk" style="display:none">Známá alergia na tetovacie pigmenty alebo predchádzajúca nežiaduca reakcia na tetovanie.</span></li>
-            <li><span data-lang="en">Severe systemic illnesses (uncontrolled hepatitis, other serious conditions) — consult your doctor.</span><span data-lang="sk" style="display:none">Vážnejšie systémové choroby (nekontrolovaná hepatitída, iné závažné stavy) — konzultujte s lekárom.</span></li>
-          </ul>
-
-          <p>
-            <span data-lang="en">If you have any chronic illness, take prescription medications, or have doubts, please consult your doctor and let me know before booking so we can confirm it’s safe to proceed.</span>
-            <span data-lang="sk" style="display:none">Ak máte chronické ochorenie, užívate predpisované lieky alebo máte pochybnosti, prosím konzultujte s lekárom a dajte mi vedieť pred rezerváciou, aby sme potvrdili bezpečnosť procedúry.</span>
-          </p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span data-lang="en">5. Where are you located and do you travel?</span>
-          <span data-lang="sk" style="display:none">5. Kde sa nachádzate a cestujete?</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            <span data-lang="en">I tattoo in the center of Prague, and I often work in Bratislava and Košice. I am also open to work in other European cities.</span>
-            <span data-lang="sk" style="display:none">Tetujem v centre Prahy a často pracujem v Bratislave a Košiciach. Som otvorená aj práci v iných európskych mestách.</span>
-          </p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-question">
-          <span data-lang="en">6. Do you offer gift cards or vouchers?</span>
-          <span data-lang="sk" style="display:none">6. Ponúkate darčekové poukážky?</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            <span data-lang="en">Yes — feel free to contact me at <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a> for details.</span>
-            <span data-lang="sk" style="display:none">Áno — neváhajte ma kontaktovať na <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a> pre detaily.</span>
-          </p>
-        </div>
-      </details>
-
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="contact">
-      <h2><span data-lang="en">Contact & Booking</span><span data-lang="sk" style="display:none">Kontakt & Rezervácia</span></h2>
-      <div class="cols">
-        <div>
-          <p class="muted">
-            <span data-lang="en">Email: <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a></span>
-            <span data-lang="sk" style="display:none">E-mail: <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a></span>
-          </p>
-          <p class="muted">
-            <span data-lang="en">Instagram: <a href="https://www.instagram.com/ivsleeps/" target="_blank">Instagram</a></span>
-            <span data-lang="sk" style="display:none">Instagram: <a href="https://www.instagram.com/ivsleeps/" target="_blank">Instagram</a></span>
-          </p>
-          <p class="muted" style="margin-top:10px">
-            <span data-lang="en">If you'd like to book, send a message with your preferred dates & description.</span>
-            <span data-lang="sk" style="display:none">Ak chcete rezervovať, pošlite správu s preferovanými dátumami a popisom.</span>
-          </p>
-        </div>
-        <div class="form">
-          <form action="https://formspree.io/f/xkgeryrk" method="POST">
-            <input type="text" name="name" placeholder="" id="inp-name" required>
-            <input type="email" name="email" placeholder="" id="inp-email" required>
-            <input type="text" name="phone" placeholder="" id="inp-phone">
-            <input type="text" name="subject" placeholder="" id="inp-subject">
-            <textarea name="message" rows="5" placeholder="" id="inp-message" required></textarea>
-            <input type="hidden" name="_subject" value="New booking request from website">
-            <button type="submit">
-              <span data-lang="en">Send booking request</span>
-              <span data-lang="sk" style="display:none">Poslať žiadosť o rezerváciu</span>
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <footer>
+</p>
+<div class="hero-actions"><a class="button button-primary" href="#portfolio"><span data-lang="en">Explore portfolio</span><span data-lang="sk" style="display:none">Preskúmať portfólio</span></a><a class="button button-quiet" href="#flash"><span data-lang="en">View flash designs</span><span data-lang="sk" style="display:none">Flash návrhy</span></a><a class="text-link" href="#contact"><span data-lang="en">Get in touch</span><span data-lang="sk" style="display:none">Kontaktovať</span></a></div><div class="tagline">
+<span data-lang="en">Booking 2026 open</span>
+<span data-lang="sk" style="display:none">Rezervácie pre 2026 otvorené</span>
+</div>
+</div>
+<aside aria-hidden="true" aria-label="Featured flash" class="hero-main"></aside>
+</section>
+<!-- PORTFOLIO -->
+<section aria-label="Portfolio" class="portfolio" id="portfolio">
+<h2><span data-lang="en">Portfolio</span><span data-lang="sk" style="display:none">Portfólio</span></h2>
+<p class="lead">
+<span data-lang="en">Selected recent works — click a thumbnail to open the carousel (stays on the same page).</span>
+<span data-lang="sk" style="display:none">Vybrané nedávne práce — kliknite na náhľad pre otvorenie galérie (zostane na tejto stránke).</span>
+</p>
+<div class="portfolio-grid" id="portfolioGrid" role="list">
+<!-- ordered 1 → 15 (exact filenames & extensions) -->
+<a aria-label="Open Portfolio 1" class="gallery-item" data-full="assets/portfolio-1.jpg" data-index="0" data-type="portfolio" href="#"><img alt="Portfolio 1" src="assets/portfolio-1.jpg"/></a>
+<a aria-label="Open Portfolio 2" class="gallery-item" data-full="assets/portfolio-2.jpg" data-index="1" data-type="portfolio" href="#"><img alt="Portfolio 2" src="assets/portfolio-2.jpg"/></a>
+<a aria-label="Open Portfolio 3" class="gallery-item" data-full="assets/portfolio-3.JPG" data-index="2" data-type="portfolio" href="#"><img alt="Portfolio 3" src="assets/portfolio-3.JPG"/></a>
+<a aria-label="Open Portfolio 4" class="gallery-item" data-full="assets/portfolio-4.jpeg" data-index="3" data-type="portfolio" href="#"><img alt="Portfolio 4" src="assets/portfolio-4.jpeg"/></a>
+<a aria-label="Open Portfolio 5" class="gallery-item" data-full="assets/portfolio-5.jpg" data-index="4" data-type="portfolio" href="#"><img alt="Portfolio 5" src="assets/portfolio-5.jpg"/></a>
+<a aria-label="Open Portfolio 6" class="gallery-item" data-full="assets/portfolio-6.jpg" data-index="5" data-type="portfolio" href="#"><img alt="Portfolio 6" src="assets/portfolio-6.jpg"/></a>
+<a aria-label="Open Portfolio 7" class="gallery-item" data-full="assets/portfolio-7.jpeg" data-index="6" data-type="portfolio" href="#"><img alt="Portfolio 7" src="assets/portfolio-7.jpeg"/></a>
+<a aria-label="Open Portfolio 8" class="gallery-item" data-full="assets/portfolio-8.jpeg" data-index="7" data-type="portfolio" href="#"><img alt="Portfolio 8" src="assets/portfolio-8.jpeg"/></a>
+<a aria-label="Open Portfolio 9" class="gallery-item" data-full="assets/portfolio-9.jpeg" data-index="8" data-type="portfolio" href="#"><img alt="Portfolio 9" src="assets/portfolio-9.jpeg"/></a>
+<a aria-label="Open Portfolio 10" class="gallery-item" data-full="assets/portfolio-10.jpeg" data-index="9" data-type="portfolio" href="#"><img alt="Portfolio 10" src="assets/portfolio-10.jpeg"/></a>
+<a aria-label="Open Portfolio 11" class="gallery-item" data-full="assets/portfolio-11.jpg" data-index="10" data-type="portfolio" href="#"><img alt="Portfolio 11" src="assets/portfolio-11.jpg"/></a>
+<a aria-label="Open Portfolio 12" class="gallery-item" data-full="assets/portfolio-12.JPG" data-index="11" data-type="portfolio" href="#"><img alt="Portfolio 12" src="assets/portfolio-12.JPG"/></a>
+<a aria-label="Open Portfolio 13" class="gallery-item" data-full="assets/portfolio-13.jpeg" data-index="12" data-type="portfolio" href="#"><img alt="Portfolio 13" src="assets/portfolio-13.jpeg"/></a>
+<a aria-label="Open Portfolio 14" class="gallery-item" data-full="assets/portfolio-14.jpeg" data-index="13" data-type="portfolio" href="#"><img alt="Portfolio 14" src="assets/portfolio-14.jpeg"/></a>
+<a aria-label="Open Portfolio 15" class="gallery-item" data-full="assets/portfolio-15.JPG" data-index="14" data-type="portfolio" href="#"><img alt="Portfolio 15" src="assets/portfolio-15.JPG"/></a>
+<a aria-label="Open Portfolio 16" class="gallery-item" data-full="assets/portfolio-16.JPG" data-index="15" data-type="portfolio" href="#"><img alt="Portfolio 16" src="assets/portfolio-16.JPG"/></a>
+<a aria-label="Open Portfolio 17" class="gallery-item" data-full="assets/portfolio-17.JPG" data-index="16" data-type="portfolio" href="#"><img alt="Portfolio 17" src="assets/portfolio-17.JPG"/></a>
+<a aria-label="Open Portfolio 18" class="gallery-item" data-full="assets/portfolio-18.JPG" data-index="17" data-type="portfolio" href="#"><img alt="Portfolio 18" src="assets/temp_image_A87B6D21-34B3-43DA-8A85-3605297E87B5.jpeg"/></a>
+<a aria-label="Open Portfolio 19" class="gallery-item" data-full="assets/portfolio-19.JPG" data-index="18" data-type="portfolio" href="#"><img alt="Portfolio 18" src="assets/temp_image_9DA4EFBD-A134-41A3-B5A7-AE7059E678C8.jpeg"/></a>
+</div>
+</section>
+<!-- PRINTS & PAINTINGS -->
+<section aria-label="Prints &amp; Paintings" class="portfolio" id="prints">
+<h2><span data-lang="en">Prints &amp; Paintings</span><span data-lang="sk" style="display:none">Tlače &amp; Maľby</span></h2>
+<p class="lead">
+<span data-lang="en">Small prints and original paintings available — click to preview.</span>
+<span data-lang="sk" style="display:none">Malé tlače a originálne maľby na predaj — kliknite pre náhľad.</span>
+</p>
+<div class="portfolio-grid" id="printsGrid" role="list">
+<a aria-label="Open Print 1" class="gallery-item" data-full="assets/print-1.JPEG" data-index="50" data-type="print" href="#"><img alt="Print 1" src="assets/print-1.JPEG"/></a>
+<a aria-label="Open Print 2" class="gallery-item" data-full="assets/print-2.JPEG" data-index="51" data-type="print" href="#"><img alt="Print 2" src="assets/print-2.JPEG"/></a>
+<a aria-label="Open Print 3" class="gallery-item" data-full="assets/print-3.jpeg" data-index="52" data-type="print" href="#"><img alt="Print 3" src="assets/print-3.jpeg"/></a>
+<a aria-label="Open Print 4" class="gallery-item" data-full="assets/print-4.JPG" data-index="53" data-type="print" href="#"><img alt="Print 4" src="assets/print-4.JPG"/></a>
+<a aria-label="Open Print 4" class="gallery-item" data-full="assets/print-4.JPG" data-index="53" data-type="print" href="#"><img alt="Print 5" src="assets/print-5.JPG"/></a>
+<a aria-label="Open Painting 1" class="gallery-item" data-full="assets/painting-1.JPEG" data-index="60" data-type="painting" href="#"><img alt="Painting 1" src="assets/painting-1.JPEG"/></a>
+</div>
+</section>
+<!-- FLASH -->
+<section aria-label="Tattoo flash" class="portfolio" id="flash">
+<h2><span data-lang="en">Tattoo Flash</span><span data-lang="sk" style="display:none">Tattoo Flash</span></h2>
+<p class="lead">
+<span data-lang="en">Small flash sheets &amp; quick designs — click to open in the same carousel.</span>
+<span data-lang="sk" style="display:none">Malé flash sheety a rýchle návrhy — kliknite pre otvorenie v galérii.</span>
+</p>
+<div class="flash-cards" id="flashGrid" role="list">
+<div class="flash-card">
+<a aria-label="Open Flash 1" class="gallery-item" data-design-name="Flash 1" data-full="assets/flash-1.jpeg" data-index="20" data-type="flash" href="#"><img alt="Flash 1" src="assets/flash-1.jpeg"/></a>
+<h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 1</h3>
+<div class="flash-actions"><button class="flash-view" data-view-design="true" type="button"><span data-lang="en">View design</span><span data-lang="sk" style="display:none">Zobraziť návrh</span></button><button class="flash-choose" data-choose-design="Flash 1" type="button"><span data-lang="en">Choose this design</span><span data-lang="sk" style="display:none">Vybrať tento návrh</span></button></div></div>
+<div class="flash-card">
+<a aria-label="Open Flash 2" class="gallery-item" data-design-name="Flash 2" data-full="assets/flash-2.jpeg" data-index="21" data-type="flash" href="#"><img alt="Flash 2" src="assets/flash-2.jpeg"/></a>
+<h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 2</h3>
+<div class="flash-actions"><button class="flash-view" data-view-design="true" type="button"><span data-lang="en">View design</span><span data-lang="sk" style="display:none">Zobraziť návrh</span></button><button class="flash-choose" data-choose-design="Flash 2" type="button"><span data-lang="en">Choose this design</span><span data-lang="sk" style="display:none">Vybrať tento návrh</span></button></div></div>
+<div class="flash-card">
+<a aria-label="Open Flash 3" class="gallery-item" data-design-name="Flash 3" data-full="assets/flash-3.JPEG" data-index="22" data-type="flash" href="#"><img alt="Flash 3" src="assets/flash-3.JPEG"/></a>
+<h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 3</h3>
+<div class="flash-actions"><button class="flash-view" data-view-design="true" type="button"><span data-lang="en">View design</span><span data-lang="sk" style="display:none">Zobraziť návrh</span></button><button class="flash-choose" data-choose-design="Flash 3" type="button"><span data-lang="en">Choose this design</span><span data-lang="sk" style="display:none">Vybrať tento návrh</span></button></div></div>
+<div class="flash-card">
+<a aria-label="Open Flash 4" class="gallery-item" data-design-name="Flash 4" data-full="assets/flash-4.jpeg" data-index="23" data-type="flash" href="#"><img alt="Flash 4" src="assets/flash-4.jpeg"/></a>
+<h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 4</h3>
+<div class="flash-actions"><button class="flash-view" data-view-design="true" type="button"><span data-lang="en">View design</span><span data-lang="sk" style="display:none">Zobraziť návrh</span></button><button class="flash-choose" data-choose-design="Flash 4" type="button"><span data-lang="en">Choose this design</span><span data-lang="sk" style="display:none">Vybrať tento návrh</span></button></div></div>
+<div class="flash-card">
+<a aria-label="Open Flash 5" class="gallery-item" data-design-name="Flash 5" data-full="assets/flash-5.jpg" data-index="24" data-type="flash" href="#"><img alt="Flash 5" src="assets/flash-5.jpg"/></a>
+<h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 5</h3>
+<div class="flash-actions"><button class="flash-view" data-view-design="true" type="button"><span data-lang="en">View design</span><span data-lang="sk" style="display:none">Zobraziť návrh</span></button><button class="flash-choose" data-choose-design="Flash 5" type="button"><span data-lang="en">Choose this design</span><span data-lang="sk" style="display:none">Vybrať tento návrh</span></button></div></div>
+<!-- additional flashes that exist in your assets -->
+<div class="flash-card">
+<a aria-label="Open Flash 6" class="gallery-item" data-design-name="Flash 6" data-full="assets/flash-6.jpg" data-index="25" data-type="flash" href="#"><img alt="Flash 6" src="assets/flash-6.jpg"/></a>
+<h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 6</h3>
+<div class="flash-actions"><button class="flash-view" data-view-design="true" type="button"><span data-lang="en">View design</span><span data-lang="sk" style="display:none">Zobraziť návrh</span></button><button class="flash-choose" data-choose-design="Flash 6" type="button"><span data-lang="en">Choose this design</span><span data-lang="sk" style="display:none">Vybrať tento návrh</span></button></div></div>
+<div class="flash-card">
+<a aria-label="Open Flash 7" class="gallery-item" data-design-name="Flash 7" data-full="assets/flash-7.jpg" data-index="26" data-type="flash" href="#"><img alt="Flash 7" src="assets/flash-7.jpg"/></a>
+<h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 7</h3>
+<div class="flash-actions"><button class="flash-view" data-view-design="true" type="button"><span data-lang="en">View design</span><span data-lang="sk" style="display:none">Zobraziť návrh</span></button><button class="flash-choose" data-choose-design="Flash 7" type="button"><span data-lang="en">Choose this design</span><span data-lang="sk" style="display:none">Vybrať tento návrh</span></button></div></div>
+<div class="flash-card">
+<a aria-label="Open Flash 8" class="gallery-item" data-design-name="Flash 8" data-full="assets/flash-8.jpg" data-index="27" data-type="flash" href="#"><img alt="Flash 8" src="assets/flash-8.jpg"/></a>
+<h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 8</h3>
+<div class="flash-actions"><button class="flash-view" data-view-design="true" type="button"><span data-lang="en">View design</span><span data-lang="sk" style="display:none">Zobraziť návrh</span></button><button class="flash-choose" data-choose-design="Flash 8" type="button"><span data-lang="en">Choose this design</span><span data-lang="sk" style="display:none">Vybrať tento návrh</span></button></div></div>
+<div class="flash-card">
+<a aria-label="Open Flash 9" class="gallery-item" data-design-name="Flash 9" data-full="assets/flash-9.jpeg" data-index="28" data-type="flash" href="#"><img alt="Flash 9" src="assets/flash-9.jpeg"/></a>
+<h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 9</h3>
+<div class="flash-actions"><button class="flash-view" data-view-design="true" type="button"><span data-lang="en">View design</span><span data-lang="sk" style="display:none">Zobraziť návrh</span></button><button class="flash-choose" data-choose-design="Flash 9" type="button"><span data-lang="en">Choose this design</span><span data-lang="sk" style="display:none">Vybrať tento návrh</span></button></div></div>
+<div class="flash-card">
+<a aria-label="Open Flash 10" class="gallery-item" data-design-name="Flash 10" data-full="assets/flash-10.jpg" data-index="29" data-type="flash" href="#"><img alt="Flash 10" src="assets/flash-10.jpg"/></a>
+<h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 10</h3>
+<div class="flash-actions"><button class="flash-view" data-view-design="true" type="button"><span data-lang="en">View design</span><span data-lang="sk" style="display:none">Zobraziť návrh</span></button><button class="flash-choose" data-choose-design="Flash 10" type="button"><span data-lang="en">Choose this design</span><span data-lang="sk" style="display:none">Vybrať tento návrh</span></button></div></div>
+<div class="flash-card">
+<a aria-label="Open Flash 10" class="gallery-item" data-design-name="Flash 11" data-full="assets/IMG_2650 (1).jpeg" data-index="30" data-type="flash" href="#"><img alt="Flash 11" src="assets/IMG_2650 (1).jpeg"/></a>
+<h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 11</h3>
+<div class="flash-actions"><button class="flash-view" data-view-design="true" type="button"><span data-lang="en">View design</span><span data-lang="sk" style="display:none">Zobraziť návrh</span></button><button class="flash-choose" data-choose-design="Flash 11" type="button"><span data-lang="en">Choose this design</span><span data-lang="sk" style="display:none">Vybrať tento návrh</span></button></div></div>
+<div class="flash-card">
+<a aria-label="Open Flash 10" class="gallery-item" data-design-name="Flash 12" data-full="assets/IMG_5111.jpeg" data-index="31" data-type="flash" href="#"><img alt="Flash 12" src="assets/IMG_5111.jpeg"/></a>
+<h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 12</h3>
+<div class="flash-actions"><button class="flash-view" data-view-design="true" type="button"><span data-lang="en">View design</span><span data-lang="sk" style="display:none">Zobraziť návrh</span></button><button class="flash-choose" data-choose-design="Flash 12" type="button"><span data-lang="en">Choose this design</span><span data-lang="sk" style="display:none">Vybrať tento návrh</span></button></div></div>
+<div class="flash-card">
+<a aria-label="Open Flash 13" class="gallery-item" data-design-name="Flash 13" data-full="assets/1A564487-6B7B-46C3-AC3A-F88800A56A80.jpeg" data-index="32" data-type="flash" href="#"><img alt="Flash 12" src="assets/1A564487-6B7B-46C3-AC3A-F88800A56A80.jpeg"/></a>
+<h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 13</h3>
+<div class="flash-actions"><button class="flash-view" data-view-design="true" type="button"><span data-lang="en">View design</span><span data-lang="sk" style="display:none">Zobraziť návrh</span></button><button class="flash-choose" data-choose-design="Flash 13" type="button"><span data-lang="en">Choose this design</span><span data-lang="sk" style="display:none">Vybrať tento návrh</span></button></div></div>
+<div class="flash-card">
+<a aria-label="Open Flash 14" class="gallery-item" data-design-name="Flash 14" data-full="assets/flash-14.jpg" data-index="33" data-type="flash" href="#"><img alt="Flash 14" src="assets/flash-14.jpg"/></a>
+<h3 style="margin:10px 0 6px;font-family:Playfair Display,serif;font-size:16px;">Flash 14</h3>
+<div class="flash-actions"><button class="flash-view" data-view-design="true" type="button"><span data-lang="en">View design</span><span data-lang="sk" style="display:none">Zobraziť návrh</span></button><button class="flash-choose" data-choose-design="Flash 14" type="button"><span data-lang="en">Choose this design</span><span data-lang="sk" style="display:none">Vybrať tento návrh</span></button></div></div>
+</div>
+</section>
+<!-- INSTAGRAM -->
+<section aria-label="Instagram gallery" class="insta-section" id="insta">
+<h2 style="font-family:Playfair Display,serif;margin:0 0 8px;">
+<span data-lang="en">From my Instagram</span>
+<span data-lang="sk" style="display:none">Z môjho Instagramu</span>
+</h2>
+<p class="muted" style="margin:0 0 10px">
+<span data-lang="en">Latest posts from <a href="https://www.instagram.com/ivsleeps/" target="_blank">@ivsleeps</a></span>
+<span data-lang="sk" style="display:none">Najnovšie príspevky z <a href="https://www.instagram.com/ivsleeps/" target="_blank">@ivsleeps</a></span>
+</p>
+<div aria-busy="true" aria-live="polite" class="insta-grid" id="instaGrid"></div>
+<div class="insta-fallback" id="instaFallback" style="display:none;">
+<span data-lang="en">Could not load Instagram posts — <a href="https://www.instagram.com/ivsleeps/" target="_blank">view on IG</a>.</span>
+<span data-lang="sk" style="display:none">Nepodarilo sa načítať príspevky z Instagramu — <a href="https://www.instagram.com/ivsleeps/" target="_blank">pozrieť na IG</a>.</span>
+</div>
+</section>
+<!-- ABOUT -->
+<section class="about" id="about">
+<div class="text">
+<h2><span data-lang="en">About me</span><span data-lang="sk" style="display:none">O mne</span></h2>
+<p class="muted">
+<span data-lang="en">Art has always been my grounding force — something I’ve returned to since the moment I first picked up a pencil. My journey took me through different industries, but tattooing found me at exactly the right time, allowing me to create the kind of work that feels both intimate and expressive.</span>
+<span data-lang="sk" style="display:none">Umenie bolo vždy mojím ukotvením — niečo, ku čomu sa vraciam od prvého okamihu, keď som vzala ceruzku do ruky. Moja cesta ma prešla rôznymi odvetviami, no tetovanie ma našlo presne v správny čas a umožnilo mi tvoriť diela, ktoré sú osobné a výrazné.</span>
+</p>
+<p class="muted">
+<span data-lang="en">What I treasure most is the experience we share: creating something timeless together and seeing your eyes light up when you look at your new piece. That moment is priceless to me.</span>
+<span data-lang="sk" style="display:none">Najviac si vážim momenty, ktoré spolu zdieľame: hlavne ak spolu vytvoríme niečo nadčasové a Vám sa rozžiaria oči pri pohľade na Vaše telo.</span>
+</p>
+<p class="muted">
+<span data-lang="en">Above all, I want everyone who steps into my space to feel comfortable, welcomed, and safe.</span>
+<span data-lang="sk" style="display:none">Predovšetkým chcem, aby sa každý, kto vstúpi do štúdia, cítil pohodlne, vítaný a v bezpečí.</span>
+</p>
+</div>
+<div class="portrait"><img alt="Portrait" src="assets/portrait.jpg"/></div>
+</section>
+<!-- FAQ (inserted before CONTACT) -->
+<section aria-labelledby="faq-heading" class="faq" id="faq">
+<h2 id="faq-heading" style="font-family:Playfair Display,serif;margin:0 0 8px;">
+<span data-lang="en">Frequently asked questions</span>
+<span data-lang="sk" style="display:none">Často kladené otázky</span>
+</h2>
+<details class="faq-item">
+<summary class="faq-question">
+<span data-lang="en">1. How do I book?</span>
+<span data-lang="sk" style="display:none">1. Ako si rezervovať termín?</span>
+</summary>
+<div class="faq-answer">
+<p>
+<span data-lang="en">To reserve an appointment you can either use the booking form on this site or write me an email at <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a>. Please include: placement of the tattoo, approximate size, references if any, budget if relevant, and your ideal dates for the appointment.</span>
+<span data-lang="sk" style="display:none">Pre rezerváciu termínu môžete použiť rezervačný formulár na stránke alebo mi napísať e-mail na <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a>. Prosím uveďte: miesto tetovania, približnú veľkosť, referencie ak máte, rozpočet ak je relevantný a preferované dátumy pre termín.</span>
+</p>
+</div>
+</details>
+<details class="faq-item">
+<summary class="faq-question">
+<span data-lang="en">2. What is your deposit / cancellation policy?</span>
+<span data-lang="sk" style="display:none">2. Aké sú podmienky zálohy / zrušenia?</span>
+</summary>
+<div class="faq-answer">
+<p>
+<span data-lang="en">Once we set up an appointment I take a 1000–1500 CZK deposit for drafting a sketch of the design. This deposit is deducted from the final price of the tattoo.</span>
+<span data-lang="sk" style="display:none">Po dohodnutí termínu si beriem zálohu 1000–1500 CZK za navrhnutie skice dizajnu. Táto záloha sa odpočíta z konečnej ceny tetovania.</span>
+</p>
+<p>
+<span data-lang="en">If we have not created a design and you change your mind, something unexpected happens, or you simply do not want to proceed with the appointment (and you let me know at least 48 hours before), the deposit is returned. In other cases, the deposit is not returned.</span>
+<span data-lang="sk" style="display:none">Ak sme ešte nevytvorili dizajn a rozmyslíte si, stane sa niečo neočakávané alebo jednoducho nechcete pokračovať v termíne (a oznámite mi to aspoň 48 hodín vopred), záloha sa vracia. V iných prípadoch záloha nevracia.</span>
+</p>
+</div>
+</details>
+<details class="faq-item">
+<summary class="faq-question">
+<span data-lang="en">3. Do you accept group bookings or events?</span>
+<span data-lang="sk" style="display:none">3. Prijímate skupinové rezervácie alebo eventy?</span>
+</summary>
+<div class="faq-answer">
+<p>
+<span data-lang="en">Yes — contact me at <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a> for quotes and availability.</span>
+<span data-lang="sk" style="display:none">Áno — kontaktujte ma na <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a> pre cenovú ponuku a dostupnosť.</span>
+</p>
+</div>
+</details>
+<details class="faq-item">
+<summary class="faq-question">
+<span data-lang="en">4. Are there any age or health requirements?</span>
+<span data-lang="sk" style="display:none">4. Sú nejaké vekové alebo zdravotné požiadavky?</span>
+</summary>
+<div class="faq-answer">
+<p>
+<span data-lang="en">If you are under the age of 18, you need to come to the studio with your guardian and fill out the paperwork where they confirm that you can get tattooed.</span>
+<span data-lang="sk" style="display:none">Ak ste mladší ako 18 rokov, musíte prísť do štúdia so zákonným zástupcom a vyplniť papierovanie, v ktorom potvrdí váš súhlas s tetovaním.</span>
+</p>
+<p><strong><span data-lang="en">Health / Contraindications (common examples):</span><span data-lang="sk" style="display:none">Zdravotné kontraindikácie (bežné príklady):</span></strong></p>
+<ul>
+<li><span data-lang="en">Pregnancy or breastfeeding — generally advised to postpone tattooing until after pregnancy/breastfeeding.</span><span data-lang="sk" style="display:none">Tehotenstvo alebo dojčenie — zvyčajne sa odporúča odložiť tetovanie až po ukončení tehotenstva/dojčenia.</span></li>
+<li><span data-lang="en">Current or recent use of isotretinoin (Roaccutane) — wait the recommended period after finishing treatment.</span><span data-lang="sk" style="display:none">Súčasné alebo nedávne užívanie izotretinoínu (Roaccutane) — počkajte odporúčanú dobu po ukončení liečby.</span></li>
+<li><span data-lang="en">Active or unstable skin disease at the tattoo site (eczema, psoriasis flare, severe acne, infected skin).</span><span data-lang="sk" style="display:none">Aktívne alebo nestabilné kožné ochorenie v oblasti tetovania (ekzém, psoriáza, ťažké akné, infikovaná koža).</span></li>
+<li><span data-lang="en">Weakened immune system or immunosuppressive treatments — consult your physician first.</span><span data-lang="sk" style="display:none">Oslabený imunitný systém alebo imunosupresívne lieky — najprv konzultujte s lekárom.</span></li>
+<li><span data-lang="en">Bleeding or clotting disorders, or use of blood-thinning medication — increased bleeding risk.</span><span data-lang="sk" style="display:none">Poruchy zrážania krvi alebo užívanie krvácavých liekov — zvýšené riziko krvácania.</span></li>
+<li><span data-lang="en">Known allergy to tattoo pigments or a previous adverse reaction to a tattoo.</span><span data-lang="sk" style="display:none">Známá alergia na tetovacie pigmenty alebo predchádzajúca nežiaduca reakcia na tetovanie.</span></li>
+<li><span data-lang="en">Severe systemic illnesses (uncontrolled hepatitis, other serious conditions) — consult your doctor.</span><span data-lang="sk" style="display:none">Vážnejšie systémové choroby (nekontrolovaná hepatitída, iné závažné stavy) — konzultujte s lekárom.</span></li>
+</ul>
+<p>
+<span data-lang="en">If you have any chronic illness, take prescription medications, or have doubts, please consult your doctor and let me know before booking so we can confirm it’s safe to proceed.</span>
+<span data-lang="sk" style="display:none">Ak máte chronické ochorenie, užívate predpisované lieky alebo máte pochybnosti, prosím konzultujte s lekárom a dajte mi vedieť pred rezerváciou, aby sme potvrdili bezpečnosť procedúry.</span>
+</p>
+</div>
+</details>
+<details class="faq-item">
+<summary class="faq-question">
+<span data-lang="en">5. Where are you located and do you travel?</span>
+<span data-lang="sk" style="display:none">5. Kde sa nachádzate a cestujete?</span>
+</summary>
+<div class="faq-answer">
+<p>
+<span data-lang="en">I tattoo in the center of Prague, and I often work in Bratislava and Košice. I am also open to work in other European cities.</span>
+<span data-lang="sk" style="display:none">Tetujem v centre Prahy a často pracujem v Bratislave a Košiciach. Som otvorená aj práci v iných európskych mestách.</span>
+</p>
+</div>
+</details>
+<details class="faq-item">
+<summary class="faq-question">
+<span data-lang="en">6. Do you offer gift cards or vouchers?</span>
+<span data-lang="sk" style="display:none">6. Ponúkate darčekové poukážky?</span>
+</summary>
+<div class="faq-answer">
+<p>
+<span data-lang="en">Yes — feel free to contact me at <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a> for details.</span>
+<span data-lang="sk" style="display:none">Áno — neváhajte ma kontaktovať na <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a> pre detaily.</span>
+</p>
+</div>
+</details>
+</section>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+<h2><span data-lang="en">Contact &amp; Booking</span><span data-lang="sk" style="display:none">Kontakt &amp; Rezervácia</span></h2>
+<div class="cols">
+<div>
+<p class="muted">
+<span data-lang="en">Email: <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a></span>
+<span data-lang="sk" style="display:none">E-mail: <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a></span>
+</p>
+<p class="muted">
+<span data-lang="en">Instagram: <a href="https://www.instagram.com/ivsleeps/" target="_blank">Instagram</a></span>
+<span data-lang="sk" style="display:none">Instagram: <a href="https://www.instagram.com/ivsleeps/" target="_blank">Instagram</a></span>
+</p>
+<p class="muted" style="margin-top:10px">
+<span data-lang="en">If you'd like to book, send a message with your preferred dates &amp; description.</span>
+<span data-lang="sk" style="display:none">Ak chcete rezervovať, pošlite správu s preferovanými dátumami a popisom.</span>
+</p>
+</div>
+<div class="form">
+<form action="https://formspree.io/f/xkgeryrk" id="bookingForm" method="POST" novalidate=""><div aria-live="polite" class="selected-design" hidden="True" id="selectedDesign"><span class="selected-label"><span data-lang="en">Selected flash design</span><span data-lang="sk" style="display:none">Vybraný flash návrh</span></span><strong id="selectedDesignName"></strong><button class="remove-design" id="removeDesign" type="button"><span data-lang="en">Remove</span><span data-lang="sk" style="display:none">Odstrániť</span></button></div><input id="selectedDesignField" name="selected_design" type="hidden" value=""/>
+<input id="inp-name" name="name" placeholder="" required="" type="text"/>
+<input id="inp-email" name="email" placeholder="" required="" type="email"/>
+<input id="inp-phone" name="phone" placeholder="" type="text"/>
+<input id="inp-subject" name="subject" placeholder="" type="text"/>
+<textarea id="inp-message" name="message" placeholder="" required="" rows="5"></textarea>
+<input name="_subject" type="hidden" value="New booking request from website"/>
+<button type="submit">
+<span data-lang="en">Send booking request</span>
+<span data-lang="sk" style="display:none">Poslať žiadosť o rezerváciu</span>
+</button>
+<p aria-live="polite" class="form-status" id="formStatus" role="status"></p></form>
+</div>
+</div>
+</section>
+<footer>
       © <span id="year"></span> ivsleeps · Prague, CZ · <span class="muted">
-        <span data-lang="en">All rights reserved</span>
-        <span data-lang="sk" style="display:none">Všetky práva vyhradené</span>
-      </span>
-    </footer>
+<span data-lang="en">All rights reserved</span>
+<span data-lang="sk" style="display:none">Všetky práva vyhradené</span>
+</span>
+</footer>
+</div>
+<!-- Modal carousel (single modal used for all items) -->
+<div aria-hidden="true" aria-label="Image viewer" class="modal" id="modal" role="dialog">
+<div class="viewer" id="viewer">
+<button aria-label="Close viewer" class="ctrl close" id="closeBtn">✕</button>
+<div class="controls">
+<button aria-label="Previous" class="ctrl" id="prevBtn">◀</button>
+<button aria-label="Next" class="ctrl" id="nextBtn">▶</button>
+</div>
+<div id="slideWrap">
+<img alt="" id="modalImage" src="">
+</img></div>
+<div class="caption" id="modalCaption"></div>
+<div aria-hidden="false" class="dots" id="modalDots"></div>
+</div>
+</div>
 
-  </div>
-
-  <!-- Modal carousel (single modal used for all items) -->
-  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-label="Image viewer">
-    <div class="viewer" id="viewer">
-      <button class="ctrl close" id="closeBtn" aria-label="Close viewer">✕</button>
-      <div class="controls">
-        <button class="ctrl" id="prevBtn" aria-label="Previous">◀</button>
-        <button class="ctrl" id="nextBtn" aria-label="Next">▶</button>
-      </div>
-      <div id="slideWrap">
-        <img id="modalImage" src="" alt="" />
-      </div>
-      <div class="caption" id="modalCaption"></div>
-      <div class="dots" id="modalDots" aria-hidden="false"></div>
-    </div>
-  </div>
-
-<script>
-  // --- language toggle ---
-  (function(){
-    const SUPPORTED = ['en','sk'];
-    function setLang(lang){
-      if(!SUPPORTED.includes(lang)) lang = 'en';
-      // set document lang for accessibility
-      document.documentElement.lang = lang === 'sk' ? 'sk' : 'en';
-      // toggle visible nodes
-      document.querySelectorAll('[data-lang]').forEach(el=>{
-        el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
-      });
-      // update placeholders in form
-      const placeholders = {
-        en: {
-          name: 'Your name',
-          email: 'Email',
-          phone: 'Phone (optional)',
-          subject: 'Subject',
-          message: 'Describe what you\'d like',
-        },
-        sk: {
-          name: 'Vaše meno',
-          email: 'E-mail',
-          phone: 'Telefón (nepovinné)',
-          subject: 'Predmet',
-          message: 'Opíšte, čo by ste chceli',
-        }
-      };
-      const p = placeholders[lang] || placeholders.en;
-      document.getElementById('inp-name').placeholder = p.name;
-      document.getElementById('inp-email').placeholder = p.email;
-      document.getElementById('inp-phone').placeholder = p.phone;
-      document.getElementById('inp-subject').placeholder = p.subject;
-      document.getElementById('inp-message').placeholder = p.message;
-
-      // update language buttons aria-pressed
-      document.querySelectorAll('[data-lang-toggle]').forEach(btn=>{
-        const bLang = btn.getAttribute('data-lang-toggle');
-        btn.setAttribute('aria-pressed', String(bLang === lang));
-      });
-
-      // persist
-      try{ localStorage.setItem('site-lang', lang); }catch(e){}
-    }
-
-    // init: load from localStorage or browser language
-    let lang = 'en';
-    try{
-      const saved = localStorage.getItem('site-lang');
-      if(saved && SUPPORTED.includes(saved)) lang = saved;
-      else {
-        const nav = navigator.language || navigator.userLanguage || 'en';
-        if(nav.startsWith('sk')) lang = 'sk';
-      }
-    }catch(e){}
-
-    // set initial
-    setLang(lang);
-
-    // attach handlers
-    document.querySelectorAll('[data-lang-toggle]').forEach(btn=>{
-      btn.addEventListener('click', ()=> setLang(btn.getAttribute('data-lang-toggle')));
-    });
-
-    // expose for debugging
-    window.setSiteLang = setLang;
-  })();
-
-  // --- end language toggle ---
-
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  const hamburger = document.getElementById('hamburger');
-  const mobileNav = document.getElementById('mobileNav');
-
-  hamburger.addEventListener('click', () => {
-    const open = mobileNav.classList.toggle('open');
-    mobileNav.setAttribute('aria-hidden', !open);
-    hamburger.setAttribute('aria-expanded', open);
-  });
-
-  // Smooth anchor scrolling
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click', e=>{
-      const href = a.getAttribute('href');
-      if(!href.startsWith('#') || href === '#') return;
-      const target = document.querySelector(href);
-      if(target){
-        e.preventDefault();
-        target.scrollIntoView({behavior:'smooth',block:'start'});
-      }
-    });
-  });
-
-  // Build list of gallery items (portfolio + flash + prints + paintings)
-  const galleryNodes = Array.from(document.querySelectorAll('.gallery-item'));
-  const items = galleryNodes.map((node, idx) => ({
-    full: node.dataset.full || node.getAttribute('href'),
-    type: node.dataset.type || 'portfolio',
-    title: node.querySelector('img')?.alt || '',
-    thumb: node.querySelector('img')?.src || '',
-    index: idx
-  }));
-
-  // Modal elements
-  const modal = document.getElementById('modal');
-  const modalImage = document.getElementById('modalImage');
-  const modalCaption = document.getElementById('modalCaption');
-  const modalDots = document.getElementById('modalDots');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const closeBtn = document.getElementById('closeBtn');
-
-  let current = 0;
-
-  function openModal(startIndex){
-    current = startIndex;
-    updateModal();
-    modal.classList.add('open');
-    modal.setAttribute('aria-hidden','false');
-    document.body.style.overflow = 'hidden';
-    document.addEventListener('keydown', onKey);
-  }
-
-  function closeModal(){
-    modal.classList.remove('open');
-    modal.setAttribute('aria-hidden','true');
-    document.body.style.overflow = '';
-    document.removeEventListener('keydown', onKey);
-  }
-
-  function onKey(e){
-    if(e.key === 'Escape') closeModal();
-    if(e.key === 'ArrowLeft') showPrev();
-    if(e.key === 'ArrowRight') showNext();
-  }
-
-  function showPrev(){
-    current = (current - 1 + items.length) % items.length;
-    updateModal();
-  }
-  function showNext(){
-    current = (current + 1) % items.length;
-    updateModal();
-  }
-
-  function updateModal(){
-    const it = items[current];
-    modalImage.src = it.full;
-    modalImage.alt = it.title || '';
-    modalCaption.textContent = it.title ? it.title + ' — ' + it.type.toUpperCase() : it.type.toUpperCase();
-    modalImage.loading = 'lazy';
-    renderDots();
-    closeBtn.focus();
-  }
-
-  function renderDots(){
-    modalDots.innerHTML = '';
-    items.forEach((it, i)=>{
-      const d = document.createElement('button');
-      d.className = 'dot' + (i===current? ' active':'');
-      d.setAttribute('aria-label','Go to image '+(i+1));
-      d.addEventListener('click', ()=>{ current=i; updateModal(); });
-      modalDots.appendChild(d);
-    });
-  }
-
-  // Attach click handlers to thumbnails to open modal
-  galleryNodes.forEach((node, i)=>{
-    node.addEventListener('click', (e)=>{
-      e.preventDefault();
-      openModal(i);
-    });
-  });
-
-  prevBtn.addEventListener('click', showPrev);
-  nextBtn.addEventListener('click', showNext);
-  closeBtn.addEventListener('click', closeModal);
-
-  // Click outside image to close
-  modal.addEventListener('click', (e)=>{
-    if(e.target === modal) closeModal();
-  });
-
-  // Simple touch swipe support
-  let touchStartX = 0;
-  let touchEndX = 0;
-  modalImage.addEventListener('touchstart', (e)=>{ touchStartX = e.changedTouches[0].screenX; });
-  modalImage.addEventListener('touchend', (e)=>{ touchEndX = e.changedTouches[0].screenX; handleGesture(); });
-  function handleGesture(){
-    if(touchEndX + 30 < touchStartX) showNext();
-    if(touchEndX - 30 > touchStartX) showPrev();
-  }
-
-  // Prevent accidental keyboard scroll when modal open
-  ['keydown','keyup'].forEach(ev=>{
-    window.addEventListener(ev, (e)=>{
-      if(modal.classList.contains('open') && ['ArrowLeft','ArrowRight'].includes(e.key)) e.preventDefault();
-    }, {passive:false});
-  });
-
-  // --- DEBUG: check exact asset availability (will log missing files to console) ---
-  (function checkAssets(){
-    const imgs = Array.from(document.querySelectorAll('.wrap img'));
-    const tests = imgs.map(img=>{
-      const url = img.getAttribute('src');
-      return new Promise(resolve=>{
-        const t = new Image();
-        t.onload = ()=>resolve({url, ok:true});
-        t.onerror = ()=>resolve({url, ok:false});
-        t.src = url + '?_check=' + Date.now();
-      });
-    });
-    Promise.all(tests).then(results=>{
-      const missing = results.filter(r=>!r.ok);
-      if(missing.length){
-        console.warn('Missing assets (check names/letter-case in `website/assets`):');
-        missing.forEach(m=>console.warn(' -', m.url));
-      } else {
-        console.log('All listed assets loaded successfully.');
-      }
-    });
-  })();
-  // --- end debug ---
-
-</script>
-
-</body>
+<script defer="True" src="script.js"></script></body>
 </html> 
