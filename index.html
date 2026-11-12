@@ -324,38 +324,39 @@ Momentálne tetujem v štúdiu True Love Tattoo Club v srdci Prahy, no rada cest
 </details>
 </section>
 <!-- CONTACT -->
-<section class="contact" id="contact">
-<h2><span data-lang="en">Contact &amp; Booking</span><span data-lang="sk" style="display:none">Kontakt &amp; Rezervácia</span></h2>
-<div class="cols">
-<div>
-<p class="muted">
-<span data-lang="en">Email: <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a></span>
-<span data-lang="sk" style="display:none">E-mail: <a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a></span>
-</p>
-<p class="muted">
-<span data-lang="en">Instagram: <a href="https://www.instagram.com/ivsleeps/" target="_blank">Instagram</a></span>
-<span data-lang="sk" style="display:none">Instagram: <a href="https://www.instagram.com/ivsleeps/" target="_blank">Instagram</a></span>
-</p>
-<p class="muted" style="margin-top:10px">
-<span data-lang="en">If you'd like to book, send a message with your preferred dates &amp; description.</span>
-<span data-lang="sk" style="display:none">Ak chcete rezervovať, pošlite správu s preferovanými dátumami a popisom.</span>
-</p>
+<section class="contact booking-section" id="contact">
+<h2><span data-lang="en">Booking request</span><span data-lang="sk" style="display:none">Žiadosť o rezerváciu</span></h2>
+<div class="booking-intro"><p><span data-lang="en">Tell me a little about the tattoo you have in mind. I’ll review your request and get back to you personally. Sending this form is not a confirmed appointment.</span><span data-lang="sk" style="display:none">Napíšte mi niečo o tetovaní, ktoré máte na mysli. Vašu žiadosť si prejdem a osobne sa vám ozvem. Odoslaním formulára ešte nevzniká potvrdený termín.</span></p><p class="booking-meta"><span data-lang="en">Prague, CZ · For questions: </span><span data-lang="sk" style="display:none">Praha, CZ · V prípade otázok: </span><a href="mailto:ivsleeps@gmail.com">ivsleeps@gmail.com</a></p></div>
+<div class="booking-form-wrap">
+<form action="https://formspree.io/f/xkgeryrk" id="bookingForm" method="POST" novalidate>
+<div aria-live="polite" class="selected-design" hidden id="selectedDesign"><span class="selected-label"><span data-lang="en">Selected flash design</span><span data-lang="sk" style="display:none">Vybraný flash návrh</span></span><strong id="selectedDesignName"></strong><button class="remove-design" id="removeDesign" type="button"><span data-lang="en">Remove</span><span data-lang="sk" style="display:none">Odstrániť</span></button></div>
+<input id="selectedDesignField" name="selected_design" type="hidden" value="">
+<input name="_subject" type="hidden" value="New IVSLEEPS booking request">
+<div class="booking-step"><span class="step-number">01</span><h3><span data-lang="en">Your details</span><span data-lang="sk" style="display:none">Vaše údaje</span></h3></div>
+<div class="booking-grid">
+<label><span data-lang="en">Name *</span><span data-lang="sk" style="display:none">Meno *</span><input id="inp-name" name="name" autocomplete="name" placeholder="Your name" required></label>
+<label><span data-lang="en">Email *</span><span data-lang="sk" style="display:none">E-mail *</span><input id="inp-email" name="email" type="email" autocomplete="email" placeholder="Email address" required></label>
+<label><span data-lang="en">Instagram (optional)</span><span data-lang="sk" style="display:none">Instagram (nepovinné)</span><input id="inp-instagram" name="instagram" placeholder="@yourusername"></label>
+<label><span data-lang="en">Phone (optional)</span><span data-lang="sk" style="display:none">Telefón (nepovinné)</span><input id="inp-phone" name="phone" type="tel" autocomplete="tel" placeholder="Phone number"></label>
 </div>
-<div class="form">
-<form action="https://formspree.io/f/xkgeryrk" id="bookingForm" method="POST" novalidate=""><div aria-live="polite" class="selected-design" hidden="True" id="selectedDesign"><span class="selected-label"><span data-lang="en">Selected flash design</span><span data-lang="sk" style="display:none">Vybraný flash návrh</span></span><strong id="selectedDesignName"></strong><button class="remove-design" id="removeDesign" type="button"><span data-lang="en">Remove</span><span data-lang="sk" style="display:none">Odstrániť</span></button></div><input id="selectedDesignField" name="selected_design" type="hidden" value=""/>
-<input id="inp-name" name="name" placeholder="" required="" type="text"/>
-<input id="inp-email" name="email" placeholder="" required="" type="email"/>
-<input id="inp-phone" name="phone" placeholder="" type="text"/>
-<input id="inp-subject" name="subject" placeholder="" type="text"/>
-<textarea id="inp-message" name="message" placeholder="" required="" rows="5"></textarea>
-<input name="_subject" type="hidden" value="New booking request from website"/>
-<button type="submit">
-<span data-lang="en">Send booking request</span>
-<span data-lang="sk" style="display:none">Poslať žiadosť o rezerváciu</span>
-</button>
-<p aria-live="polite" class="form-status" id="formStatus" role="status"></p></form>
+<div class="booking-step"><span class="step-number">02</span><h3><span data-lang="en">Your tattoo idea</span><span data-lang="sk" style="display:none">Vaša predstava</span></h3></div>
+<div class="booking-grid">
+<label><span data-lang="en">Placement *</span><span data-lang="sk" style="display:none">Umiestnenie *</span><input id="inp-placement" name="placement" placeholder="e.g. upper arm, thigh, back" required></label>
+<label><span data-lang="en">Approximate size *</span><span data-lang="sk" style="display:none">Približná veľkosť *</span><input id="inp-size" name="approximate_size" placeholder="e.g. 10 × 15 cm" required></label>
+<label><span data-lang="en">Style / type</span><span data-lang="sk" style="display:none">Štýl / typ</span><select id="inp-style" name="style"><option value="">Choose if you know</option><option>Surreal / fantasy</option><option>Anime / character</option><option>Dark ornamental</option><option>Fine line</option><option>Custom / not sure</option></select></label>
+<label><span data-lang="en">Budget (optional)</span><span data-lang="sk" style="display:none">Rozpočet (nepovinné)</span><input id="inp-budget" name="budget" placeholder="Approximate budget in CZK"></label>
 </div>
+<label class="booking-full"><span data-lang="en">Describe your idea *</span><span data-lang="sk" style="display:none">Opíšte svoju predstavu *</span><textarea id="inp-message" name="message" placeholder="Tell me about the concept, details that matter to you, and anything else I should know…" required rows="5"></textarea></label>
+<label class="booking-full"><span data-lang="en">Reference links (optional)</span><span data-lang="sk" style="display:none">Odkazy na referencie (nepovinné)</span><input id="inp-references" name="reference_links" placeholder="Paste links to your reference images"></label>
+<div class="booking-step"><span class="step-number">03</span><h3><span data-lang="en">When would you like to come?</span><span data-lang="sk" style="display:none">Kedy by ste chceli prísť?</span></h3></div>
+<div class="booking-grid">
+<label><span data-lang="en">Preferred date / period</span><span data-lang="sk" style="display:none">Preferovaný dátum / obdobie</span><input id="inp-date" name="preferred_date" placeholder="e.g. May–June 2026"></label>
+<label><span data-lang="en">Date flexibility</span><span data-lang="sk" style="display:none">Flexibilita termínu</span><select id="inp-flexibility" name="date_flexibility"><option value="Flexible">Flexible</option><option value="Specific dates only">Specific dates only</option><option value="First available">First available</option></select></label>
 </div>
+<p class="booking-note"><span data-lang="en">* Required fields. Please include links to reference images if you have them. I’ll reply by email to discuss the details and availability.</span><span data-lang="sk" style="display:none">* Povinné polia. Ak máte referenčné obrázky, priložte odkazy. Ozvem sa vám e-mailom a dohodneme detaily a dostupnosť.</span></p>
+<button class="booking-submit" type="submit"><span data-lang="en">Send booking request</span><span data-lang="sk" style="display:none">Odoslať žiadosť o rezerváciu</span><span aria-hidden="true">↗</span></button>
+<p aria-live="polite" class="form-status" id="formStatus" role="status"></p>
+</form></div>
 </section>
 <footer>
       © <span id="year"></span> ivsleeps · Prague, CZ · <span class="muted">

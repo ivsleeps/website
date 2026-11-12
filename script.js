@@ -3,8 +3,8 @@
   const $ = (selector, root=document) => root.querySelector(selector);
   const $$ = (selector, root=document) => [...root.querySelectorAll(selector)];
   const translations = {
-    en:{name:'Your name',email:'Email address',phone:'Phone (optional)',subject:'Subject',message:"Tell me about the tattoo you'd like",sending:'Sending your request…',success:'Thank you — your request has been sent.',error:'Something went wrong. Please try again or email ivsleeps@gmail.com.',network:'Could not send the form. Check your connection and try again.',selected:'Hi! I’m interested in the following design: '},
-    sk:{name:'Vaše meno',email:'E-mailová adresa',phone:'Telefón (nepovinné)',subject:'Predmet',message:'Opíšte tetovanie, o ktoré máte záujem',sending:'Žiadosť sa odosiela…',success:'Ďakujem — vaša správa bola odoslaná.',error:'Niečo sa pokazilo. Skúste to znova alebo napíšte na ivsleeps@gmail.com.',network:'Formulár sa nepodarilo odoslať. Skontrolujte pripojenie a skúste znova.',selected:'Ahoj! Mám záujem o nasledujúci návrh: '}
+    en:{name:'Your name',email:'Email address',phone:'Phone number',instagram:'@yourusername',placement:'e.g. upper arm, thigh, back',size:'e.g. 10 × 15 cm',style:'Choose if you know',budget:'Approximate budget in CZK',message:'Tell me about the concept, details that matter to you, and anything else I should know…',sending:'Sending your request…',success:'Thank you — your request has been sent.',error:'Something went wrong. Please try again or email ivsleeps@gmail.com.',network:'Could not send the form. Check your connection and try again.',selected:'Hi! I’m interested in the following design: '},
+    sk:{name:'Vaše meno',email:'E-mailová adresa',phone:'Telefónne číslo',instagram:'@vašoužívateľskémeno',placement:'napr. rameno, stehno, chrbát',size:'napr. 10 × 15 cm',style:'Vyberte, ak viete',budget:'Približný rozpočet v CZK',message:'Opíšte koncept, dôležité detaily a všetko, čo by som mala vedieť…',sending:'Žiadosť sa odosiela…',success:'Ďakujem — vaša správa bola odoslaná.',error:'Niečo sa pokazilo. Skúste to znova alebo napíšte na ivsleeps@gmail.com.',network:'Formulár sa nepodarilo odoslať. Skontrolujte pripojenie a skúste znova.',selected:'Ahoj! Mám záujem o nasledujúci návrh: '}
   };
   let language='en';
   const form=$('#bookingForm');
@@ -21,7 +21,7 @@
     document.documentElement.lang=language;
     $$('[data-lang]').forEach(node=>{node.style.display=node.dataset.lang===language?'':'none';});
     const p=translations[language];
-    const placeholders={'#inp-name':p.name,'#inp-email':p.email,'#inp-phone':p.phone,'#inp-subject':p.subject,'#inp-message':p.message};
+    const placeholders={'#inp-name':p.name,'#inp-email':p.email,'#inp-phone':p.phone,'#inp-instagram':p.instagram,'#inp-placement':p.placement,'#inp-size':p.size,'#inp-style':p.style,'#inp-budget':p.budget,'#inp-message':p.message};
     Object.entries(placeholders).forEach(([id,value])=>{const el=$(id);if(el)el.placeholder=value;});
     $$('[data-lang-toggle]').forEach(btn=>btn.setAttribute('aria-pressed',String(btn.dataset.langToggle===language)));
     try{localStorage.setItem('site-lang',language);}catch(_e){}
