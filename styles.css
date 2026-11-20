@@ -133,3 +133,93 @@ html,body{max-width:100%;overflow-x:hidden}
 .booking-submit:hover{background:var(--paper);border-color:var(--paper)}.booking-submit:disabled{opacity:.65;cursor:wait}.booking-submit span:last-child{font-size:19px}
 .booking-form-wrap .selected-design{grid-column:1/-1}
 @media(max-width:760px){.booking-form-wrap form{grid-template-columns:1fr;gap:15px}.booking-grid{grid-template-columns:1fr;gap:14px}.booking-step{padding-top:18px}.booking-step h3{font-size:20px}.booking-form-wrap .booking-full,.booking-note,.booking-submit{grid-column:1}}
+
+
+/* HERO VIDEO */
+.hero-main{overflow:hidden;background:var(--ink-soft);isolation:isolate;min-width:0;min-height:440px}
+.hero-main video.hero-video{position:absolute;inset:0;width:100%;height:100%;display:block!important;object-fit:cover;object-position:center center;z-index:1;background:var(--ink-soft);opacity:1;visibility:visible}
+.hero-main video.hero-video::-webkit-media-controls{display:none!important}
+.hero-main:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,6,11,.02) 45%,rgba(5,6,11,.5));pointer-events:none}
+.hero-video-caption{position:absolute;z-index:2;left:18px;bottom:16px;color:var(--paper);font-size:9px;letter-spacing:.2em}
+/* FOUR OVAL SIGNATURE PIECES */
+.signature-section{padding:clamp(64px,8vw,112px) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.signature-heading{text-align:center;margin:0 auto 42px;max-width:620px}
+.signature-heading .eyebrow{margin:0 0 12px}
+.signature-heading h2{font:500 clamp(34px,5vw,60px)/1.05 var(--serif);letter-spacing:-.035em;color:var(--paper);margin:0 0 12px}
+.signature-intro{font-size:13px;color:var(--muted);margin:0}
+.signature-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,3vw,42px);align-items:center;width:100%;}
+.signature-piece{width:100%;min-width:0;height:auto;aspect-ratio:3/4;border-radius:50%;}
+.signature-piece{position:relative;display:block;overflow:hidden;aspect-ratio:3/4;border-radius:50%/42%;background:var(--surface);border:1px solid rgba(65,105,201,.35);isolation:isolate}
+.signature-piece:nth-child(even){transform:translateY(0)}
+.signature-piece img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .7s cubic-bezier(.2,.7,.2,1),opacity .4s}
+.signature-piece:hover img{transform:scale(1.055);opacity:.82}
+.signature-piece span{position:absolute;z-index:2;bottom:18px;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:.18em;color:#fff;text-shadow:0 1px 10px #000}
+.signature-more{display:block;width:max-content;margin:48px auto 0;color:var(--paper);font-size:10px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--accent-bright);padding:0 0 8px}
+@media(max-width:760px){.signature-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.signature-piece{aspect-ratio:3/4;border-radius:50%}.signature-piece:nth-child(even){transform:none}.signature-more{margin-top:42px}}
+@media(max-width:420px){.signature-grid{gap:12px}}
+@media(prefers-reduced-motion:reduce){.hero-video{animation:none;transition:none}.hero-main{background:var(--ink-soft)}}
+
+/* IVSLEEPS — FULL-WIDTH MONOCHROME EDITORIAL PASS (desktop only) */
+:root{
+  --ink:#080808;--ink-soft:#171717;--paper:#f2f0ec;--paper-soft:#d8d5d0;
+  --muted:#aaa7a1;--muted-dark:#77736d;--accent:#f2f0ec;--accent-bright:#ffffff;
+  --accent-deep:#171717;--line:rgba(255,255,255,.18);--line-dark:rgba(255,255,255,.32);
+  --surface:#171717;--surface-raised:#242424;--black:#050505;--white:#f7f6f3;
+  --content:100%;--gutter:clamp(24px,5.2vw,104px);
+}
+@media (min-width:761px){
+  html,body{width:100%;max-width:none}
+  body{background:#080808;color:#f2f0ec;font-size:16px}
+  .wrap{width:100%;max-width:none;margin:0;padding:0}
+  header{width:100%;margin:0;padding:22px var(--gutter);background:rgba(8,8,8,.9);border-bottom:1px solid rgba(255,255,255,.16)}
+  .brand .wordmark{font-size:clamp(24px,2vw,34px);letter-spacing:.25em}
+  nav.desktop{gap:clamp(18px,2.4vw,42px)}
+  nav.desktop a{font-size:11px;letter-spacing:.18em;color:#c2bfba}
+  .lang-btn{font-size:11px}
+  .hero{position:relative;display:flex;align-items:center;width:100%;min-height:calc(100svh - 78px);padding:clamp(72px,9vh,130px) var(--gutter);margin:0;overflow:hidden;isolation:isolate}
+  .hero-main{position:absolute;inset:0;width:100%;height:100%;min-height:0;max-height:none;border-radius:0;z-index:-2;background:#151515}
+  .hero-main video.hero-video{object-position:center 42%;}
+  .hero-main:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.52) 43%,rgba(0,0,0,.12) 100%),linear-gradient(0deg,rgba(0,0,0,.45),transparent 45%);pointer-events:none}
+  .hero-main:after{content:none}
+  .hero-video-caption{left:auto;right:var(--gutter);bottom:28px;font-size:10px;letter-spacing:.24em}
+  .hero-left{position:relative;z-index:2;width:min(760px,58vw);padding:0;}
+  .hero .eyebrow{color:#dedbd6;font-size:11px;letter-spacing:.28em}
+  .hero h1{font-size:clamp(64px,8.2vw,132px);line-height:.94;max-width:9.5ch;margin-bottom:28px;color:#f4f2ee}
+  .hero .lead{font-size:clamp(14px,1.05vw,17px);line-height:1.75;max-width:48ch;color:rgba(245,243,239,.78);display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+  .hero-actions{gap:18px;margin:34px 0 22px}
+  .button{min-height:56px;padding:0 28px;font-size:11px;letter-spacing:.16em}
+  .button-primary{background:#f2f0ec;color:#080808;border-color:#f2f0ec}
+  .button-primary:hover{background:#c9c6c0;border-color:#c9c6c0}
+  .button-quiet{border-color:rgba(255,255,255,.5);background:rgba(0,0,0,.12)}
+  .button-quiet:hover{background:rgba(255,255,255,.12)}
+  .text-link{border-color:#f2f0ec;font-size:11px}
+  .tagline{border-color:rgba(255,255,255,.35);font-size:10px;letter-spacing:.2em;color:#e4e1dc}
+  /* Wide editorial sections: content spans the monitor, not a centered narrow column. */
+  section.portfolio,.faq,.contact,.insta-section,.about{width:100%;max-width:none;margin:0;padding:clamp(76px,8vw,132px) var(--gutter);border-radius:0}
+  section.portfolio h2,.faq h2,.contact h2,.insta-section h2,.about h2{font-size:clamp(44px,5vw,76px);color:#f2f0ec}
+  .portfolio>.lead{font-size:15px;max-width:65ch;margin-bottom:42px}
+  .portfolio-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,1.8vw,30px);margin-top:44px}
+  .portfolio-grid .gallery-item{aspect-ratio:4/5}
+  .portfolio-grid .gallery-item:nth-child(5n+2){transform:translateY(34px)}
+  #prints .portfolio-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .signature-section{width:100%;padding:clamp(76px,8vw,132px) var(--gutter);background:#f2f0ec;color:#101010;border:0}
+  .signature-heading{max-width:900px;margin-bottom:clamp(38px,4vw,64px)}
+  .signature-heading .eyebrow{color:#55514c}
+  .signature-heading h2{font-size:clamp(44px,5vw,76px);color:#101010}
+  .signature-intro{font-size:15px;color:#55514c}
+  .signature-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,3vw,48px);align-items:stretch}
+  .signature-piece{aspect-ratio: .62 / 1;border:0;border-radius:999px;background:#1b1b1b}
+  .signature-piece:nth-child(even){transform:translateY(0)}
+  .signature-piece img{filter:grayscale(100%)}
+  .signature-piece span{font-size:11px;bottom:24px;letter-spacing:.22em}
+  .signature-more{margin-top:52px;color:#111;border-color:#111;font-size:11px}
+  .about{grid-template-columns:minmax(0,1.1fr) minmax(360px,.9fr);gap:clamp(48px,8vw,140px);align-items:center}
+  .about .portrait{max-width:none;width:100%}
+  .insta-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+  .flash-cards{grid-template-columns:repeat(4,minmax(0,1fr));gap:30px 22px}
+  .booking-form-wrap{max-width:1200px}
+  .booking-form-wrap form{gap:22px 28px}
+  .booking-form-wrap input,.booking-form-wrap select,.booking-form-wrap textarea{background:#151515;border-color:rgba(255,255,255,.22);color:#f2f0ec}
+  .booking-step h3{font-size:28px}
+  footer{width:100%;margin:0;padding:32px var(--gutter) 42px}
+}
