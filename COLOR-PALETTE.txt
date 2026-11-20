@@ -1,0 +1,14 @@
+IVSLEEPS — corrected blue palette
+
+Pantone Neon Navy (reference anchor): #131936
+Black:                         #05060B
+Midnight blue surfaces:        #0B1230
+Raised navy surfaces:          #131F49
+Deep royal navy accent:        #243B82
+Clear blue interactive accent: #4169C9
+Warm limestone text:           #E9E2D7
+
+The previous accent colours were too muted and read as charcoal/slate.
+This version keeps the reference's very dark Neon Navy base but introduces
+clearly visible saturated blue in buttons, focus rings, links, selected states,
+borders and interactive elements.

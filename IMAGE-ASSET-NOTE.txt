@@ -1,0 +1,5 @@
+IMAGE FIT UPDATE
+
+CSS has been updated so portfolio, flash, portrait, print, Instagram and hero image containers fill their intended rectangles without distorting image proportions. Thumbnail images use object-fit: cover; the lightbox continues to show the full uncropped image.
+
+IMPORTANT: The original photograph files were not present in the supplied source package. The HTML references files under assets/, but that directory contains only a README. Copy the original assets folder from the live/original website into this project's assets/ directory before deployment. Once those files are supplied, individual object-position values can be tuned to protect the focal point of each photograph.

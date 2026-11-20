@@ -1,0 +1,51 @@
+The uploaded source contained HTML only; no assets/ directory or image files were attached.
+Copy the original assets/ folder into this project before deployment.
+
+Referenced image paths in the redesigned page:
+assets/1A564487-6B7B-46C3-AC3A-F88800A56A80.jpeg
+assets/IMG_2650
+assets/IMG_2650 (1).jpeg
+assets/IMG_5111.jpeg
+assets/flash-1.jpeg
+assets/flash-10.jpg
+assets/flash-14.jpg
+assets/flash-2.jpeg
+assets/flash-3.JPEG
+assets/flash-4.jpeg
+assets/flash-5.jpg
+assets/flash-6.jpg
+assets/flash-7.jpg
+assets/flash-8.jpg
+assets/flash-9.jpeg
+assets/hero-main.JPG
+assets/painting-1.JPEG
+assets/portfolio-1.jpg
+assets/portfolio-10.jpeg
+assets/portfolio-11.jpg
+assets/portfolio-12.JPG
+assets/portfolio-13.jpeg
+assets/portfolio-14.jpeg
+assets/portfolio-15.JPG
+assets/portfolio-16.JPG
+assets/portfolio-17.JPG
+assets/portfolio-18.JPG
+assets/portfolio-19.JPG
+assets/portfolio-2.jpg
+assets/portfolio-3.JPG
+assets/portfolio-4.jpeg
+assets/portfolio-5.jpg
+assets/portfolio-6.jpg
+assets/portfolio-7.jpeg
+assets/portfolio-8.jpeg
+assets/portfolio-9.jpeg
+assets/portrait.jpg
+assets/print-1.JPEG
+assets/print-2.JPEG
+assets/print-3.jpeg
+assets/print-4.JPG
+assets/print-5.JPG
+assets/temp_image_9DA4EFBD-A134-41A3-B5A7-AE7059E678C8.jpeg
+assets/temp_image_A87B6D21-34B3-43DA-8A85-3605297E87B5.jpeg
+
+COLOR PALETTE UPDATE
+The supplied moodboard is now applied in styles.css. Core Pantone reference: Neon Navy #131936. Supporting colors: midnight navy #0B1024, warm limestone #E9E2D7, stone #CFC7BA, muted blue-grey #A7A9B7, slate blue #34466F.

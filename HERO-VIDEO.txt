@@ -1,0 +1,1 @@
+The uploaded MP4 is installed as assets/hero-video.mp4 and used as the autoplay, muted, looping homepage hero video. Add the original portfolio photographs to this folder using the filenames referenced in index.html for the four signature oval images and portfolio gallery.
